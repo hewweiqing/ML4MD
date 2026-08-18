@@ -29,6 +29,7 @@ from .coordinate_noise import derive_stream_seed as coordinate_derive_stream_see
 from .cpu_split import GRAPH_SETTINGS, load_inner_split
 from .descriptor_head_warmup import warm_descriptor_head
 from .full_network_warmup import warm_full_network
+from .gpu_runtime import DEVICE, assert_model_gpu, configure_gpu_runtime
 from .random_feature_graphs import build_random_feature_batch, derive_stream_seed
 from .sigma_authorization import require_authorized_sigma
 
@@ -50,7 +51,7 @@ def model_config():
 
 def build_model():
     from alignn.models.alignn import ALIGNN
-    return ALIGNN(model_config())
+    return ALIGNN(model_config()).to(DEVICE)
 
 
 def seed_all(seed: int) -> None:
@@ -119,7 +120,9 @@ def build_random_feature_input(real_input: dict, *, fold: int, seed: int):
 
 def graph_batch(atom_graphs: list, line_graphs: list, indices: list[int]):
     import dgl
-    return dgl.batch([atom_graphs[i] for i in indices]), dgl.batch([line_graphs[i] for i in indices])
+    atoms = dgl.batch([atom_graphs[i] for i in indices]).to(DEVICE)
+    lines = dgl.batch([line_graphs[i] for i in indices]).to(DEVICE)
+    return atoms, lines
 
 
 def native_logits(model: torch.nn.Module, batch_input) -> torch.Tensor:
@@ -151,7 +154,50 @@ def measure(model: torch.nn.Module, input_set: dict) -> dict:
         "activation_scale_summary": activation_scale_summary(trace)}
 
 
+def make_full_network_batch_factory(real_input: dict, *, fold: int):
+    """Pure function of (step, seed): fresh noise features + fresh balanced
+    random labels every call, both on DEVICE, reproducible given the same
+    (step, seed) pair (required for warm_full_network's deterministic-replay
+    check).
+    """
+    def factory(step: int, replay_seed: int):
+        step_seed = derive_stream_seed(STAGE3_VERSION, fold, replay_seed, step, "stage3-a-full-network-step")
+        atoms, lines, _ = build_random_feature_batch(real_input["atom_graphs"][:128], real_input["line_graphs"][:128],
+            version=STAGE3_VERSION, fold=fold, seed=step_seed)
+        labels = torch.as_tensor(balanced_random_labels(128, step_seed + 1), dtype=torch.long, device=DEVICE)
+        return graph_batch(atoms, lines, list(range(len(atoms)))), labels
+    return factory
+
+
+def time_full_network_warmup_single_seed(dataset: Path, fold: int, seed: int) -> dict:
+    """Runs ONLY the full-network warm-up (not the rest of Stage A) for one
+    (fold, seed) and reports wall-clock time. This is the "time one seed of
+    the full-network arm first" profiling step requested before submitting
+    the full 20-seed Stage A run — 938 whole-network optimizer steps run
+    TWICE (deterministic-replay contract) is a much larger intervention than
+    the head-only arms, so its cost should be measured before committing to
+    the full grid, not assumed.
+    """
+    import json
+    import time
+    configure_gpu_runtime()
+    seed_all(seed)
+    real_input = build_real_structure_input(dataset, fold, seed)
+    initial_state = {name: value.detach().clone() for name, value in build_model().state_dict().items()}
+    started = time.perf_counter()
+    result = warm_full_network(build_model, initial_state, make_full_network_batch_factory(real_input, fold=fold),
+        native_logits, seed=seed)
+    elapsed_seconds = time.perf_counter() - started
+    manifest = json.loads((PACKAGE_ROOT / "PACKAGE_MANIFEST.json").read_text(encoding="utf-8"))
+    return {"status": "passed", "fold": fold, "seed": seed, "elapsed_seconds": elapsed_seconds,
+        "elapsed_seconds_per_replay": elapsed_seconds / 2, "optimizer_steps_per_replay": result["optimizer_steps"],
+        "batch_size": result["batch_size"], "deterministic_replay": result["deterministic_replay"],
+        "projected_seconds_for_20_seeds": elapsed_seconds * len(STAGE_A_SEEDS),
+        "package_aggregate_sha256": manifest["aggregate_sha256"], "diagnostics": result["diagnostics"]}
+
+
 def run_stage_a(dataset: Path, fold: int, work_dir: Path, *, sigma_authorization_path: str | None = None) -> dict:
+    configure_gpu_runtime()
     authorization = require_authorized_sigma(authorization_path=sigma_authorization_path)
     work_dir.mkdir(parents=True, exist_ok=True)
     results = []
@@ -163,6 +209,7 @@ def run_stage_a(dataset: Path, fold: int, work_dir: Path, *, sigma_authorization
         input_sets = {"real": real_input, "coordinate_perturbed": coordinate_input, "random_feature": random_feature_input}
 
         model = build_model()
+        assert_model_gpu(model)
         pre_warmup = {name: measure(model, input_sets[name]) for name in INPUT_SETS}
 
         initial_state = {name: value.detach().clone() for name, value in model.state_dict().items()}
@@ -171,18 +218,12 @@ def run_stage_a(dataset: Path, fold: int, work_dir: Path, *, sigma_authorization
 
         coordinate_descriptors = extract_pooled_descriptors(model, coordinate_input["atom_graphs"], coordinate_input["line_graphs"], graph_batch)
         coordinate_labels = torch.as_tensor(balanced_random_labels(COORDINATE_RECORD_COUNT,
-            coordinate_derive_stream_seed(STAGE3_VERSION, fold, seed, 0, "stage3-a-coordinate-labels")), dtype=torch.long)
+            coordinate_derive_stream_seed(STAGE3_VERSION, fold, seed, 0, "stage3-a-coordinate-labels")), dtype=torch.long, device=DEVICE)
         coordinate_warmup = warm_coordinate_head(model.fc.state_dict(), coordinate_descriptors[:COORDINATE_RECORD_COUNT],
             coordinate_labels, version=STAGE3_VERSION, fold=fold, seed=seed)
 
-        def full_network_batch_factory(step: int, replay_seed: int):
-            step_seed = derive_stream_seed(STAGE3_VERSION, fold, replay_seed, step, "stage3-a-full-network-step")
-            atoms, lines, _ = build_random_feature_batch(real_input["atom_graphs"][:128], real_input["line_graphs"][:128],
-                version=STAGE3_VERSION, fold=fold, seed=step_seed)
-            labels = torch.as_tensor(balanced_random_labels(128, step_seed + 1), dtype=torch.long)
-            return graph_batch(atoms, lines, list(range(len(atoms)))), labels
-
-        full_network_result = warm_full_network(build_model, initial_state, full_network_batch_factory, native_logits, seed=seed)
+        full_network_result = warm_full_network(build_model, initial_state,
+            make_full_network_batch_factory(real_input, fold=fold), native_logits, seed=seed)
 
         post_warmup = {}
         for variant, fc_state in (("descriptor", descriptor_warmup["fc_state"]),

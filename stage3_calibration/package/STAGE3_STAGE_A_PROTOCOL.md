@@ -22,6 +22,39 @@ inventory to `ALIGNN_MODULE_INVENTORY.json` (done automatically by
 by execution-call-order index regardless, but semantic module labels need
 that one-time inventory.
 
+## Submission sequence (`slurm/`)
+
+Three jobs, in order, gated by `scripts/require_stage_a_gates.py`:
+
+1. `00_stage_a_a100_preflight.sbatch` — CUDA/A100 runtime + a minimal
+   head-only optimizer step. Reuses `coordinate_gpu_v4`'s certified
+   conda environment (`activate_cuda_runtime.sh`, copied verbatim — same
+   version pins, same environment prefix).
+2. `05_profile_full_network_seed0.sbatch` — times **one** (fold 0, seed 0)
+   full-network warm-up run before committing to the full 20-seed job. 938
+   whole-network optimizer steps run twice (deterministic-replay contract)
+   is a much larger intervention than the existing head-only arms, so its
+   cost is measured, not assumed. Writes
+   `preflight/STAGE_A_FULL_NETWORK_SEED0_PROFILE.json`. A human reviewer
+   must then write a matching `STAGE_A_FULL_NETWORK_SEED0_PROFILE_APPROVAL.json`
+   (`schema_version`, `decision: "approved"`, `reviewer_identity`, `reasons`,
+   `approved_at_utc`, `bindings` from `stage_a_profile.binding_values(...)`,
+   `resource_policy_evaluation` from `stage_a_profile.evaluate_policy(...)`
+   against `STAGE_A_RESOURCE_POLICY.json`) before the next step is unlocked
+   — `require_stage_a_gates.py` checks this via `stage_a_profile.verify_approval()`.
+3. `10_stage_a_full_fold0.sbatch` — the full 20-seed Stage A run (fold 0,
+   single job, not an array — one process loops all seeds). Requires both
+   the preflight and the profile approval to pass first.
+
+`resource_profile.py`'s schema from `coordinate_gpu_v4` was deliberately
+**not** reused here — it encodes assumptions specific to that package's own
+25-cell paired-branch training grid (persisted shard cache accounting,
+control/random2 branch-hour projections) that don't describe what Stage A
+actually measures. `stage_a_profile.py` follows the same
+validate/evaluate-against-policy/require-human-approval pattern with a
+schema that matches the single-seed timing report this package actually
+produces.
+
 ## Model
 
 `ALIGNNConfig(name="alignn", alignn_layers=4, gcn_layers=4,

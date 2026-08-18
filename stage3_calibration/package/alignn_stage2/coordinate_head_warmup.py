@@ -25,15 +25,20 @@ RECORD_COUNT = 3000
 
 
 def _warm_once(fc_state: dict, descriptors: torch.Tensor, labels: torch.Tensor, *, seed: int) -> dict:
-    fc = torch.nn.Linear(descriptors.shape[1], 2)
-    fc.load_state_dict(fc_state)
+    device = descriptors.device
+    labels = labels.to(device)
+    fc = torch.nn.Linear(descriptors.shape[1], 2).to(device)
+    fc.load_state_dict({key: value.to(device) for key, value in fc_state.items()})
     optimizer = torch.optim.AdamW(fc.parameters(), lr=LEARNING_RATE, weight_decay=0.0)
+    # Permutation RNG stays pinned to CPU (matches coordinate_gpu_v4's
+    # gpu_coordinate_training.py convention: "Only the selected batch
+    # indices cross to CUDA; the permutation RNG does not").
     generator = torch.Generator(device="cpu").manual_seed(seed)
-    permutation = torch.randperm(RECORD_COUNT, generator=generator)
+    permutation = torch.randperm(RECORD_COUNT, generator=generator).to(device)
     cursor = 0
     for _ in range(WARMUP_STEPS):
         if cursor + BATCH_SIZE > RECORD_COUNT:
-            permutation = torch.randperm(RECORD_COUNT, generator=generator)
+            permutation = torch.randperm(RECORD_COUNT, generator=generator).to(device)
             cursor = 0
         indices, cursor = permutation[cursor:cursor + BATCH_SIZE], cursor + BATCH_SIZE
         optimizer.zero_grad(set_to_none=True)

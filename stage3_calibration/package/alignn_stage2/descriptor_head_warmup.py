@@ -61,26 +61,30 @@ def extract_pooled_descriptors(model: torch.nn.Module, atom_graphs: list, line_g
 
 
 def _warm_once(fc_state: dict, descriptors: torch.Tensor, *, seed: int) -> tuple[dict, dict]:
-    fc = torch.nn.Linear(descriptors.shape[1], 2)
-    fc.load_state_dict(fc_state)
+    device = descriptors.device
+    fc = torch.nn.Linear(descriptors.shape[1], 2).to(device)
+    fc.load_state_dict({key: value.to(device) for key, value in fc_state.items()})
     mean, std = descriptors.mean(0), descriptors.std(0, unbiased=False).clamp_min(1e-6)
+    # Permutation/sampling RNG stays pinned to CPU (matches the existing
+    # coordinate/descriptor warm-up convention elsewhere in this repo); only
+    # the resulting tensors move to the descriptors' device.
     generator = torch.Generator(device="cpu").manual_seed(seed)
     holdout_generator = torch.Generator(device="cpu").manual_seed(seed + 1)
-    synthetic = mean + std * torch.randn((SYNTHETIC_COUNT, descriptors.shape[1]), generator=generator)
-    labels = torch.tensor([0, 1] * (SYNTHETIC_COUNT // 2))
-    permutation = torch.randperm(SYNTHETIC_COUNT, generator=generator)
+    synthetic = (mean + std * torch.randn((SYNTHETIC_COUNT, descriptors.shape[1]), generator=generator).to(device))
+    labels = torch.tensor([0, 1] * (SYNTHETIC_COUNT // 2), device=device)
+    permutation = torch.randperm(SYNTHETIC_COUNT, generator=generator).to(device)
     synthetic, labels = synthetic[permutation], labels[permutation]
     optimizer = torch.optim.AdamW(fc.parameters(), lr=LEARNING_RATE, weight_decay=0.0)
     cursor = 0
     for _ in range(WARMUP_STEPS):
         if cursor + BATCH_SIZE > SYNTHETIC_COUNT:
-            permutation = torch.randperm(SYNTHETIC_COUNT, generator=generator)
+            permutation = torch.randperm(SYNTHETIC_COUNT, generator=generator).to(device)
             cursor = 0
         indices, cursor = permutation[cursor:cursor + BATCH_SIZE], cursor + BATCH_SIZE
         optimizer.zero_grad(set_to_none=True)
         torch.nn.functional.cross_entropy(fc(synthetic[indices]), labels[indices]).backward()
         optimizer.step()
-    heldout = mean + std * torch.randn((SYNTHETIC_COUNT, descriptors.shape[1]), generator=holdout_generator)
+    heldout = mean + std * torch.randn((SYNTHETIC_COUNT, descriptors.shape[1]), generator=holdout_generator).to(device)
     with torch.no_grad():
         probabilities = torch.softmax(fc(heldout), dim=1)
         entropy = -(probabilities * probabilities.clamp_min(1e-15).log()).sum(1)

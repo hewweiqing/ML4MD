@@ -1,5 +1,5 @@
 {
-  "aggregate_sha256": "b60db43256898a79cdaaa546231b4f946e599ae2833c3fe71e053c5f512bb62d",
+  "aggregate_sha256": "b38552748e6854788ab5f68ebe2c08c44d77ebf80cfe6bf393d940920380bb58",
   "algorithm": "SHA-256 of exact UTF-8 concatenation of lexically sorted canonical POSIX lines: <sha256>  <relative-path>\\n",
   "canonical_inputs": [
     "58a4b21ac43084825ae85347b3c21e8fdc05934939d7154f24585947b064e6ca  ALL_25_SPLIT_HASHES.json",
@@ -25,7 +25,7 @@
     "97ee14036be45e089da710077d0143987791db2e60ae193c68ecaa6e5d884aec  alignn_stage2/descriptor_head_warmup.py",
     "320a6f836629396619788b4d94cd9f358cf316e957c28475df93101853af213c  alignn_stage2/full_network_warmup.py",
     "2820a8962c7b92be7a0ff2b66053c8f2efdad12636be41424a1c9ff0fbc26316  alignn_stage2/gpu_runtime.py",
-    "4a339297d4e1a0d1cae8a87793f5ddffbd6bb54791c1b45ed2e5fa14b851d422  alignn_stage2/init_diagnostic.py",
+    "2e45b665be7fd713e261b1dcf8f768f936d8df14136d449b8bc086d768a891cf  alignn_stage2/init_diagnostic.py",
     "4a4afe3ed8f91ea1848a63efbd0c854083e0a5c57c48b8fef19dc680cb346d04  alignn_stage2/random_feature_graphs.py",
     "d061c05c95408f6c378abc1a1b2b44ef35bd406530a079e80383d0c70325e524  alignn_stage2/sigma_authorization.py",
     "ad1869ed512085c29132221226163a7af388cdebf2eb545b1300d9d9635c2acd  alignn_stage2/slurm_resources.py",
@@ -188,8 +188,8 @@
     },
     {
       "path": "alignn_stage2/init_diagnostic.py",
-      "sha256": "4a339297d4e1a0d1cae8a87793f5ddffbd6bb54791c1b45ed2e5fa14b851d422",
-      "size_bytes": 14237
+      "sha256": "2e45b665be7fd713e261b1dcf8f768f936d8df14136d449b8bc086d768a891cf",
+      "size_bytes": 15573
     },
     {
       "path": "alignn_stage2/random_feature_graphs.py",

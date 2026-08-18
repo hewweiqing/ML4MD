@@ -196,6 +196,30 @@ def time_full_network_warmup_single_seed(dataset: Path, fold: int, seed: int) ->
         "package_aggregate_sha256": manifest["aggregate_sha256"], "diagnostics": result["diagnostics"]}
 
 
+def cross_seed_verdict_summary(results: list[dict]) -> dict:
+    """Per (phase, input_set), how the mechanism_verdict is distributed
+    across seeds. If a verdict splits across seeds rather than being
+    consistent, that itself is a finding (initialization variance large
+    enough to matter, per review feedback) — this makes that visible
+    without hand-inspecting 20 seeds' worth of nested JSON.
+    """
+    buckets: dict[tuple[str, str], dict[str, int]] = {}
+    for row in results:
+        for phase_name, phase in (("pre_warmup", row["pre_warmup"]), *row["post_warmup"].items()):
+            if not isinstance(phase, dict):
+                continue
+            for input_set_name in INPUT_SETS:
+                entry = phase.get(input_set_name)
+                if not isinstance(entry, dict) or "mechanism_verdict" not in entry:
+                    continue
+                key = (phase_name, input_set_name)
+                buckets.setdefault(key, {})
+                verdict = entry["mechanism_verdict"]
+                buckets[key][verdict] = buckets[key].get(verdict, 0) + 1
+    return {f"{phase}::{input_set}": {"counts": counts, "consistent_across_seeds": len(counts) == 1}
+        for (phase, input_set), counts in sorted(buckets.items())}
+
+
 def run_stage_a(dataset: Path, fold: int, work_dir: Path, *, sigma_authorization_path: str | None = None) -> dict:
     configure_gpu_runtime()
     authorization = require_authorized_sigma(authorization_path=sigma_authorization_path)
@@ -254,6 +278,7 @@ def run_stage_a(dataset: Path, fold: int, work_dir: Path, *, sigma_authorization
 
     report = {"status": "passed", "stage": "A", "fold": fold, "seeds": list(STAGE_A_SEEDS),
         "input_sets": list(INPUT_SETS), "warmup_variants": list(WARMUP_VARIANTS) + ["head_perturbation_control"],
+        "cross_seed_verdict_summary": cross_seed_verdict_summary(results),
         "results": results}
     write_json(work_dir / f"STAGE_A_DIAGNOSTIC_fold{fold}.json", report)
     return report

@@ -1,0 +1,46 @@
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Environments and editors
+.venv/
+venv/
+.idea/
+.vscode/
+
+# Runtime and scheduler outputs
+logs/
+*.out
+*.err
+slurm-*.out
+*_job.txt
+*_job_id.txt
+preflight/*PROFILE*.json
+
+# Model/data artifacts that do not belong in ordinary Git
+*.pt
+*.pth
+*.ckpt
+*.npz
+*.npy
+*.csv
+*.tar
+*.tar.gz
+*.zip
+*.parquet
+*.h5
+*.hdf5
+
+# Cluster work roots and caches
+ml4md/
+graph_cache*/
+coordinate_cache*/
+scratch/
+
+# Keep the small, audited descriptor logs already copied into the bundle.
+!descriptor_v41/results/logs/
+!descriptor_v41/results/logs/*.out
+!descriptor_v41/results/logs/*.err

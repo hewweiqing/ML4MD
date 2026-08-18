@@ -1,0 +1,9 @@
+# CPython 3.10 dependency-closure audit
+
+Observed DelftBlue target: CPython 3.10.20, Linux x86-64, glibc 2.28, pip 25.3.
+
+The v15 reproduction removes `exceptiongroup` and `tomli` from the selected wheels and lock, then evaluates pytest 8.4.2 metadata under the target markers. The validator reports both active requirements as unpinned. v16 includes and hashes both and proves that every other active target requirement has a selected distribution satisfying its version specifier. `importlib-metadata` is not selected because its relevant markers require Python below 3.10; Windows-only `colorama` is removed as unreachable; `typing-extensions==4.16.0` is selected and satisfies the active graph.
+
+The safer deterministic installation pattern is used: enumerate every selected wheel, install every lock with `--no-deps --require-hashes`, install only the two commit-pinned local projects with `--no-deps`, then run `pip check` and compare the entire installed distribution inventory to the declared closure. PyTorch appears only in its dedicated CUDA-11.8 lock and index; DGL appears only as its exact direct URL; the CUDA component and ordinary PyPI locks are disjoint. This prevents pip from silently resolving an undeclared package or consulting the wrong source.
+
+The immutable `DEPENDENCY_RESOLUTION_EVIDENCE.json` records passed static target-resolution proof. The immutable `CLEAN_INSTALL_EVIDENCE.json` and `CLEAN_INSTALL_TRANSCRIPT.txt` are deliberately pending placeholders and can never certify a runtime. During `setup_environment.sh`, exact final-prefix install results are instead written to `.alignn_stage2_v20_clean_install_evidence.json` and `.alignn_stage2_v20_clean_install_transcript.json` beside the certified environment. Metadata or download simulation alone cannot set runtime status to passed.

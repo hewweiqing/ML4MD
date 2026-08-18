@@ -1,0 +1,32 @@
+{
+  "aggregate_sha256": "d5fa822490646456cf6c97340c175a4e7de6c6f89f4befd7c6c874ed71c216b8",
+  "entries": [
+    {
+      "path": "STAGE_2_PROSPECTIVE_AMENDMENT.md",
+      "sha256": "6ae8fb17211e32761fed0b5adddcd3aebaac90cad9870a170ca875d2b79aab1e",
+      "size_bytes": 4434
+    },
+    {
+      "path": "ALIGNN_FULL_CONFIG.json",
+      "sha256": "a9ed7e0ef0dc0de251483b0c11553a7bbc01d0d1459975788a32c028c0ed472d",
+      "size_bytes": 2315
+    },
+    {
+      "path": "VALIDATION_ADEQUACY_GATES.json",
+      "sha256": "33efd7e752607b107a0b3f6c31c18fe986d8989b97289541b12ccd03af3c250c",
+      "size_bytes": 938
+    },
+    {
+      "path": "ONECYCLE_SEMANTICS.json",
+      "sha256": "6f8885253999f3257ca645aab7ef5e38f710fb4bbd31082f91f980c9a0939ea6",
+      "size_bytes": 582
+    },
+    {
+      "path": "STAGE_2_EXECUTION_PLAN.json",
+      "sha256": "f0e6989be4afbf6ebe518df844ce1ad5850516181b91eae377738b2b2c9798a2",
+      "size_bytes": 998
+    }
+  ],
+  "schema_version": 1,
+  "status": "frozen_before_full_configuration_preflight"
+}

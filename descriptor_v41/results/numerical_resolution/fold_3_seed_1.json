@@ -1,0 +1,77 @@
+{
+  "approved_module_sha256": "108b3183400725ca53e025c6f0f92690f35069f6fd786091b9d37dc50e90f08b",
+  "authorization_sha256": "b9b99ec4325a8230f8aeaac5fb4eead4d95a6bb690ca83c71a9aafc5ff8f32b6",
+  "fits": {
+    "control": {
+      "accepted": true,
+      "checks": {
+        "absolute_log_temperature_gradient_at_most_1e_6": true,
+        "approved_muben_source_hash_matches": true,
+        "deterministic_repeatability_exact": true,
+        "finite_strictly_positive_temperature": true,
+        "fit_scope_inner_validation_only": true,
+        "validation_nll_finite_nonincrease": true
+      },
+      "fit": {
+        "converged": false,
+        "convergence_status": "not_converged",
+        "final_abs_log_T_gradient": 1.2526421648690373e-07,
+        "fit_split": "inner_validation_only",
+        "implementation_version": "muben-final-446471d-alignn-logt-float64-lbfgs-v2-grad1e-7",
+        "max_iterations": 500,
+        "numerical_dtype": "torch.float64",
+        "objective": "unweighted_inner_validation_nll_two_class_cross_entropy",
+        "optimization_steps": 5,
+        "optimizer": "LBFGS_strong_wolfe",
+        "parameterization": "T=exp(log_T)",
+        "temperature": 1.3265899641665033,
+        "tolerance_change": 1e-12,
+        "tolerance_grad": 1e-07,
+        "validation_nll_after": 0.24627598471138148,
+        "validation_nll_before": 0.25720270064707956
+      },
+      "original_converged": false,
+      "original_convergence_status": "not_converged",
+      "validation_artifact_sha256": "4bdf93f3eec8f70412503d2599324fb64855ff82e23b892f6f9819f623c89025"
+    },
+    "random2": {
+      "accepted": true,
+      "checks": {
+        "absolute_log_temperature_gradient_at_most_1e_6": true,
+        "approved_muben_source_hash_matches": true,
+        "deterministic_repeatability_exact": true,
+        "finite_strictly_positive_temperature": true,
+        "fit_scope_inner_validation_only": true,
+        "validation_nll_finite_nonincrease": true
+      },
+      "fit": {
+        "converged": true,
+        "convergence_status": "converged",
+        "final_abs_log_T_gradient": 6.687958687374855e-08,
+        "fit_split": "inner_validation_only",
+        "implementation_version": "muben-final-446471d-alignn-logt-float64-lbfgs-v2-grad1e-7",
+        "max_iterations": 500,
+        "numerical_dtype": "torch.float64",
+        "objective": "unweighted_inner_validation_nll_two_class_cross_entropy",
+        "optimization_steps": 5,
+        "optimizer": "LBFGS_strong_wolfe",
+        "parameterization": "T=exp(log_T)",
+        "temperature": 1.284139468528748,
+        "tolerance_change": 1e-12,
+        "tolerance_grad": 1e-07,
+        "validation_nll_after": 0.2483255767598876,
+        "validation_nll_before": 0.2569692807817157
+      },
+      "original_converged": true,
+      "original_convergence_status": "converged",
+      "validation_artifact_sha256": "506a172f962a35eeaa0a75236b157171a414c0ec5684b9b1f27c822a6e845e36"
+    }
+  },
+  "fold": 3,
+  "original_convergence_results_preserved": true,
+  "outer_test_accessed": false,
+  "schema_version": 1,
+  "scope": "post_training_pre_outer_test_inner_validation_only",
+  "seed": 1,
+  "status": "passed_v40_numerical_resolution"
+}

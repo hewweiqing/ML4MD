@@ -1,0 +1,1 @@
+dgl @ https://data.dgl.ai/wheels/cu118/dgl-1.1.1%2Bcu118-cp310-cp310-manylinux1_x86_64.whl --hash=sha256:d59dfda7070534ebad4e28c1b51c19c5ab0298a4842dd0d55d06d6ff8aa93158

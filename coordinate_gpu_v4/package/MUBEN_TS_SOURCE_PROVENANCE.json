@@ -1,0 +1,9 @@
+{
+  "schema_version": 3,
+  "status": "approved_muben_v31_numerical_convergence_amendment",
+  "muben_release_commit": "446471d46449ec79cc0f846baa54d7f4a2f90695",
+  "muben_final_audit_sha256": "f4989a94700990e768cbe595a1399f23dc79e33df2471dd4e12ec32bf5245d43",
+  "adapter": {"path": "vendor/muben_temperature_scaling.py", "sha256": "108b3183400725ca53e025c6f0f92690f35069f6fd786091b9d37dc50e90f08b", "implementation_version": "muben-final-446471d-alignn-logt-float64-lbfgs-v2-grad1e-7", "supersedes_sha256": "868654151b87d526f122f741183c23599913541d5d62aada5cb35c91bc510719"},
+  "semantics": {"tasks": 1, "temperature_scalars": 1, "parameterization": "T=exp(log_T)", "dtype": "float64", "objective": "inner-validation NLL", "input": "native [n,2] logits", "final_log_T_gradient_tolerance": 1e-7},
+  "amendment_basis": {"outer_test_accessed": false, "validation_only_failure_job": "10641918", "changed_fields": ["implementation_version", "final_log_T_gradient_tolerance", "source_sha256"]}
+}

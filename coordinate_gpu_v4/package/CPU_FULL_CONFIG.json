@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "device": "cpu",
+  "folds": [0, 1, 2, 3, 4],
+  "seeds": [0, 1, 2, 3, 4],
+  "models_per_cell": 2,
+  "conditions": ["CPU_CONTROL_RAW", "CPU_CONTROL_TS", "CPU_RANDOM2_COORDINATE_RAW", "CPU_RANDOM2_COORDINATE_TS"],
+  "model": {"alignn_layers": 4, "gcn_layers": 4, "atom_features": 92, "edge_features": 80, "triplet_features": 40, "embedding": 64, "hidden": 256, "classes": 2, "pooling": "native_average"},
+  "graph": {"neighbor_strategy": "k-nearest", "cutoff_angstrom": 8.0, "max_neighbors": 12, "atom_features": "cgcnn", "line_graph": true, "canonicalize": true},
+  "supervised": {"epochs": 40, "batch_size": 32, "optimizer": "AdamW", "max_lr": 0.001, "weight_decay": 0.00001, "loss": "unweighted_nll", "float": "float32", "amp": false, "gradient_accumulation": false, "early_termination": false, "num_workers": 0, "checkpoint_selection": "minimum_inner_validation_nll_earlier_epoch_on_exact_tie"},
+  "onecycle": {"pct_start": 0.3, "anneal_strategy": "cos", "initial_lr": 0.00004, "nominal_final_lr": 4e-9, "step_after_each_optimizer_update": true},
+  "slurm": {"account": "research-ME-mse", "partition": "compute", "ntasks": 1, "cpus_per_task": 8, "mem_per_cpu": "3968M", "scientific_wall_time": "24:00:00", "array_max_concurrent": 5}
+}

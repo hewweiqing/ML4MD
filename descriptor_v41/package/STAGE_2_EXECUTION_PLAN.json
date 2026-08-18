@@ -1,0 +1,25 @@
+{
+  "ordered_gates": [
+    "package_and_environment_verified",
+    "a100_runtime_certified",
+    "label_free_structure_cache_exhaustively_verified",
+    "non_primary_smoke_passed_and_inspected",
+    "phase_separated_100_batch_profile_passed",
+    "explicit_profile_review_approved",
+    "primary_fold0_seed0_passed",
+    "paired_25_cell_grid",
+    "calibration_and_atomic_promotion",
+    "oof_consolidation_and_final_audit"
+  ],
+  "outer_test_access_policy": "structure-only preprocessing is prospectively label-free; no outer-test labels, logits, predictions, metrics or calibration fitting before scientific gates",
+  "profile": {
+    "approval_is_manual": true,
+    "minimum_optimizer_batches": 100,
+    "primary_must_not_be_automatically_dependent_on_profile_job": true,
+    "resource_policy": "RESOURCE_POLICY.json"
+  },
+  "release": "delftblue_package_v13",
+  "schema_version": 2,
+  "scientific_design": "unchanged from validated v10",
+  "status": "prospectively_frozen_before_v13_runtime"
+}

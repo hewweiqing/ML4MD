@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "method": "Baseline SHA-256 values are the released archive digests and source/result digests frozen before v7 packaging; after values were independently rehashed after integration.",
+  "status": "passed",
+  "released_alignn_archives": [
+    {"path": "alignn_stage2_delftblue.tar.gz", "before_sha256": "407ea5811674b06a1e74af1fa8c32efe3a72ecd4b4bf93924f3ef5492ffbcc85", "after_sha256": "407ea5811674b06a1e74af1fa8c32efe3a72ecd4b4bf93924f3ef5492ffbcc85", "unchanged": true},
+    {"path": "alignn_stage2_delftblue_v2.tar.gz", "before_sha256": "0beaa56d662358d56d5e42a2b0d3f80895f3b52a1e82c91d71ac733116bdd996", "after_sha256": "0beaa56d662358d56d5e42a2b0d3f80895f3b52a1e82c91d71ac733116bdd996", "unchanged": true},
+    {"path": "alignn_stage2_delftblue_v3.tar.gz", "before_sha256": "87a5fbca7d80eb6fb470aad93b4f2e77cdcb4f405296ae90a09e3cc14cd3f6c2", "after_sha256": "87a5fbca7d80eb6fb470aad93b4f2e77cdcb4f405296ae90a09e3cc14cd3f6c2", "unchanged": true},
+    {"path": "alignn_stage2_delftblue_v4.tar.gz", "before_sha256": "1004c167aa48c56a2426377bfe2f749df8dac3b865ce3a6aa41014c908727637", "after_sha256": "1004c167aa48c56a2426377bfe2f749df8dac3b865ce3a6aa41014c908727637", "unchanged": true},
+    {"path": "alignn_stage2_delftblue_v5.tar.gz", "before_sha256": "d755f28de2d8cfb37f729198626a740d98d3d869463a3fef8d238bbd9b287d6f", "after_sha256": "d755f28de2d8cfb37f729198626a740d98d3d869463a3fef8d238bbd9b287d6f", "unchanged": true},
+    {"path": "alignn_stage2_delftblue_v6.tar.gz", "before_sha256": "410a34ec1fea07efdaad7e694b8bf435cd6a509630c17e875305f3d471643ec8", "after_sha256": "410a34ec1fea07efdaad7e694b8bf435cd6a509630c17e875305f3d471643ec8", "unchanged": true}
+  ],
+  "muben_inputs": [
+    {"path": "MUBen/muben/uncertainty/ts.py", "before_sha256": "397237acf55cf04c6b6f374c43bda3a26b5ebf3f98915fadc6a228d69bff996e", "after_sha256": "397237acf55cf04c6b6f374c43bda3a26b5ebf3f98915fadc6a228d69bff996e", "unchanged": true},
+    {"path": "reproduction/muben_ts/scripts/cached_logit_ts.py", "before_sha256": "d04711baf652c6acb65442397e8d7ad4ace49d640e6db685a448340093441b63", "after_sha256": "d04711baf652c6acb65442397e8d7ad4ace49d640e6db685a448340093441b63", "unchanged": true},
+    {"path": "reproduction/muben_ts/scripts/grover_cached_logit_ts.py", "before_sha256": "752790852e490c9e3566d1f3b735ae7f30de57f8e2b2ff24cad557348219a174", "after_sha256": "752790852e490c9e3566d1f3b735ae7f30de57f8e2b2ff24cad557348219a174", "unchanged": true},
+    {"path": "reproduction/muben_ts/reports/phase3_full_reassessment.json", "before_sha256": "5b88f94ccefb8491f029f55b4e6a2faf61fd360f0c73ff6042139242e1861f9f", "after_sha256": "5b88f94ccefb8491f029f55b4e6a2faf61fd360f0c73ff6042139242e1861f9f", "unchanged": true},
+    {"path": "GROVER/tox21/seed-0/val_atom_logits.npy", "before_sha256": "7422531a41fc1aaf1a2412c4a9fde3b2bcabbdc04bbf657a49e71599156c9995", "after_sha256": "7422531a41fc1aaf1a2412c4a9fde3b2bcabbdc04bbf657a49e71599156c9995", "unchanged": true},
+    {"path": "GROVER/tox21/seed-0/val_bond_logits.npy", "before_sha256": "26479bafcf751c96451fb27d7181e745cc671790389c57c8b009bb394317709b", "after_sha256": "26479bafcf751c96451fb27d7181e745cc671790389c57c8b009bb394317709b", "unchanged": true},
+    {"path": "GROVER/tox21/seed-0/test_atom_logits.npy", "before_sha256": "848e45363c4006f60e5423739e3814cf5774e9fb81e37f3914db300f0e78e5fd", "after_sha256": "848e45363c4006f60e5423739e3814cf5774e9fb81e37f3914db300f0e78e5fd", "unchanged": true},
+    {"path": "GROVER/tox21/seed-0/test_bond_logits.npy", "before_sha256": "96ca43ec7024e083653cce6a691d23062edfc6c9496991c788ec725069c8f33a", "after_sha256": "96ca43ec7024e083653cce6a691d23062edfc6c9496991c788ec725069c8f33a", "unchanged": true}
+  ]
+}

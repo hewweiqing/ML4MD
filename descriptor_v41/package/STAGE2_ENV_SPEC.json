@@ -1,0 +1,30 @@
+{
+  "python": "3.10.20",
+  "torch": "2.0.1+cu118",
+  "dgl": "1.1.1+cu118 cp310 manylinux1_x86_64",
+  "alignn_commit": "f2366daa3413d28a825b46e34d001b5549b05a40",
+  "matbench_commit": "936176db18ca4cd7b38cbd957c017a5bac770c6b",
+  "pip": "25.3",
+  "environment_revision": 9,
+  "default_prefix": "/scratch/$USER/conda_envs/alignn_matbench_is_metal_cu118_v9",
+  "staging_prefix": "/scratch/$USER/conda_envs/alignn_matbench_is_metal_cu118_v9.staging",
+  "locks": {
+    "DELFBLUE_CU118_CONSTRAINTS.txt": "212bf2b6fe78ab8107434ddce34e1e332b55972979d825620546eee790d64907",
+    "CUDA11_RUNTIME_REQUIREMENTS.txt": "5ac66039cc45cc7d55331cde428218c86ff3eb10a2c68129826155ec2a56cb08",
+    "CUDA11_RUNTIME_LOCK.json": "ddb54421a8855e87ed68737f7170fef67739535e33ca510622477faeda89d897",
+    "PYTHON_DEPENDENCY_LOCK.txt": "8cef7ce44319e48f4070452ae1de8f3687388156395d569b26af6843673564ab",
+    "BOOTSTRAP_REQUIREMENTS.txt": "f19f55f3fd57b9fd4e64a6e8f32bb8a6f01a66934134698b09f8448c11328bf7",
+    "DECLARED_LOCAL_DISTRIBUTIONS.json": "7b14faeee5d1ba2c2e64a34d46f382c779eb69b839b0d933486e05cfb5be5949",
+    "TORCH_CU118_REQUIREMENT.txt": "57bb2e8967f45a4455507fc7a14286deb96f24ea903a35248e54f0a28f657396",
+    "DGL_CU118_REQUIREMENT.txt": "d16e99910f3add7c166593d5a18bcae542bdbca050e942a4e92dc6b8eb87ef47",
+    "DEPENDENCY_RESOLUTION_EVIDENCE.json": "c618d8754ea5c740829b10c7c209eb1f1cb2fc8841b8ad057b1d0f00ac004b0f"
+  },
+  "abi_rationale": "DGL cu118 directly needs CUDA-major-11 cudart, cuBLAS and cuSPARSE SONAMEs. Verified CUDA-11 wheel metadata shows cuSPARSE has no nvJitLink dependency and cuSOLVER requires only cuBLAS. Torch retains its exact cu118 payload.",
+  "certification_boundary": {
+    "login_node": "shared bootstrap; CDLL by exact SONAME for cudart, cuBLAS, cuSPARSE and cuSOLVER; torch, DGL and ALIGNN imports; no GPU",
+    "a100_node": "same library checks plus A100 identity, CUDA availability/tensor operation, DGL CUDA graph and ALIGNN CUDA model construction",
+    "scientific_jobs_require": "revision-9 A100_RUNTIME_CERTIFICATION.json bound to the exact final prefix"
+  },
+  "dataset_sha256": "9a028ed5750a4c76ca36e9f3c8d48fe0bf3fb21b76ec2289e58ae7048d527919",
+  "slurm": {"gpu_partition": "gpu-a100", "account": "research-ME-mse", "gpus": 1, "cpus": 8, "gpu_mem_per_cpu_max_mb": 8000, "compute_mem_per_cpu_max_mb": 3968}
+}

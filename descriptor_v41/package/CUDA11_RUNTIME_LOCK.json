@@ -1,0 +1,19 @@
+{
+  "cuda_toolkit_line": "11.8",
+  "environment_revision": 9,
+  "loader_policy": "exact SONAMEs from the certified prefix only; no module fallback",
+  "required_sonames": [
+    "libcudart.so.11.0",
+    "libcublas.so.11",
+    "libcusparse.so.11",
+    "libcusolver.so.11"
+  ],
+  "rationale": {
+    "torch": "torch 2.0.1+cu118 is the unchanged CPython-3.10 Linux cu118 wheel from the PyTorch CUDA 11.8 index",
+    "dgl": "DGL 1.1.1+cu118 directly links libcudart.so.11.0, libcublas.so.11 and libcusparse.so.11",
+    "cuda_components": "Actual CUDA-11 wheel METADATA shows cuSPARSE has no Requires-Dist entry and cuSOLVER requires only nvidia-cublas-cu11. CUDA-12 nvJitLink packaging is not part of this CUDA-11 graph.",
+    "scope": "External cuDNN, NCCL, NVRTC, cuFFT, cuRAND, CUPTI and NVTX wheels are not required by DGL's direct links or the single-GPU preflight; torch retains its own cu118 wheel payload.",
+    "integrity": "Every downloaded Linux wheel is version- and SHA-256-locked; certification additionally records each resolved shared-library SHA-256."
+  },
+  "schema_version": 2
+}

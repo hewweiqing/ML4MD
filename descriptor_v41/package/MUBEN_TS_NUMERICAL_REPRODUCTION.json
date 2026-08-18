@@ -1,0 +1,206 @@
+{
+  "blockers": [],
+  "results": [
+    {
+      "artifact_mode": "raw checkpoint replay because validation logits were not persisted; calibration fitting only, no base-model training",
+      "cell": {
+        "config": "primary",
+        "dataset": "tox21",
+        "model_family": "DNN-RDKit",
+        "seed": 0
+      },
+      "fit_inputs": [
+        "validation_logits",
+        "validation_labels",
+        "validation_masks"
+      ],
+      "labels_masks_shape_aligned": true,
+      "ranking_preserved_all_tasks": true,
+      "ranking_preserved_per_task": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "raw_logits_unchanged": true,
+      "raw_metrics_max_abs_diff_vs_saved": 5.960464477539063e-08,
+      "raw_probability_max_abs_diff_vs_saved": 1.1920928955078125e-07,
+      "recomputed_temperature": [
+        0.7987406253814697,
+        0.8951160907745361,
+        0.9031093120574951,
+        1.1840341091156006,
+        0.8035370707511902,
+        0.835534930229187,
+        1.019635558128357,
+        1.101033329963684,
+        1.064160943031311,
+        0.9606538414955139,
+        1.3231079578399658,
+        1.2937384843826294
+      ],
+      "saved_label_alignment": true,
+      "saved_temperature": [
+        0.7987406253814697,
+        0.8951160907745361,
+        0.9031093120574951,
+        1.1840341091156006,
+        0.8035370707511902,
+        0.835534930229187,
+        1.019635558128357,
+        1.101033329963684,
+        1.064160943031311,
+        0.9606538414955139,
+        1.3231079578399658,
+        1.2937384843826294
+      ],
+      "scaled_metrics_max_abs_diff_vs_saved": 5.960464477539063e-08,
+      "scaled_probability_max_abs_diff_vs_saved": 1.1920928955078125e-07,
+      "temperature_all_finite": true,
+      "temperature_all_positive": true,
+      "temperature_max_abs_diff": 0.0,
+      "test_labels_enter_fit": false
+    },
+    {
+      "artifact_mode": "raw checkpoint replay because validation logits were not persisted; calibration fitting only, no base-model training",
+      "cell": {
+        "config": "primary",
+        "dataset": "tox21",
+        "model_family": "ChemBERTa",
+        "seed": 0
+      },
+      "fit_inputs": [
+        "validation_logits",
+        "validation_labels",
+        "validation_masks"
+      ],
+      "labels_masks_shape_aligned": true,
+      "ranking_preserved_all_tasks": true,
+      "ranking_preserved_per_task": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "raw_logits_unchanged": true,
+      "raw_metrics_max_abs_diff_vs_saved": 5.960464477539063e-08,
+      "raw_probability_max_abs_diff_vs_saved": 1.1920928955078125e-07,
+      "recomputed_temperature": [
+        0.8480547070503235,
+        0.9418673515319824,
+        1.1566100120544434,
+        1.147255778312683,
+        1.0171328783035278,
+        1.0162193775177002,
+        1.1650855541229248,
+        1.3517060279846191,
+        1.1981914043426514,
+        1.067668080329895,
+        1.553346872329712,
+        1.2685368061065674
+      ],
+      "saved_label_alignment": true,
+      "saved_temperature": [
+        0.8480547070503235,
+        0.9418673515319824,
+        1.1566100120544434,
+        1.147255778312683,
+        1.0171328783035278,
+        1.0162193775177002,
+        1.1650855541229248,
+        1.3517060279846191,
+        1.1981914043426514,
+        1.067668080329895,
+        1.553346872329712,
+        1.2685368061065674
+      ],
+      "scaled_metrics_max_abs_diff_vs_saved": 5.960464477539063e-08,
+      "scaled_probability_max_abs_diff_vs_saved": 1.1920928955078125e-07,
+      "temperature_all_finite": true,
+      "temperature_all_positive": true,
+      "temperature_max_abs_diff": 0.0,
+      "test_labels_enter_fit": false
+    },
+    {
+      "artifact_mode": "persisted validation/test atom and bond logits",
+      "atom_checks": {
+        "labels_masks_shape_aligned": true,
+        "ranking_preserved_all_tasks": true,
+        "ranking_preserved_per_task": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "raw_logits_unchanged": true,
+        "temperature_all_finite": true,
+        "temperature_all_positive": true
+      },
+      "atom_temperature_max_abs_diff": 0.0,
+      "bond_checks": {
+        "labels_masks_shape_aligned": true,
+        "ranking_preserved_all_tasks": true,
+        "ranking_preserved_per_task": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "raw_logits_unchanged": true,
+        "temperature_all_finite": true,
+        "temperature_all_positive": true
+      },
+      "bond_temperature_max_abs_diff": 0.0,
+      "cell": {
+        "config": "primary",
+        "dataset": "tox21",
+        "model_family": "GROVER",
+        "seed": 0
+      },
+      "fit_inputs": [
+        "validation_atom_logits",
+        "validation_bond_logits",
+        "validation_labels",
+        "validation_masks"
+      ],
+      "label_mask_alignment": true,
+      "raw_metrics_max_abs_diff_vs_saved": 0.0,
+      "scaled_metrics_max_abs_diff_vs_saved": 0.0,
+      "test_labels_enter_fit": false
+    }
+  ],
+  "schema_version": 1,
+  "status": "passed"
+}

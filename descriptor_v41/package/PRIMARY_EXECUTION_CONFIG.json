@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "status": "locked",
+  "task": "matbench_mp_is_metal",
+  "official_outer_folds": [0, 1, 2, 3, 4],
+  "seeds": [0, 1, 2, 3, 4],
+  "trained_branches_per_cell": ["control", "random2_descriptor"],
+  "readouts": ["A_Control_raw", "B_Control_temperature_scaled", "C_Random2_Descriptor_raw", "D_Random2_Descriptor_temperature_scaled"],
+  "primary_comparison": "D_minus_B",
+  "secondary_comparisons": ["C_minus_A", "B_minus_A", "D_minus_C"],
+  "inner_split": "frozen deterministic stratified 90/10; validation is used for selection and temperature fitting",
+  "epochs": 40,
+  "batch_size": 32,
+  "random2": {"synthetic_samples": 3000, "warmup_steps": 938, "batch_size": 128, "learning_rate": 0.0001},
+  "temperature": "one shared positive scalar per trained branch, fit on cached validation native logits",
+  "temperature_parameterization": "T=exp(log_T), float64 LBFGS to declared numerical convergence",
+  "required_pre_primary_gates": ["A100 environment", "structure-level cache", "non-primary smoke", "100 representative optimizer batches"],
+  "graph_cache": "one construction per unique structure; fixed 512-structure shards; split IDs map to shard offsets",
+  "array_mapping": "fold=index//5; seed=index%5",
+  "environment_prefix_default": "/scratch/$USER/conda_envs/alignn_matbench_is_metal_cu118_v5",
+  "persistent_work_root_default": "/home/$USER/ml4md/ALIGNN/stage2_primary_v13",
+  "scientific_sources": ["STAGE_2_AMENDMENT_HASHES.json", "RANDOM2_CONFIG.json", "MUBEN_TS_APPROVAL.json"]
+}

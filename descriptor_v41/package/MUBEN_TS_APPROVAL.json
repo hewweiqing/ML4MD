@@ -1,0 +1,20 @@
+{
+  "schema_version": 4,
+  "status": "approved_muben_v31_numerical_convergence_amendment",
+  "installed_source": "vendor/muben_temperature_scaling.py",
+  "expected_sha256": "108b3183400725ca53e025c6f0f92690f35069f6fd786091b9d37dc50e90f08b",
+  "implementation_version": "muben-final-446471d-alignn-logt-float64-lbfgs-v2-grad1e-7",
+  "policy": "Exact v31 digest and amendment approval status required before calibration or outer-test export; old, pending and generic approval states fail closed.",
+  "muben_release_commit": "446471d46449ec79cc0f846baa54d7f4a2f90695",
+  "muben_final_audit": "MUBEN_TS_FINAL_AUDIT_EVIDENCE.json",
+  "muben_final_audit_sha256": "f4989a94700990e768cbe595a1399f23dc79e33df2471dd4e12ec32bf5245d43",
+  "derivation": "Completed MUBen cached-logit interface plus the unchanged ALIGNN T=exp(t), float64, validation-NLL and shared-scalar semantics. The v31 numerical amendment aligns the reported convergence gate with an explicit 1e-7 final log_T-gradient tolerance after DelftBlue job 10641918 failed closed on inner-validation logits only.",
+  "supersedes_source_sha256": "868654151b87d526f122f741183c23599913541d5d62aada5cb35c91bc510719",
+  "selection_used_outer_test": false,
+  "outer_test_access_started_before_amendment": false,
+  "selection_used_control_random2_superiority": false,
+  "temperature_objective_changed": false,
+  "temperature_parameterization_changed": false,
+  "temperature_task_count_changed": false,
+  "declared_final_gradient_tolerance": 1e-7
+}

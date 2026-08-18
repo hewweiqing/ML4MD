@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "assessed_branch": "selected Control checkpoint only",
+  "data_scope": "fold-0 validation only",
+  "train_prior_source": "fold-0 supervised inner-training labels only",
+  "gates": {
+    "validation_auroc_min": 0.75,
+    "validation_balanced_accuracy_min": 0.70,
+    "validation_positive_f1_min": 0.65,
+    "validation_nll_improvement_over_train_prior_min": 0.02,
+    "validation_brier_improvement_over_train_prior_min": 0.02,
+    "both_predicted_classes_required": true,
+    "finite_logits_required": true,
+    "finite_probabilities_required": true,
+    "probability_standard_deviation_min": 0.02,
+    "checkpoint_reconstruction_atol": 1e-7,
+    "checkpoint_reconstruction_rtol": 0.0,
+    "id_label_order_exact_match_required": true
+  },
+  "random2_outperformance_required": false,
+  "historical_matbench_result_used_for_tuning": false,
+  "failure_action": "stop before outer-test structure or target access"
+}

@@ -1,0 +1,7 @@
+CUDA runtime: prefix=/scratch/hhew/conda_envs/alignn_matbench_is_metal_cu118_v9 source=certified-prefix environment_revision=9 package_release=20
+Required a100 certification passed: /home/hhew/alignn_stage2_v26/delftblue_package_v26/preflight/A100_RUNTIME_CERTIFICATION.json
+ALIGNN_PROFILE_APPROVAL: PASS
+V37_EXTERNAL_FULL_GRID_INPUTS: PASS
+V37_EXTERNAL_FULL_GRID_GATES: PASS
+ALIGNN_25_CELL_GRID: PASS
+ALIGNN_OOF_CONSOLIDATION: PASS

@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "distributions": {
+    "alignn": {
+      "version": "2025.4.1",
+      "commit": "f2366daa3413d28a825b46e34d001b5549b05a40"
+    },
+    "matbench": {
+      "version": "0.6",
+      "commit": "936176db18ca4cd7b38cbd957c017a5bac770c6b"
+    }
+  }
+}

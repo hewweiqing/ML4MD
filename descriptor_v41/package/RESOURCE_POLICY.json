@@ -1,0 +1,24 @@
+{
+  "approval_thresholds": {
+    "disk_fraction_max": 0.8,
+    "gpu_reserved_fraction_max": 0.8,
+    "host_memory_fraction_max": 0.8,
+    "runtime_fraction_max": 0.8
+  },
+  "profile": {
+    "minimum_optimizer_batches": 100,
+    "paired_time_safety_factor": 1.25,
+    "projected_host_memory_safety_factor": 1.25
+  },
+  "requested_slurm_resources": {
+    "account": "research-ME-mse",
+    "cpus_per_task": 8,
+    "gpu_model": "A100",
+    "gpus_per_task": 1,
+    "host_memory_bytes": 64000000000,
+    "mem_per_cpu": "8000M",
+    "partition": "gpu-a100",
+    "primary_wall_time_hours": 24.0
+  },
+  "schema_version": 1
+}

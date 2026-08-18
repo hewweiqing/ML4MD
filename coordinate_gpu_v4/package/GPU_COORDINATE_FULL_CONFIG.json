@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "status": "prospectively_frozen_before_gpu_coordinate_training",
+  "device": "cuda_a100",
+  "folds": [0, 1, 2, 3, 4],
+  "seeds": [0, 1, 2, 3, 4],
+  "models_per_cell": 2,
+  "conditions": ["GPU_CONTROL_RAW", "GPU_CONTROL_TS", "GPU_RANDOM2_COORDINATE_RAW", "GPU_RANDOM2_COORDINATE_TS"],
+  "model_and_graph_settings": "identical_to_CPU_FULL_CONFIG.json",
+  "supervised_training": "identical_to_CPU_FULL_CONFIG.json",
+  "coordinate_intervention": "identical_to_COORDINATE_NOISE_CONFIG.json_and_external_verified_sigma_authorization",
+  "restart_policy": "restart every GPU cell from its original paired initialization; CPU checkpoints prohibited",
+  "resume_policy": "same-package same-A100 CUDA checkpoint only",
+  "slurm": {"account": "research-ME-mse", "partition": "gpu-a100", "ntasks": 1, "cpus_per_task": 8, "gpus_per_task": 1, "mem_per_cpu": "8000M", "scientific_wall_time": "24:00:00", "array_max_concurrent": 5}
+}

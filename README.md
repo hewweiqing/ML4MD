@@ -64,6 +64,17 @@ Each package contains its own `PACKAGE_MANIFEST.json`. The release metadata also
 records the SHA-256 of the original transfer archive, which is intentionally not
 duplicated in Git.
 
+Each `package/` folder's per-version protocol, audit, and correction documents
+(the full V5-V41 history) have been consolidated into a single
+`*_SUMMARY.md` at the experiment root, and the superseded originals removed;
+`PACKAGE_MANIFEST.json` was regenerated to match. `package/` therefore no
+longer reproduces the exact `package_aggregate_sha256` recorded in
+`release_metadata/*/DELFTBLUE_*_ARCHIVE_MANIFEST_V*.json` for the archive that
+was actually built, uploaded, and behaviorally tested on DelftBlue; that
+original hash remains preserved unchanged in `release_metadata` as the
+bit-exact provenance record. No code, config, or test files were touched by
+this trim, only documentation.
+
 ## Data policy
 
 Checkpoints, caches, full row-level predictions, transfer archives, and cluster

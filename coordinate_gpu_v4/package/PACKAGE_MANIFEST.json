@@ -1,91 +1,41 @@
 {
-  "aggregate_sha256": "f669bf9ee02aed5a35e645b49798feb9c8696a939314ea0a37aebf0cd60e6d2d",
+  "aggregate_sha256": "2d5d969eb4d12e2e721e59fd7389c3803299e042b61d02e150078f9818e9ee9f",
   "algorithm": "SHA-256 of exact UTF-8 concatenation of lexically sorted canonical POSIX lines: <sha256>  <relative-path>\\n",
   "canonical_inputs": [
     "a9ed7e0ef0dc0de251483b0c11553a7bbc01d0d1459975788a32c028c0ed472d  ALIGNN_FULL_CONFIG.json",
     "9a66aede5839ecc9ccf5505f2bd12f413db8e862989869ae122e325c184a5bae  ALL_25_SPLIT_HASHES.json",
     "608d371b5e3bf99a5fa4370428da6bb19702011c348cd6a9f93ec3c63e4b9444  ARCHIVE_PERMISSION_POLICY.json",
-    "9c003143d3c8edc344264bfd44b2d8c45518dd58f4ab8089bddf7a4ea29e60a0  AUDIT_REPORT.md",
     "617eeb6bd9b1d2dd0279dfba69c8a0e998299dd4e82334a213dc25018ff73587  BEFORE_AFTER_PRESERVATION_HASHES.json",
     "f19f55f3fd57b9fd4e64a6e8f32bb8a6f01a66934134698b09f8448c11328bf7  BOOTSTRAP_REQUIREMENTS.txt",
-    "c5a7b08e5f82c575e53d688e301629cac7fd3094be910761d0bf108bcf2bf562  CALIBRATION_METRIC_DEFINITIONS.md",
     "fb8a4fb1830ceb3c2be1dfe89030e0ef9e3c09b4a18fb92a7600a85f2b91c3ef  CLEAN_INSTALL_EVIDENCE.json",
     "387c3a6e6347b4f42be972bba690ec2c081d70ca62b4f8fb4eda7b14ebc0ad42  CLEAN_INSTALL_TRANSCRIPT.txt",
     "e11792a7e60a30514e7994c3eb4fad46006c38bf4cea431cd5843acfc91a41b4  COORDINATE_NOISE_CONFIG.json",
-    "7f6198f5ce5d298c281b311a202b6c2c047000349b9bfd02b57019cbc8114b7e  CPU_EXECUTION_CONTRACT.md",
     "b30b6747f108c62420735d893d57ce901af7870ec6569c56e407b2b25d80af97  CPU_FULL_CONFIG.json",
-    "ac29ffb42c907ae01c15c078e46c69832cbbb295032731d3638fb2a2ca57adb1  CPU_PROFILE_APPROVAL_CONTRACT.md",
-    "fa8cd1b245788e8ec91c676ec03389ee053d9f61dc9f15bdd5a78b15059ff4eb  CPU_RESUME_CONTRACT.md",
-    "9a8282add01c442d23a674d7c363078dff202b305a842d1fee25133763d820fa  CROSS_EXPERIMENT_COMPARISON_POLICY.md",
     "ddb54421a8855e87ed68737f7170fef67739535e33ca510622477faeda89d897  CUDA11_RUNTIME_LOCK.json",
     "5ac66039cc45cc7d55331cde428218c86ff3eb10a2c68129826155ec2a56cb08  CUDA11_RUNTIME_REQUIREMENTS.txt",
     "7b14faeee5d1ba2c2e64a34d46f382c779eb69b839b0d933486e05cfb5be5949  DECLARED_LOCAL_DISTRIBUTIONS.json",
     "212bf2b6fe78ab8107434ddce34e1e332b55972979d825620546eee790d64907  DELFBLUE_CU118_CONSTRAINTS.txt",
-    "b0b77139eb3fa5f6fe2800874d36ef2357ce266007a1eaac719efb396104b04b  DELFTBLUE_GPU_COORDINATE_RUNBOOK.md",
-    "a3a81b93d154ed160166cca3a7d03674d1b479486f7de626b0a5c103cc0caa84  DELFTBLUE_PACKAGE_READINESS_REPORT.md",
-    "2714fde76b71283c484a2f099783a6d7e1a185dd44535456efd79d2ddd9a8ca2  DELFTBLUE_RUNBOOK.md",
-    "9485e01b9c3e35cad4da581cd2b079e6d6790f8c19d6f643549921b0563a5011  DEPENDENCY_RESOLUTION_AUDIT.md",
     "c03e9c2e438efc81b56c007f2f1f448c147b04116ec569500f453e8123431f9c  DEPENDENCY_RESOLUTION_EVIDENCE.json",
     "d16e99910f3add7c166593d5a18bcae542bdbca050e942a4e92dc6b8eb87ef47  DGL_CU118_REQUIREMENT.txt",
-    "1e07a8c4d161ee9d7e186450ea90865b3a93b91e263fe1c06a878b185da12c12  ENVIRONMENT_SETUP_CORRECTION.md",
-    "a225511c93ae2e4a7197682e1ce743bcdfb7ec249f96a361eefba1cba12bbc1e  EXPERIMENT_PROTOCOL.md",
     "0d53c293d20333337082ef229f72dc7c287ca2e5ed4ca74410789c2cae9e1af5  FROZEN_FULL_EXPERIMENT_ALIGNN_CONFIG.json",
     "299de420dbc31aa27c2338b18f4a10b1fdf0d58137be77c45cda30ae1dfad352  GPU_COORDINATE_FULL_CONFIG.json",
-    "ab18ca8916a566fb4f76e4d2aad88c825899f8287d9ac0cdacb436d9099dcc40  GPU_COORDINATE_PACKAGE_READINESS_REPORT.md",
-    "54209eafcba48a8116578984943c3983d286156cef1cfdf6bfd7be9365022859  GPU_COORDINATE_PROSPECTIVE_DEVICE_AMENDMENT.md",
     "9409d90e9fb642ca720289b1997e8b7ced612219404c779521baa7c6b79a4b73  GPU_COORDINATE_V29_AUTHORIZATION_BINDING.json",
-    "52e3f84f8d530d01919ea2b24017a4050f43b68738a27984c0601d492d113194  GPU_COORDINATE_V2_AUTHORIZATION_CORRECTION.md",
-    "2d71e40273e3a6598d4afefa5641a70e127086f7df642146e65e3ef18a23e13f  GPU_COORDINATE_V3_RUNTIME_HELPER_CORRECTION.md",
-    "cd73fc65a0374a6d2c5a5d9a155f963c4158ae2bd65eedb511f19bd8540bbcef  GPU_COORDINATE_V4_PERMUTATION_DEVICE_CORRECTION.md",
     "c31f4668326d3990d6c08d161fc279ad0f0949387ca55f1fb1514daf6ffce82e  IMPLEMENTATION_STATUS.json",
     "863dbe32342934622eea6c80c05c79b0034cbf9dd7c759374efdbd152e99017a  MUBEN_TS_APPROVAL.json",
-    "b5c3f83be544e719896935c16cfb86e839b2643d9cf5b531ff14c41c75fa7728  MUBEN_TS_EVIDENCE_AUDIT.md",
     "0c613578f57408dfa05437c7076f5384eb29f84aa703722590abc68a19532588  MUBEN_TS_FINAL_AUDIT_EVIDENCE.json",
-    "931485da60f5f07b08b9ee2418cdbdf115512d1f5f83e0d623cb8d8817b507d7  MUBEN_TS_INTEGRATION_CHECKLIST.md",
     "43477056bd4b152f021a3d08706567409630a7c3e85c2e120289bee983db61a4  MUBEN_TS_NUMERICAL_REPRODUCTION.json",
     "30f0c9b50770b9525efd089f348bf08d9da0f44627f32e52e4e2126fc83e25dd  MUBEN_TS_SOURCE_PROVENANCE.json",
     "6f8885253999f3257ca645aab7ef5e38f710fb4bbd31082f91f980c9a0939ea6  ONECYCLE_SEMANTICS.json",
-    "9a27f397396eeccf4ab994df85581b67e2725f02fa0cee015d0bd60962477e40  OUTER_TEST_STRUCTURE_PREPROCESSING_POLICY.md",
-    "8c498291d1b844dd0b19f19cd2451cc636e5fa4d3ff8b324a73f3bdd0fd6cf1c  PREDICTION_ARTIFACT_SCHEMA.md",
     "150ae686c7e56348e07a37e4695f26df8e5991af60254956e16d5adfd573ac47  PRIMARY_EXECUTION_CONFIG.json",
-    "0a6dce6aa62ffb4283e34db1d3553861c547035b4225e5120b16ad3c6e0c3f06  PROSPECTIVE_ANALYSIS_PLAN.md",
     "3f6626704961e5807d01dda1b099dd2aceb0fbef696efb31cb96b131c278effe  PYTHON_DEPENDENCY_LOCK.txt",
     "ec08f90df43324539f5dfec3a6a5d85e28591a5763bc7597b468a621da8eca5b  RANDOM2_CONFIG.json",
-    "579bb63da59325b6fb32dfbaf17732450b5c2c995c5ec7e649c7b9f04353248b  RANDOM2_COORDINATE_CPU_PROTOCOL.md",
     "25ddab48d5d1534d4fec191b418a2d36da8657df6033974604faca04c9f6bf8b  README.md",
     "529fbf693e87406966948b45f4ed71d344226889977ec05a161e24c547953fd6  RESOURCE_POLICY.json",
-    "d5adc1a9b4bb5862140db09278ba8abef423187bdae99197498a21ea7b76ad68  RESOURCE_PROFILE_APPROVAL_CONTRACT.md",
-    "1ddb029eb61ff5605db762b8606ffcf6d9791b4b1cc7c9031ef517138653fa58  SPLIT_HASH_RECONCILIATION.md",
     "4980692e651aaa5a5a93e0f00173e3ca8ddc0928894bcd1f5b42560fe3311804  STAGE2_ENV_SPEC.json",
     "4a2de534ab7f45def4fb4661303a2ba6739c33de2e2ff182ce3fa1ffaebb024d  STAGE_0B_AUDIT.json",
     "43b92d7877076a39ccf4ce295a52f89a0aba8040884d5b473f39a03c28e8fcfd  STAGE_2_AMENDMENT_HASHES.json",
     "f0e6989be4afbf6ebe518df844ce1ad5850516181b91eae377738b2b2c9798a2  STAGE_2_EXECUTION_PLAN.json",
-    "6ae8fb17211e32761fed0b5adddcd3aebaac90cad9870a170ca875d2b79aab1e  STAGE_2_PROSPECTIVE_AMENDMENT.md",
-    "ebca64a2ffbd0b4c6f3002d7ae84f6a32ff4b0ccd1f274daea0ed8dfea522f20  TEMPERATURE_SCALING_INTERFACE_CONTRACT.md",
     "57bb2e8967f45a4455507fc7a14286deb96f24ea903a35248e54f0a28f657396  TORCH_CU118_REQUIREMENT.txt",
-    "2fcc89a5516ca9cdc3fda3d1eb02042f3c4dac444792bf3d947147fc6d6eea0d  UNIMOL_TS_RECONCILIATION_CHECKLIST.md",
-    "1e9d468efd182aaf108fbbe6d7046a2882127bc0a0823bffa02d7501a83a1229  V10_TEST_REPORT.md",
-    "96cd50ffdceda6b7845bfa42779abb291820392cadf425030d8e1accde3acdf1  V11_TEST_REPORT.md",
-    "0c0de55c96eafdb8b03a4153c6aaa41ff3490897f3e892d76e40bc9c1841b5d3  V12_TEST_REPORT.md",
-    "9b7021db9d48eca6de1e78e9da7ae16ea48ca3cbd8e2f8e7216dfaecf692e437  V13_TEST_REPORT.md",
-    "bdd040baed3303f58709971bcb7092c9cd105ac47319c74a785ad97d92cb2c24  V14_TEST_REPORT.md",
-    "5c82f02328d9849a487601d46c6d817938226d4089f80296c2d9733ab48a2861  V15_TEST_REPORT.md",
-    "244b9485869cfe53cccd3522fd693a93f825d062d246280de00375a670cc3d85  V16_TEST_REPORT.md",
-    "fac2b787c5254498e6974d045d95b52b991aab47e09d788ff67d15b3c63d2de1  V17_IMPLEMENTATION_REPORT.md",
-    "46497233133a11f566a2ed4d82831189c61e3b649cf92cc3e55b2cfc04e66af6  V17_SCIENTIFIC_INTEGRITY_AMENDMENT.md",
-    "c9b68df02362f4628ac0fc3485452007e800433355efeec171ece08825f44d40  V17_TEST_REPORT.md",
-    "6ea8d95f4ee8aa336d64496bfa560d80cb475d1fd61315e3e372eb5df8f01966  V18_BOOTSTRAP_CERTIFICATION_AMENDMENT.md",
-    "4ba06715cbe9a7026583b713fd9e0ce43130ad02a97858a0673b0afa4a2e95a4  V18_TEST_REPORT.md",
-    "1286ef0a7fe5dbe283f11d30979f50b90738225b23e792dd6eafa7f4fbebd931  V19_IMPORT_PATH_CORRECTION.md",
-    "16c40ecef82213916894267baf5feac5f98e588ebc32b3c189992393b3910354  V19_TEST_REPORT.md",
-    "a86bd0b5c7207de983767d86a7400ab21b4e84fe0e8df2508a90300992850444  V20_CONDA_CLONE_OVERLAY_CORRECTION.md",
-    "26641617098ba3cc10fbd6fa0ad1880bd0fdcfcc2c27346d3cd809c374feaad2  V20_TEST_REPORT.md",
-    "de4a7d48a015956bc7ffff69615bae817f4a3d066fdc17abfd584f8203ed2ff5  V25_PROFILE_OUTPUT_CORRECTION.md",
-    "fdbcf30642630f3e0e8873f6a83a04ce4c2781c56fde570b5bfa131c04507213  V26_TEST_CORRECTION.md",
-    "6afc3c0d0d363ad071665e0a66fbed9dec4ef00b4dd6600d364e95ec1ed24d55  V29_DGL_COLUMN_CORRECTION.md",
-    "8c84b1953bab12ff718ac21b9a27c3cfce9e8930ad4d87bee8dab29103abcaa7  V29_TEST_REPORT.md",
-    "3dbd1e01cf00aade51e276bfaf03dbdbb497ed81c0516b7aff05c1a51ff415b8  V5_MANIFEST_ROOT_CAUSE.md",
-    "53eed0732767070fc610a6cdc3d1816d46a1f76c1fb07e7d0564c659f265bfba  V7_TEST_REPORT.md",
     "33efd7e752607b107a0b3f6c31c18fe986d8989b97289541b12ccd03af3c250c  VALIDATION_ADEQUACY_GATES.json",
     "f24a0b89ec93b4b0fbaa51d26f0aabc024341624cf1f94d95aa61670c01d248f  alignn_stage2/__init__.py",
     "c6a93aa56336d2d1f4a45fdd29c29124de99fbf44aea2a3b0e582febbf0f2de7  alignn_stage2/calibration_contract.py",
@@ -193,11 +143,15 @@
   ],
   "excluded_at_generation": [
     {
-      "path": "alignn_stage2/__pycache__/__init__.cpython-312.pyc",
+      "path": "PACKAGE_MANIFEST.json",
+      "reason": "self-referential manifest excluded"
+    },
+    {
+      "path": "alignn_stage2/__pycache__/__init__.cpython-310.pyc",
       "reason": "generated/runtime directory component: __pycache__"
     },
     {
-      "path": "alignn_stage2/__pycache__/common.cpython-312.pyc",
+      "path": "alignn_stage2/__pycache__/common.cpython-310.pyc",
       "reason": "generated/runtime directory component: __pycache__"
     }
   ],
@@ -225,11 +179,6 @@
       "size_bytes": 251
     },
     {
-      "path": "AUDIT_REPORT.md",
-      "sha256": "9c003143d3c8edc344264bfd44b2d8c45518dd58f4ab8089bddf7a4ea29e60a0",
-      "size_bytes": 779
-    },
-    {
       "path": "BEFORE_AFTER_PRESERVATION_HASHES.json",
       "sha256": "617eeb6bd9b1d2dd0279dfba69c8a0e998299dd4e82334a213dc25018ff73587",
       "size_bytes": 3722
@@ -238,11 +187,6 @@
       "path": "BOOTSTRAP_REQUIREMENTS.txt",
       "sha256": "f19f55f3fd57b9fd4e64a6e8f32bb8a6f01a66934134698b09f8448c11328bf7",
       "size_bytes": 358
-    },
-    {
-      "path": "CALIBRATION_METRIC_DEFINITIONS.md",
-      "sha256": "c5a7b08e5f82c575e53d688e301629cac7fd3094be910761d0bf108bcf2bf562",
-      "size_bytes": 1373
     },
     {
       "path": "CLEAN_INSTALL_EVIDENCE.json",
@@ -260,29 +204,9 @@
       "size_bytes": 2152
     },
     {
-      "path": "CPU_EXECUTION_CONTRACT.md",
-      "sha256": "7f6198f5ce5d298c281b311a202b6c2c047000349b9bfd02b57019cbc8114b7e",
-      "size_bytes": 853
-    },
-    {
       "path": "CPU_FULL_CONFIG.json",
       "sha256": "b30b6747f108c62420735d893d57ce901af7870ec6569c56e407b2b25d80af97",
       "size_bytes": 1263
-    },
-    {
-      "path": "CPU_PROFILE_APPROVAL_CONTRACT.md",
-      "sha256": "ac29ffb42c907ae01c15c078e46c69832cbbb295032731d3638fb2a2ca57adb1",
-      "size_bytes": 793
-    },
-    {
-      "path": "CPU_RESUME_CONTRACT.md",
-      "sha256": "fa8cd1b245788e8ec91c676ec03389ee053d9f61dc9f15bdd5a78b15059ff4eb",
-      "size_bytes": 980
-    },
-    {
-      "path": "CROSS_EXPERIMENT_COMPARISON_POLICY.md",
-      "sha256": "9a8282add01c442d23a674d7c363078dff202b305a842d1fee25133763d820fa",
-      "size_bytes": 531
     },
     {
       "path": "CUDA11_RUNTIME_LOCK.json",
@@ -305,26 +229,6 @@
       "size_bytes": 376
     },
     {
-      "path": "DELFTBLUE_GPU_COORDINATE_RUNBOOK.md",
-      "sha256": "b0b77139eb3fa5f6fe2800874d36ef2357ce266007a1eaac719efb396104b04b",
-      "size_bytes": 7798
-    },
-    {
-      "path": "DELFTBLUE_PACKAGE_READINESS_REPORT.md",
-      "sha256": "a3a81b93d154ed160166cca3a7d03674d1b479486f7de626b0a5c103cc0caa84",
-      "size_bytes": 1556
-    },
-    {
-      "path": "DELFTBLUE_RUNBOOK.md",
-      "sha256": "2714fde76b71283c484a2f099783a6d7e1a185dd44535456efd79d2ddd9a8ca2",
-      "size_bytes": 4950
-    },
-    {
-      "path": "DEPENDENCY_RESOLUTION_AUDIT.md",
-      "sha256": "9485e01b9c3e35cad4da581cd2b079e6d6790f8c19d6f643549921b0563a5011",
-      "size_bytes": 1821
-    },
-    {
       "path": "DEPENDENCY_RESOLUTION_EVIDENCE.json",
       "sha256": "c03e9c2e438efc81b56c007f2f1f448c147b04116ec569500f453e8123431f9c",
       "size_bytes": 71352
@@ -333,16 +237,6 @@
       "path": "DGL_CU118_REQUIREMENT.txt",
       "sha256": "d16e99910f3add7c166593d5a18bcae542bdbca050e942a4e92dc6b8eb87ef47",
       "size_bytes": 170
-    },
-    {
-      "path": "ENVIRONMENT_SETUP_CORRECTION.md",
-      "sha256": "1e07a8c4d161ee9d7e186450ea90865b3a93b91e263fe1c06a878b185da12c12",
-      "size_bytes": 747
-    },
-    {
-      "path": "EXPERIMENT_PROTOCOL.md",
-      "sha256": "a225511c93ae2e4a7197682e1ce743bcdfb7ec249f96a361eefba1cba12bbc1e",
-      "size_bytes": 1915
     },
     {
       "path": "FROZEN_FULL_EXPERIMENT_ALIGNN_CONFIG.json",
@@ -355,34 +249,9 @@
       "size_bytes": 945
     },
     {
-      "path": "GPU_COORDINATE_PACKAGE_READINESS_REPORT.md",
-      "sha256": "ab18ca8916a566fb4f76e4d2aad88c825899f8287d9ac0cdacb436d9099dcc40",
-      "size_bytes": 2720
-    },
-    {
-      "path": "GPU_COORDINATE_PROSPECTIVE_DEVICE_AMENDMENT.md",
-      "sha256": "54209eafcba48a8116578984943c3983d286156cef1cfdf6bfd7be9365022859",
-      "size_bytes": 1620
-    },
-    {
       "path": "GPU_COORDINATE_V29_AUTHORIZATION_BINDING.json",
       "sha256": "9409d90e9fb642ca720289b1997e8b7ced612219404c779521baa7c6b79a4b73",
       "size_bytes": 1145
-    },
-    {
-      "path": "GPU_COORDINATE_V2_AUTHORIZATION_CORRECTION.md",
-      "sha256": "52e3f84f8d530d01919ea2b24017a4050f43b68738a27984c0601d492d113194",
-      "size_bytes": 973
-    },
-    {
-      "path": "GPU_COORDINATE_V3_RUNTIME_HELPER_CORRECTION.md",
-      "sha256": "2d71e40273e3a6598d4afefa5641a70e127086f7df642146e65e3ef18a23e13f",
-      "size_bytes": 858
-    },
-    {
-      "path": "GPU_COORDINATE_V4_PERMUTATION_DEVICE_CORRECTION.md",
-      "sha256": "cd73fc65a0374a6d2c5a5d9a155f963c4158ae2bd65eedb511f19bd8540bbcef",
-      "size_bytes": 1733
     },
     {
       "path": "IMPLEMENTATION_STATUS.json",
@@ -395,19 +264,9 @@
       "size_bytes": 1492
     },
     {
-      "path": "MUBEN_TS_EVIDENCE_AUDIT.md",
-      "sha256": "b5c3f83be544e719896935c16cfb86e839b2643d9cf5b531ff14c41c75fa7728",
-      "size_bytes": 1016
-    },
-    {
       "path": "MUBEN_TS_FINAL_AUDIT_EVIDENCE.json",
       "sha256": "0c613578f57408dfa05437c7076f5384eb29f84aa703722590abc68a19532588",
       "size_bytes": 788
-    },
-    {
-      "path": "MUBEN_TS_INTEGRATION_CHECKLIST.md",
-      "sha256": "931485da60f5f07b08b9ee2418cdbdf115512d1f5f83e0d623cb8d8817b507d7",
-      "size_bytes": 1070
     },
     {
       "path": "MUBEN_TS_NUMERICAL_REPRODUCTION.json",
@@ -425,24 +284,9 @@
       "size_bytes": 582
     },
     {
-      "path": "OUTER_TEST_STRUCTURE_PREPROCESSING_POLICY.md",
-      "sha256": "9a27f397396eeccf4ab994df85581b67e2725f02fa0cee015d0bd60962477e40",
-      "size_bytes": 1585
-    },
-    {
-      "path": "PREDICTION_ARTIFACT_SCHEMA.md",
-      "sha256": "8c498291d1b844dd0b19f19cd2451cc636e5fa4d3ff8b324a73f3bdd0fd6cf1c",
-      "size_bytes": 1074
-    },
-    {
       "path": "PRIMARY_EXECUTION_CONFIG.json",
       "sha256": "150ae686c7e56348e07a37e4695f26df8e5991af60254956e16d5adfd573ac47",
       "size_bytes": 1516
-    },
-    {
-      "path": "PROSPECTIVE_ANALYSIS_PLAN.md",
-      "sha256": "0a6dce6aa62ffb4283e34db1d3553861c547035b4225e5120b16ad3c6e0c3f06",
-      "size_bytes": 2457
     },
     {
       "path": "PYTHON_DEPENDENCY_LOCK.txt",
@@ -455,11 +299,6 @@
       "size_bytes": 655
     },
     {
-      "path": "RANDOM2_COORDINATE_CPU_PROTOCOL.md",
-      "sha256": "579bb63da59325b6fb32dfbaf17732450b5c2c995c5ec7e649c7b9f04353248b",
-      "size_bytes": 2391
-    },
-    {
       "path": "README.md",
       "sha256": "25ddab48d5d1534d4fec191b418a2d36da8657df6033974604faca04c9f6bf8b",
       "size_bytes": 988
@@ -468,16 +307,6 @@
       "path": "RESOURCE_POLICY.json",
       "sha256": "529fbf693e87406966948b45f4ed71d344226889977ec05a161e24c547953fd6",
       "size_bytes": 616
-    },
-    {
-      "path": "RESOURCE_PROFILE_APPROVAL_CONTRACT.md",
-      "sha256": "d5adc1a9b4bb5862140db09278ba8abef423187bdae99197498a21ea7b76ad68",
-      "size_bytes": 1055
-    },
-    {
-      "path": "SPLIT_HASH_RECONCILIATION.md",
-      "sha256": "1ddb029eb61ff5605db762b8606ffcf6d9791b4b1cc7c9031ef517138653fa58",
-      "size_bytes": 1122
     },
     {
       "path": "STAGE2_ENV_SPEC.json",
@@ -500,134 +329,9 @@
       "size_bytes": 998
     },
     {
-      "path": "STAGE_2_PROSPECTIVE_AMENDMENT.md",
-      "sha256": "6ae8fb17211e32761fed0b5adddcd3aebaac90cad9870a170ca875d2b79aab1e",
-      "size_bytes": 4434
-    },
-    {
-      "path": "TEMPERATURE_SCALING_INTERFACE_CONTRACT.md",
-      "sha256": "ebca64a2ffbd0b4c6f3002d7ae84f6a32ff4b0ccd1f274daea0ed8dfea522f20",
-      "size_bytes": 1287
-    },
-    {
       "path": "TORCH_CU118_REQUIREMENT.txt",
       "sha256": "57bb2e8967f45a4455507fc7a14286deb96f24ea903a35248e54f0a28f657396",
       "size_bytes": 98
-    },
-    {
-      "path": "UNIMOL_TS_RECONCILIATION_CHECKLIST.md",
-      "sha256": "2fcc89a5516ca9cdc3fda3d1eb02042f3c4dac444792bf3d947147fc6d6eea0d",
-      "size_bytes": 776
-    },
-    {
-      "path": "V10_TEST_REPORT.md",
-      "sha256": "1e9d468efd182aaf108fbbe6d7046a2882127bc0a0823bffa02d7501a83a1229",
-      "size_bytes": 1143
-    },
-    {
-      "path": "V11_TEST_REPORT.md",
-      "sha256": "96cd50ffdceda6b7845bfa42779abb291820392cadf425030d8e1accde3acdf1",
-      "size_bytes": 1080
-    },
-    {
-      "path": "V12_TEST_REPORT.md",
-      "sha256": "0c0de55c96eafdb8b03a4153c6aaa41ff3490897f3e892d76e40bc9c1841b5d3",
-      "size_bytes": 778
-    },
-    {
-      "path": "V13_TEST_REPORT.md",
-      "sha256": "9b7021db9d48eca6de1e78e9da7ae16ea48ca3cbd8e2f8e7216dfaecf692e437",
-      "size_bytes": 761
-    },
-    {
-      "path": "V14_TEST_REPORT.md",
-      "sha256": "bdd040baed3303f58709971bcb7092c9cd105ac47319c74a785ad97d92cb2c24",
-      "size_bytes": 898
-    },
-    {
-      "path": "V15_TEST_REPORT.md",
-      "sha256": "5c82f02328d9849a487601d46c6d817938226d4089f80296c2d9733ab48a2861",
-      "size_bytes": 1111
-    },
-    {
-      "path": "V16_TEST_REPORT.md",
-      "sha256": "244b9485869cfe53cccd3522fd693a93f825d062d246280de00375a670cc3d85",
-      "size_bytes": 423
-    },
-    {
-      "path": "V17_IMPLEMENTATION_REPORT.md",
-      "sha256": "fac2b787c5254498e6974d045d95b52b991aab47e09d788ff67d15b3c63d2de1",
-      "size_bytes": 915
-    },
-    {
-      "path": "V17_SCIENTIFIC_INTEGRITY_AMENDMENT.md",
-      "sha256": "46497233133a11f566a2ed4d82831189c61e3b649cf92cc3e55b2cfc04e66af6",
-      "size_bytes": 2236
-    },
-    {
-      "path": "V17_TEST_REPORT.md",
-      "sha256": "c9b68df02362f4628ac0fc3485452007e800433355efeec171ece08825f44d40",
-      "size_bytes": 1075
-    },
-    {
-      "path": "V18_BOOTSTRAP_CERTIFICATION_AMENDMENT.md",
-      "sha256": "6ea8d95f4ee8aa336d64496bfa560d80cb475d1fd61315e3e372eb5df8f01966",
-      "size_bytes": 1727
-    },
-    {
-      "path": "V18_TEST_REPORT.md",
-      "sha256": "4ba06715cbe9a7026583b713fd9e0ce43130ad02a97858a0673b0afa4a2e95a4",
-      "size_bytes": 825
-    },
-    {
-      "path": "V19_IMPORT_PATH_CORRECTION.md",
-      "sha256": "1286ef0a7fe5dbe283f11d30979f50b90738225b23e792dd6eafa7f4fbebd931",
-      "size_bytes": 1084
-    },
-    {
-      "path": "V19_TEST_REPORT.md",
-      "sha256": "16c40ecef82213916894267baf5feac5f98e588ebc32b3c189992393b3910354",
-      "size_bytes": 624
-    },
-    {
-      "path": "V20_CONDA_CLONE_OVERLAY_CORRECTION.md",
-      "sha256": "a86bd0b5c7207de983767d86a7400ab21b4e84fe0e8df2508a90300992850444",
-      "size_bytes": 1324
-    },
-    {
-      "path": "V20_TEST_REPORT.md",
-      "sha256": "26641617098ba3cc10fbd6fa0ad1880bd0fdcfcc2c27346d3cd809c374feaad2",
-      "size_bytes": 592
-    },
-    {
-      "path": "V25_PROFILE_OUTPUT_CORRECTION.md",
-      "sha256": "de4a7d48a015956bc7ffff69615bae817f4a3d066fdc17abfd584f8203ed2ff5",
-      "size_bytes": 1337
-    },
-    {
-      "path": "V26_TEST_CORRECTION.md",
-      "sha256": "fdbcf30642630f3e0e8873f6a83a04ce4c2781c56fde570b5bfa131c04507213",
-      "size_bytes": 1080
-    },
-    {
-      "path": "V29_DGL_COLUMN_CORRECTION.md",
-      "sha256": "6afc3c0d0d363ad071665e0a66fbed9dec4ef00b4dd6600d364e95ec1ed24d55",
-      "size_bytes": 987
-    },
-    {
-      "path": "V29_TEST_REPORT.md",
-      "sha256": "8c84b1953bab12ff718ac21b9a27c3cfce9e8930ad4d87bee8dab29103abcaa7",
-      "size_bytes": 899
-    },
-    {
-      "path": "V5_MANIFEST_ROOT_CAUSE.md",
-      "sha256": "3dbd1e01cf00aade51e276bfaf03dbdbb497ed81c0516b7aff05c1a51ff415b8",
-      "size_bytes": 1433
-    },
-    {
-      "path": "V7_TEST_REPORT.md",
-      "sha256": "53eed0732767070fc610a6cdc3d1816d46a1f76c1fb07e7d0564c659f265bfba",
-      "size_bytes": 1280
     },
     {
       "path": "VALIDATION_ADEQUACY_GATES.json",

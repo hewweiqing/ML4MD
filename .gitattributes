@@ -4,3 +4,4 @@
 # silently break the recorded SHA-256 hashes.
 coordinate_gpu_v4/package/** text eol=lf
 descriptor_v41/package/** text eol=lf
+stage3_calibration/package/** text eol=lf

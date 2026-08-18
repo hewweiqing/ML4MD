@@ -1,0 +1,216 @@
+{
+  "aggregate_sha256": "e12d0232f2c79da716f427701866665dd524fcc072d4b505331c0a4f46393f2e",
+  "algorithm": "SHA-256 of exact UTF-8 concatenation of lexically sorted canonical POSIX lines: <sha256>  <relative-path>\\n",
+  "canonical_inputs": [
+    "58a4b21ac43084825ae85347b3c21e8fdc05934939d7154f24585947b064e6ca  ALL_25_SPLIT_HASHES.json",
+    "f19f55f3fd57b9fd4e64a6e8f32bb8a6f01a66934134698b09f8448c11328bf7  BOOTSTRAP_REQUIREMENTS.txt",
+    "e11792a7e60a30514e7994c3eb4fad46006c38bf4cea431cd5843acfc91a41b4  COORDINATE_NOISE_CONFIG.json",
+    "5ac66039cc45cc7d55331cde428218c86ff3eb10a2c68129826155ec2a56cb08  CUDA11_RUNTIME_REQUIREMENTS.txt",
+    "212bf2b6fe78ab8107434ddce34e1e332b55972979d825620546eee790d64907  DELFBLUE_CU118_CONSTRAINTS.txt",
+    "d16e99910f3add7c166593d5a18bcae542bdbca050e942a4e92dc6b8eb87ef47  DGL_CU118_REQUIREMENT.txt",
+    "6e59f6173f6f736f2bf23ecb0505f1e5afd51d6c055ca4bfd5574d3894113afa  FULL_NETWORK_WARMUP_CONFIG.json",
+    "46e31ecf5fa45d66d560494e6b403de1414dfb5efe7e759c0deb92e9aeaeacef  GPU_COORDINATE_V29_AUTHORIZATION_BINDING_SOURCE.md",
+    "39a6838e24d56ac25490732c8d4f22fca702c5142a4355db95eb36a7ff2e99a9  README.md",
+    "350e767aac2d13198b5643e5bd29108264e497b262c13f46f378114c8972a1cd  STAGE3_COORDINATE_SIGMA_AUTHORIZATION_BINDING.json",
+    "6df87a7d79298ba4279429455e4b196d15158b7b2b4b953793354c53d9bf401c  STAGE3_STAGE_A_PROTOCOL.md",
+    "57bb2e8967f45a4455507fc7a14286deb96f24ea903a35248e54f0a28f657396  TORCH_CU118_REQUIREMENT.txt",
+    "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855  alignn_stage2/__init__.py",
+    "24c9f6120fabf50622318f071b3b0a37911b2b96f032980bd377a36c6fab2146  alignn_stage2/activation_probe.py",
+    "6ffefa9c6b06672753c61fc3a5b689dc6fe0b4694004c0df87a408d2b49a6ec2  alignn_stage2/common.py",
+    "6848ddeb028ed5ab2c8bb0ec94146fc1f7de85f972a1e743c3b45d39b853434c  alignn_stage2/coordinate_head_warmup.py",
+    "3e912cb7f3facbc68dafb22be7d6d8f783cf01c04251431a1a271520038393ba  alignn_stage2/coordinate_noise.py",
+    "5cea46e6fde1f47796d20ad33f9dc0d915006a64f89c08e5baff016ba29df20f  alignn_stage2/cpu_split.py",
+    "91fcc8fa007d13d3f1ef12c82e857760d0936d9172c119ceae5ac7ab7266b1b2  alignn_stage2/descriptor_head_warmup.py",
+    "320a6f836629396619788b4d94cd9f358cf316e957c28475df93101853af213c  alignn_stage2/full_network_warmup.py",
+    "00f1d869afd80baef4619b1f4cc99b4f308e8f7df5531ba3ee2f2d49477e2f83  alignn_stage2/init_diagnostic.py",
+    "4a4afe3ed8f91ea1848a63efbd0c854083e0a5c57c48b8fef19dc680cb346d04  alignn_stage2/random_feature_graphs.py",
+    "d061c05c95408f6c378abc1a1b2b44ef35bd406530a079e80383d0c70325e524  alignn_stage2/sigma_authorization.py",
+    "e4ea135ff18824055b9612e64f886ef39fb220e105578e10db82eb2f76a91fe7  scripts/run_stage_a_diagnostic.py",
+    "15655459910f940887ace91c7a900caf31b24a8a5a993f096dc25be34768d3b0  scripts/verify_package.py",
+    "1b37ddb5fa1f18a4283439151a302a0fb0c302ae63a69ff12aa445b218181a9a  tests/conftest.py",
+    "c11935e83e419081c5a938be4e334ece9473b4a519ac54c2cdf11b6fd8df2224  tests/test_activation_probe.py",
+    "10ae31c31ae56a7e00886de0ef51f57daa6168a9a4dbe755cf3dd7926fb0875e  tests/test_full_network_warmup.py",
+    "9f123b5f8a680b1ec09601c2caf182784da3e3a0ed12e07e5036b3a01f1ac391  tests/test_head_warmups.py",
+    "a7309ec8d6ea68298dcaa059832d152ef669a6e52cd7a35383a33403ab23c5e4  tests/test_init_diagnostic_decision_criterion.py",
+    "997598af6d63ec806174b2a9f196d5a9efc6c1375294f47e3b6e79f9af85605b  tests/test_manifest.py"
+  ],
+  "excluded_at_generation": [
+    {
+      "path": "PACKAGE_MANIFEST.json",
+      "reason": "self-referential manifest excluded"
+    },
+    {
+      "path": "alignn_stage2/__pycache__/__init__.cpython-39.pyc",
+      "reason": "generated/runtime directory component: __pycache__"
+    },
+    {
+      "path": "alignn_stage2/__pycache__/common.cpython-39.pyc",
+      "reason": "generated/runtime directory component: __pycache__"
+    }
+  ],
+  "exclusion_rules": [
+    "exact path PACKAGE_MANIFEST.json (manifest is not self-hashed)",
+    "directory component in: __pycache__, .pytest_cache, logs, preflight, runtime_outputs, outputs, results, checkpoints, graph_cache, environment_reports",
+    "suffix in: .pyc, .pyo, .tmp, .part",
+    "basename matches setup*.log",
+    "suffix .json.gz (downloaded dataset/runtime data)"
+  ],
+  "files": [
+    {
+      "path": "ALL_25_SPLIT_HASHES.json",
+      "sha256": "58a4b21ac43084825ae85347b3c21e8fdc05934939d7154f24585947b064e6ca",
+      "size_bytes": 16434
+    },
+    {
+      "path": "BOOTSTRAP_REQUIREMENTS.txt",
+      "sha256": "f19f55f3fd57b9fd4e64a6e8f32bb8a6f01a66934134698b09f8448c11328bf7",
+      "size_bytes": 358
+    },
+    {
+      "path": "COORDINATE_NOISE_CONFIG.json",
+      "sha256": "e11792a7e60a30514e7994c3eb4fad46006c38bf4cea431cd5843acfc91a41b4",
+      "size_bytes": 2152
+    },
+    {
+      "path": "CUDA11_RUNTIME_REQUIREMENTS.txt",
+      "sha256": "5ac66039cc45cc7d55331cde428218c86ff3eb10a2c68129826155ec2a56cb08",
+      "size_bytes": 534
+    },
+    {
+      "path": "DELFBLUE_CU118_CONSTRAINTS.txt",
+      "sha256": "212bf2b6fe78ab8107434ddce34e1e332b55972979d825620546eee790d64907",
+      "size_bytes": 376
+    },
+    {
+      "path": "DGL_CU118_REQUIREMENT.txt",
+      "sha256": "d16e99910f3add7c166593d5a18bcae542bdbca050e942a4e92dc6b8eb87ef47",
+      "size_bytes": 170
+    },
+    {
+      "path": "FULL_NETWORK_WARMUP_CONFIG.json",
+      "sha256": "6e59f6173f6f736f2bf23ecb0505f1e5afd51d6c055ca4bfd5574d3894113afa",
+      "size_bytes": 1803
+    },
+    {
+      "path": "GPU_COORDINATE_V29_AUTHORIZATION_BINDING_SOURCE.md",
+      "sha256": "46e31ecf5fa45d66d560494e6b403de1414dfb5efe7e759c0deb92e9aeaeacef",
+      "size_bytes": 1749
+    },
+    {
+      "path": "README.md",
+      "sha256": "39a6838e24d56ac25490732c8d4f22fca702c5142a4355db95eb36a7ff2e99a9",
+      "size_bytes": 1146
+    },
+    {
+      "path": "STAGE3_COORDINATE_SIGMA_AUTHORIZATION_BINDING.json",
+      "sha256": "350e767aac2d13198b5643e5bd29108264e497b262c13f46f378114c8972a1cd",
+      "size_bytes": 1521
+    },
+    {
+      "path": "STAGE3_STAGE_A_PROTOCOL.md",
+      "sha256": "6df87a7d79298ba4279429455e4b196d15158b7b2b4b953793354c53d9bf401c",
+      "size_bytes": 4336
+    },
+    {
+      "path": "TORCH_CU118_REQUIREMENT.txt",
+      "sha256": "57bb2e8967f45a4455507fc7a14286deb96f24ea903a35248e54f0a28f657396",
+      "size_bytes": 98
+    },
+    {
+      "path": "alignn_stage2/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0
+    },
+    {
+      "path": "alignn_stage2/activation_probe.py",
+      "sha256": "24c9f6120fabf50622318f071b3b0a37911b2b96f032980bd377a36c6fab2146",
+      "size_bytes": 10988
+    },
+    {
+      "path": "alignn_stage2/common.py",
+      "sha256": "6ffefa9c6b06672753c61fc3a5b689dc6fe0b4694004c0df87a408d2b49a6ec2",
+      "size_bytes": 6650
+    },
+    {
+      "path": "alignn_stage2/coordinate_head_warmup.py",
+      "sha256": "6848ddeb028ed5ab2c8bb0ec94146fc1f7de85f972a1e743c3b45d39b853434c",
+      "size_bytes": 3883
+    },
+    {
+      "path": "alignn_stage2/coordinate_noise.py",
+      "sha256": "3e912cb7f3facbc68dafb22be7d6d8f783cf01c04251431a1a271520038393ba",
+      "size_bytes": 3210
+    },
+    {
+      "path": "alignn_stage2/cpu_split.py",
+      "sha256": "5cea46e6fde1f47796d20ad33f9dc0d915006a64f89c08e5baff016ba29df20f",
+      "size_bytes": 2059
+    },
+    {
+      "path": "alignn_stage2/descriptor_head_warmup.py",
+      "sha256": "91fcc8fa007d13d3f1ef12c82e857760d0936d9172c119ceae5ac7ab7266b1b2",
+      "size_bytes": 5495
+    },
+    {
+      "path": "alignn_stage2/full_network_warmup.py",
+      "sha256": "320a6f836629396619788b4d94cd9f358cf316e957c28475df93101853af213c",
+      "size_bytes": 4655
+    },
+    {
+      "path": "alignn_stage2/init_diagnostic.py",
+      "sha256": "00f1d869afd80baef4619b1f4cc99b4f308e8f7df5531ba3ee2f2d49477e2f83",
+      "size_bytes": 12012
+    },
+    {
+      "path": "alignn_stage2/random_feature_graphs.py",
+      "sha256": "4a4afe3ed8f91ea1848a63efbd0c854083e0a5c57c48b8fef19dc680cb346d04",
+      "size_bytes": 5010
+    },
+    {
+      "path": "alignn_stage2/sigma_authorization.py",
+      "sha256": "d061c05c95408f6c378abc1a1b2b44ef35bd406530a079e80383d0c70325e524",
+      "size_bytes": 5020
+    },
+    {
+      "path": "scripts/run_stage_a_diagnostic.py",
+      "sha256": "e4ea135ff18824055b9612e64f886ef39fb220e105578e10db82eb2f76a91fe7",
+      "size_bytes": 1478
+    },
+    {
+      "path": "scripts/verify_package.py",
+      "sha256": "15655459910f940887ace91c7a900caf31b24a8a5a993f096dc25be34768d3b0",
+      "size_bytes": 931
+    },
+    {
+      "path": "tests/conftest.py",
+      "sha256": "1b37ddb5fa1f18a4283439151a302a0fb0c302ae63a69ff12aa445b218181a9a",
+      "size_bytes": 168
+    },
+    {
+      "path": "tests/test_activation_probe.py",
+      "sha256": "c11935e83e419081c5a938be4e334ece9473b4a519ac54c2cdf11b6fd8df2224",
+      "size_bytes": 3972
+    },
+    {
+      "path": "tests/test_full_network_warmup.py",
+      "sha256": "10ae31c31ae56a7e00886de0ef51f57daa6168a9a4dbe755cf3dd7926fb0875e",
+      "size_bytes": 4061
+    },
+    {
+      "path": "tests/test_head_warmups.py",
+      "sha256": "9f123b5f8a680b1ec09601c2caf182784da3e3a0ed12e07e5036b3a01f1ac391",
+      "size_bytes": 2404
+    },
+    {
+      "path": "tests/test_init_diagnostic_decision_criterion.py",
+      "sha256": "a7309ec8d6ea68298dcaa059832d152ef669a6e52cd7a35383a33403ab23c5e4",
+      "size_bytes": 2321
+    },
+    {
+      "path": "tests/test_manifest.py",
+      "sha256": "997598af6d63ec806174b2a9f196d5a9efc6c1375294f47e3b6e79f9af85605b",
+      "size_bytes": 1849
+    }
+  ],
+  "schema_version": 2
+}

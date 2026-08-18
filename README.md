@@ -1,8 +1,7 @@
 # ALIGNN Random2 experiments
 
-This repository-ready bundle consolidates two related ALIGNN experiments on
-Matbench `matbench_mp_is_metal` without changing their authoritative source
-packages.
+Two related ALIGNN experiments on
+Matbench `matbench_mp_is_metal` 
 
 ## Experiments
 
@@ -39,6 +38,21 @@ submitted separately, so no incomplete coordinate result is represented as a
 final result in this bundle. See
 [`coordinate_gpu_v4/STATUS.md`](coordinate_gpu_v4/STATUS.md).
 
+### Initialization diagnostic & full-network warm-up (`stage3_calibration`)
+
+Adds two things missing from the two experiments above: a measured (not
+assumed) check of whether a randomly-initialized ALIGNN is actually
+overconfident at init (Stage A), and a whole-network SCRATCH-condition
+Random2 warm-up variant (Random2-Full), matching a randomly-initialized
+backbone rather than the pretrained-backbone FINE-TUNING condition the
+existing head-only variants match. Implementation is complete for Stage A
+and the Random2-Full warm-up primitive only; Stage A gates the larger
+training-set-size sweep (Stage B) and full 5-fold run (Stage C), which are
+not part of this package yet. `alignn`/`dgl`/CUDA are required to actually
+run it and have not been executed against a real ALIGNN model in this
+environment — see
+[`stage3_calibration/package/STAGE3_STAGE_A_PROTOCOL.md`](stage3_calibration/package/STAGE3_STAGE_A_PROTOCOL.md).
+
 ## Repository layout
 
 ```text
@@ -47,6 +61,8 @@ descriptor_v41/
   results/                 compact audited final results
 coordinate_gpu_v4/
   package/                 immutable coordinate-GPU v4 source package
+stage3_calibration/
+  package/                 Stage A diagnostic + Random2-Full warm-up source package
 release_metadata/
   descriptor_v41/          builder and archive manifest
   coordinate_gpu_v4/       builder and archive manifest

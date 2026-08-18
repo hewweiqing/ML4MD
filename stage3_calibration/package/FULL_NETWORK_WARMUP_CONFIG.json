@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "condition_name": "Random2-Full",
+  "matches_paper_condition": "SCRATCH (whole network trained, matching a randomly-initialized backbone; the existing head-only arms match the paper's FINE-TUNING condition, appropriate only for a pretrained backbone)",
+  "trainable_parameters": "all",
+  "input_construction": "real graph topology with node/edge/angle features resampled from N(0,1), fresh draw every iteration",
+  "label_construction": "balanced random 0/1 labels, freshly resampled every iteration, unpaired with inputs",
+  "budget_principle": "identical optimizer-step and batch-size budget to the existing head-only Random2 arms (COORDINATE_NOISE_CONFIG.json's warmup block: optimizer_steps=938, batch_size=128), so the only thing that differs between arms is what is trainable, not how much compute each gets. Not tuned to produce an effect.",
+  "optimizer": "AdamW",
+  "learning_rate": 0.0001,
+  "weight_decay": 0.0,
+  "batch_size": 128,
+  "optimizer_steps": 938,
+  "deterministic_replay_required": true,
+  "batchnorm_running_stats": "legitimately update during this warm-up (encoder is invoked every step, unlike the head-only arms) — the existing 'BatchNorm buffers must stay byte-identical' gate does not apply and is replaced by: all parameters/buffers finite after every step; encoder state changed after warm-up (opposite-direction sanity check); full pre/post model-state SHA-256 recorded for provenance.",
+  "known_risk": "938 whole-network optimizer steps is a much larger intervention than 938 steps on a 256->2 head alone and may substantially degrade the encoder. If observed, this is reported as a finding (e.g. large parameter drift from init, or degraded downstream accuracy in Stage B), not treated as a reason to shrink this budget after the fact."
+}

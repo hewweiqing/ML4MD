@@ -1,4 +1,4 @@
-"""Verify the two copied immutable package manifests from the repo root."""
+"""Verify the immutable package manifests from the repo root."""
 
 from __future__ import annotations
 
@@ -12,6 +12,7 @@ ROOT = Path(__file__).resolve().parent
 PACKAGES = (
     ROOT / "descriptor_v41" / "package",
     ROOT / "coordinate_gpu_v4" / "package",
+    ROOT / "stage3_calibration" / "package",
 )
 
 
@@ -29,7 +30,7 @@ def main() -> int:
             env=environment,
             check=True,
         )
-    print("Both immutable package manifests passed.")
+    print(f"All {len(PACKAGES)} immutable package manifests passed.")
     return 0
 
 

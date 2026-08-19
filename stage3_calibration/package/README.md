@@ -16,7 +16,10 @@ for why (Stage A gates everything else, per its own protocol doc).
 Start with `STAGE3_STAGE_A_PROTOCOL.md`, including its "Submission sequence"
 section (`slurm/00...` preflight -> `slurm/05...` single-seed full-network
 timing profile + required human approval -> `slurm/10...` full 20-seed run).
-`alignn`/`dgl`/CUDA are required to actually run anything here (this package
-was written and structurally tested locally without them — see `tests/`,
-31 passing local unit tests) and have never been executed against a real
-ALIGNN model in this environment.
+`alignn`/`dgl`/CUDA are required to run anything here; core mechanics have
+since been dry-run end-to-end against real `alignn`/`dgl`/CUDA on a local
+non-A100 GPU (catching and fixing two real bugs — see
+`STAGE3_STAGE_A_PROTOCOL.md`), plus 32 passing local unit tests (`tests/`)
+covering everything pure-torch. The full 20-seed run against the real
+matbench dataset on an actual A100 has still never executed — that
+requires DelftBlue.

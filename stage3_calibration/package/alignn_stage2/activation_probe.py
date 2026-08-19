@@ -110,7 +110,7 @@ def logit_diagnostics(logits: torch.Tensor) -> dict[str, Any]:
     predicted_label = (logits[:, 1] > logits[:, 0]).long()
     entropy = -(probabilities * probabilities.clamp_min(1e-15).log()).sum(dim=1)
     histogram_edges = np.linspace(0.5, 1.0, 11)
-    histogram_counts, _ = np.histogram(max_probability.numpy(), bins=histogram_edges)
+    histogram_counts, _ = np.histogram(max_probability.detach().cpu().numpy(), bins=histogram_edges)
     if not torch.isfinite(logits).all():
         raise RuntimeError("non-finite logits in logit_diagnostics")
     return {

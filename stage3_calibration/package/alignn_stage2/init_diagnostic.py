@@ -1,11 +1,18 @@
 """Stage A initialization diagnostic orchestration.
 
-Requires alignn/dgl/CUDA (see STAGE3_STAGE_A_PROTOCOL.md) — cannot be run on
-a machine without that stack. This module is written and structurally
-reviewed, but its actual measurements have not been executed anywhere; the
-first real run must also dump ALIGNN_MODULE_INVENTORY.json (see
-scripts/run_stage_a_diagnostic.py) before the labeled activation trace can
-be trusted for semantic module names.
+Requires alignn/dgl/CUDA (see STAGE3_STAGE_A_PROTOCOL.md). Core mechanics
+(graph construction, the real ALIGNN forward pass, the activation-RMS
+probe, descriptor extraction, warm-up determinism) have been dry-run
+end-to-end against real alignn/dgl/CUDA on a non-A100 local GPU using a
+synthetic structure -- see STAGE3_STAGE_A_PROTOCOL.md's "real-environment
+verified" section for the two real bugs that run caught and fixed
+(graph_batch's missing 3-tuple element; a CUDA-to-numpy conversion). The
+full 20-seed run against the real matbench dataset on an actual A100 has
+still never executed -- that requires DelftBlue. The first real DelftBlue
+run must also dump ALIGNN_MODULE_INVENTORY.json (see
+scripts/run_stage_a_diagnostic.py) to confirm the module structure
+documented in STAGE3_STAGE_A_PROTOCOL.md matches the actual cluster build
+before the labeled activation trace is trusted for semantic module names.
 """
 from __future__ import annotations
 
@@ -119,10 +126,18 @@ def build_random_feature_input(real_input: dict, *, fold: int, seed: int):
 
 
 def graph_batch(atom_graphs: list, line_graphs: list, indices: list[int]):
+    """Matches coordinate_gpu_v4/gpu_coordinate_training.py's graph_batch()
+    exactly: ALIGNN.forward() unpacks its input as `g, lg, lat = g`, a
+    3-tuple, not the 2-tuple this function returned before real-environment
+    testing caught it (ValueError: not enough values to unpack). `lat` is
+    the lattice tensor; coordinate_gpu_v4 always passes None here too, so
+    this is not something stage3_calibration invented -- it's copying the
+    exact working call signature.
+    """
     import dgl
     atoms = dgl.batch([atom_graphs[i] for i in indices]).to(DEVICE)
     lines = dgl.batch([line_graphs[i] for i in indices]).to(DEVICE)
-    return atoms, lines
+    return atoms, lines, None
 
 
 def native_logits(model: torch.nn.Module, batch_input) -> torch.Tensor:

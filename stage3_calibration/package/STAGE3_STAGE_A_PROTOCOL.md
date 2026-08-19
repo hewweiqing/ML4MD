@@ -11,16 +11,61 @@ there is no initial overconfidence, the warm-up cannot be operating via the
 paper's mechanism, and that is reported as a structural negative rather
 than smoothed over.
 
-## Must be run on DelftBlue
+## Cluster-scale run must still happen on DelftBlue; the pipeline itself is now real-environment verified
 
-`alignn`/`dgl`/CUDA are not available on the machine this code was written
-on. `init_diagnostic.py` is written and structurally reviewed but its
-measurements have never been executed. The first real run must be preceded
-by dumping the full `ALIGNN(model_config())` `named_modules()` name/type
-inventory to `ALIGNN_MODULE_INVENTORY.json` (done automatically by
+A local conda environment matching the pinned stack exactly (`torch
+2.0.1+cu118`, `dgl 1.1.1+cu118`, `alignn 2025.4.1`, `python 3.10.20`) was
+found on this machine (`D:\conda_envs\alignn_matbench_is_metal_cu118`),
+with a real (non-A100) CUDA GPU available. Since no local copy of the
+matbench dataset exists and `MatbenchBenchmark` needs network access for
+official fold definitions, the full 20-seed/real-dataset run has still
+never executed — but the previously-never-exercised core mechanics were
+dry-run end-to-end against a synthetic structure, on real GPU hardware,
+through real `alignn`/`dgl`: graph construction
+(`alignn.graphs.Graph.atom_dgl_multigraph`), coordinate perturbation,
+random-feature resampling, the real `ALIGNN.forward()` call, the fixed
+single-batch activation-RMS probe, descriptor extraction, and a real
+double-replay determinism check. This caught two real bugs that no
+pure-torch synthetic-model unit test could have caught (both fixed):
+
+1. **`graph_batch()` returned a 2-tuple `(atoms, lines)`, but
+   `ALIGNN.forward()` unpacks `g, lg, lat = g` — a 3-tuple.**
+   `coordinate_gpu_v4/gpu_coordinate_training.py`'s own `graph_batch()`
+   already returns `(atoms, lines, None)`; this package's copy had silently
+   dropped the trailing `None`. Would have crashed on the very first real
+   forward pass.
+2. **`logit_diagnostics()` called `.numpy()` on a CUDA tensor without
+   `.cpu()` first** (`TypeError: can't convert cuda:0 device type tensor to
+   numpy`) — invisible in every local unit test since those always used CPU
+   tensors.
+
+**ALIGNN's real module structure is now confirmed**, not recalled from
+training data: `ALIGNN(model_config())` has exactly 105 leaf modules
+(`atom_embedding` → `edge_embedding`/`angle_embedding` (RBFExpansion +
+Linear/BatchNorm1d/SiLU) → 4x `alignn_layers` (each with a `node_update`
+and `edge_update` sub-block, each `{src,dst,edge}_gate` + `bn_edges` +
+`{src,dst}_update` + `bn_nodes`, all `Linear`/`BatchNorm1d`) → 4x
+`gcn_layers` (same gate/update/BatchNorm structure, flat, no node/edge
+split) → `readout` + `readout_feat` (both `AvgPooling`) → `fc` (`Linear`)
+→ `softmax` (`LogSoftmax`)). `fc` is confirmed as the only head-prefixed
+parameter group, matching every existing assumption in this repo.
+**`readout_feat` never fires during a classification-mode forward pass**
+(104 of 105 leaf modules actually hook-fire) — it serves the
+regression/extra-features branch (`output_features`/`extra_features` in
+`ALIGNN_FULL_CONFIG.json`) that this repo never uses; not a bug, but worth
+knowing so `measured_count == 104` on the real cluster doesn't look like a
+missing-module error. This local GPU is not an A100, so it cannot stand in
+for `configure_gpu_runtime()`'s A100 gate or for timing/profiling — those
+still require the real cluster.
+
+The first real DelftBlue run must still be preceded by dumping the full
+`ALIGNN(model_config())` `named_modules()` name/type inventory to
+`ALIGNN_MODULE_INVENTORY.json` (done automatically by
 `scripts/run_stage_a_diagnostic.py`) — the activation-RMS trace is recorded
 by execution-call-order index regardless, but semantic module labels need
-that one-time inventory.
+that inventory, and it's good practice to confirm the structure above
+matches exactly on the actual cluster/A100 build rather than assuming this
+local GPU's build is identical.
 
 ## Submission sequence (`slurm/`)
 

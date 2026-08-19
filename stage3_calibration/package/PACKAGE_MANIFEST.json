@@ -1,5 +1,5 @@
 {
-  "aggregate_sha256": "5a642062f0212617322b664d9b8d67c86c478fbbd206bca4bfc08501f0943b0a",
+  "aggregate_sha256": "1bcdb4cab28e36aa685b48d82145fc2d81822738e1b2cad0be91ba8a88c19d1f",
   "algorithm": "SHA-256 of exact UTF-8 concatenation of lexically sorted canonical POSIX lines: <sha256>  <relative-path>\\n",
   "canonical_inputs": [
     "58a4b21ac43084825ae85347b3c21e8fdc05934939d7154f24585947b064e6ca  ALL_25_SPLIT_HASHES.json",
@@ -10,13 +10,13 @@
     "d16e99910f3add7c166593d5a18bcae542bdbca050e942a4e92dc6b8eb87ef47  DGL_CU118_REQUIREMENT.txt",
     "6e59f6173f6f736f2bf23ecb0505f1e5afd51d6c055ca4bfd5574d3894113afa  FULL_NETWORK_WARMUP_CONFIG.json",
     "46e31ecf5fa45d66d560494e6b403de1414dfb5efe7e759c0deb92e9aeaeacef  GPU_COORDINATE_V29_AUTHORIZATION_BINDING_SOURCE.md",
-    "c5e0f974b44090c8cc66894706faf03b10a9ca09b83090912cf39e32040db9a3  README.md",
+    "881278117e4906745ad7a2c823b3bc4162ee4a5fe68cd462601b4d3c3f903a8a  README.md",
     "350e767aac2d13198b5643e5bd29108264e497b262c13f46f378114c8972a1cd  STAGE3_COORDINATE_SIGMA_AUTHORIZATION_BINDING.json",
-    "44140cd95c5d605e5c92cce33f41f882d89128efac2af73670969f105e0a6c55  STAGE3_STAGE_A_PROTOCOL.md",
+    "2da8c4eefb74edf716bbb4a0184f762a99c9e278704042dcac4997ed23448138  STAGE3_STAGE_A_PROTOCOL.md",
     "ef1d89d28abfcb823aab67a6c6ee75a9b98141ba35b7e7d8cea88bfc232b868e  STAGE_A_RESOURCE_POLICY.json",
     "57bb2e8967f45a4455507fc7a14286deb96f24ea903a35248e54f0a28f657396  TORCH_CU118_REQUIREMENT.txt",
     "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855  alignn_stage2/__init__.py",
-    "24c9f6120fabf50622318f071b3b0a37911b2b96f032980bd377a36c6fab2146  alignn_stage2/activation_probe.py",
+    "f93916fae9c195ac255705ef205926bd4ab387563bb5c13d42eb85d56a4e7ca3  alignn_stage2/activation_probe.py",
     "6ffefa9c6b06672753c61fc3a5b689dc6fe0b4694004c0df87a408d2b49a6ec2  alignn_stage2/common.py",
     "cf77a24bdcc0750d364ba444ccb9d9be3f12f9d43e01c86fa7996df45952ef94  alignn_stage2/coordinate_head_warmup.py",
     "3e912cb7f3facbc68dafb22be7d6d8f783cf01c04251431a1a271520038393ba  alignn_stage2/coordinate_noise.py",
@@ -25,7 +25,7 @@
     "97ee14036be45e089da710077d0143987791db2e60ae193c68ecaa6e5d884aec  alignn_stage2/descriptor_head_warmup.py",
     "320a6f836629396619788b4d94cd9f358cf316e957c28475df93101853af213c  alignn_stage2/full_network_warmup.py",
     "2820a8962c7b92be7a0ff2b66053c8f2efdad12636be41424a1c9ff0fbc26316  alignn_stage2/gpu_runtime.py",
-    "8fb8daed746afcfb75b9a9f213289f9bbd04a45a372a1c0753e7fed57119b37e  alignn_stage2/init_diagnostic.py",
+    "417ea5454c9c6f6340df5889be138d6ff8f386e1d754e882981b553e999c5223  alignn_stage2/init_diagnostic.py",
     "4a4afe3ed8f91ea1848a63efbd0c854083e0a5c57c48b8fef19dc680cb346d04  alignn_stage2/random_feature_graphs.py",
     "d061c05c95408f6c378abc1a1b2b44ef35bd406530a079e80383d0c70325e524  alignn_stage2/sigma_authorization.py",
     "ad1869ed512085c29132221226163a7af388cdebf2eb545b1300d9d9635c2acd  alignn_stage2/slurm_resources.py",
@@ -113,8 +113,8 @@
     },
     {
       "path": "README.md",
-      "sha256": "c5e0f974b44090c8cc66894706faf03b10a9ca09b83090912cf39e32040db9a3",
-      "size_bytes": 1363
+      "sha256": "881278117e4906745ad7a2c823b3bc4162ee4a5fe68cd462601b4d3c3f903a8a",
+      "size_bytes": 1543
     },
     {
       "path": "STAGE3_COORDINATE_SIGMA_AUTHORIZATION_BINDING.json",
@@ -123,8 +123,8 @@
     },
     {
       "path": "STAGE3_STAGE_A_PROTOCOL.md",
-      "sha256": "44140cd95c5d605e5c92cce33f41f882d89128efac2af73670969f105e0a6c55",
-      "size_bytes": 8139
+      "sha256": "2da8c4eefb74edf716bbb4a0184f762a99c9e278704042dcac4997ed23448138",
+      "size_bytes": 11031
     },
     {
       "path": "STAGE_A_RESOURCE_POLICY.json",
@@ -143,8 +143,8 @@
     },
     {
       "path": "alignn_stage2/activation_probe.py",
-      "sha256": "24c9f6120fabf50622318f071b3b0a37911b2b96f032980bd377a36c6fab2146",
-      "size_bytes": 10988
+      "sha256": "f93916fae9c195ac255705ef205926bd4ab387563bb5c13d42eb85d56a4e7ca3",
+      "size_bytes": 11003
     },
     {
       "path": "alignn_stage2/common.py",
@@ -188,8 +188,8 @@
     },
     {
       "path": "alignn_stage2/init_diagnostic.py",
-      "sha256": "8fb8daed746afcfb75b9a9f213289f9bbd04a45a372a1c0753e7fed57119b37e",
-      "size_bytes": 18682
+      "sha256": "417ea5454c9c6f6340df5889be138d6ff8f386e1d754e882981b553e999c5223",
+      "size_bytes": 19687
     },
     {
       "path": "alignn_stage2/random_feature_graphs.py",

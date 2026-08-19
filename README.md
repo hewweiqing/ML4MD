@@ -48,10 +48,14 @@ backbone rather than the pretrained-backbone FINE-TUNING condition the
 existing head-only variants match. Implementation is complete for Stage A
 and the Random2-Full warm-up primitive only; Stage A gates the larger
 training-set-size sweep (Stage B) and full 5-fold run (Stage C), which are
-not part of this package yet. `alignn`/`dgl`/CUDA are required to actually
-run it and have not been executed against a real ALIGNN model in this
-environment — see
-[`stage3_calibration/package/STAGE3_STAGE_A_PROTOCOL.md`](stage3_calibration/package/STAGE3_STAGE_A_PROTOCOL.md).
+not part of this package yet. `alignn`/`dgl`/CUDA are required to run it on
+the real matbench dataset/A100, which hasn't happened yet — core mechanics
+have been dry-run end-to-end against real `alignn`/`dgl`/CUDA on a local
+non-A100 GPU. See
+[`stage3_calibration/STAGE3_CALIBRATION_RUNBOOK.md`](stage3_calibration/STAGE3_CALIBRATION_RUNBOOK.md)
+for the step-by-step, or
+[`stage3_calibration/package/STAGE3_STAGE_A_PROTOCOL.md`](stage3_calibration/package/STAGE3_STAGE_A_PROTOCOL.md)
+for the technical spec.
 
 ## Repository layout
 

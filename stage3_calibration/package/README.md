@@ -13,9 +13,14 @@ primitive only. Stage B (training-set-size sweep) and Stage C (full 5-fold
 run) are out of scope for this package as committed — see the plan history
 for why (Stage A gates everything else, per its own protocol doc).
 
-Start with `STAGE3_STAGE_A_PROTOCOL.md`, including its "Submission sequence"
-section (`slurm/00...` preflight -> `slurm/05...` single-seed full-network
-timing profile + required human approval -> `slurm/10...` full 20-seed run).
+For a practical step-by-step (exact commands, env vars, what to check when
+results land), see
+[`../STAGE3_CALIBRATION_RUNBOOK.md`](../STAGE3_CALIBRATION_RUNBOOK.md) at
+the `stage3_calibration/` root. For the technical spec (what's measured,
+why, decision thresholds), start with `STAGE3_STAGE_A_PROTOCOL.md`,
+including its "Submission sequence" section (`slurm/00...` preflight ->
+`slurm/05...` single-seed full-network timing profile + required human
+approval -> `slurm/10...` full 20-seed run).
 `alignn`/`dgl`/CUDA are required to run anything here; core mechanics have
 since been dry-run end-to-end against real `alignn`/`dgl`/CUDA on a local
 non-A100 GPU (catching and fixing two real bugs — see

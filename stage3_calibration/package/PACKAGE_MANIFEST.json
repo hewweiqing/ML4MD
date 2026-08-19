@@ -1,5 +1,5 @@
 {
-  "aggregate_sha256": "1bcdb4cab28e36aa685b48d82145fc2d81822738e1b2cad0be91ba8a88c19d1f",
+  "aggregate_sha256": "6326893c9f99224582416fbc3c0eeac08d00af7943af8bb0ce00b2e930063d9d",
   "algorithm": "SHA-256 of exact UTF-8 concatenation of lexically sorted canonical POSIX lines: <sha256>  <relative-path>\\n",
   "canonical_inputs": [
     "58a4b21ac43084825ae85347b3c21e8fdc05934939d7154f24585947b064e6ca  ALL_25_SPLIT_HASHES.json",
@@ -10,7 +10,7 @@
     "d16e99910f3add7c166593d5a18bcae542bdbca050e942a4e92dc6b8eb87ef47  DGL_CU118_REQUIREMENT.txt",
     "6e59f6173f6f736f2bf23ecb0505f1e5afd51d6c055ca4bfd5574d3894113afa  FULL_NETWORK_WARMUP_CONFIG.json",
     "46e31ecf5fa45d66d560494e6b403de1414dfb5efe7e759c0deb92e9aeaeacef  GPU_COORDINATE_V29_AUTHORIZATION_BINDING_SOURCE.md",
-    "881278117e4906745ad7a2c823b3bc4162ee4a5fe68cd462601b4d3c3f903a8a  README.md",
+    "c5f930860b3456cd3554e83fe7160cabb16b98cb8f34135069a60a9376070fea  README.md",
     "350e767aac2d13198b5643e5bd29108264e497b262c13f46f378114c8972a1cd  STAGE3_COORDINATE_SIGMA_AUTHORIZATION_BINDING.json",
     "2da8c4eefb74edf716bbb4a0184f762a99c9e278704042dcac4997ed23448138  STAGE3_STAGE_A_PROTOCOL.md",
     "ef1d89d28abfcb823aab67a6c6ee75a9b98141ba35b7e7d8cea88bfc232b868e  STAGE_A_RESOURCE_POLICY.json",
@@ -113,8 +113,8 @@
     },
     {
       "path": "README.md",
-      "sha256": "881278117e4906745ad7a2c823b3bc4162ee4a5fe68cd462601b4d3c3f903a8a",
-      "size_bytes": 1543
+      "sha256": "c5f930860b3456cd3554e83fe7160cabb16b98cb8f34135069a60a9376070fea",
+      "size_bytes": 1811
     },
     {
       "path": "STAGE3_COORDINATE_SIGMA_AUTHORIZATION_BINDING.json",

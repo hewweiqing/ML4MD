@@ -2,6 +2,30 @@
 
 Status recorded on 2026-08-18 from the DelftBlue execution transcript.
 
+## FROZEN: do not edit `package/` while the 24 pending cells are in flight
+
+`gpu_coordinate_training.py`'s resume path hard-fails on any mismatch
+between a checkpoint's saved `integrity.package_aggregate_sha256` and the
+current `PACKAGE_MANIFEST.json` aggregate (`checkpoint.get("integrity") !=
+integrity: raise RuntimeError(...)`, `gpu_coordinate_training.py:447`).
+That hash changes on **any** edit inside `package/` — not just code changes
+to the training loop; a README typo fix inside `package/` would do the same
+damage. If any of the 24 pending cells below are mid-training with a
+`last.pt` already written, editing the package now would make its resume
+hard-fail instead of continuing, losing whatever GPU-hours it had already
+spent.
+
+Whether that risk is real or hypothetical right now depends on whether any
+`last.pt` checkpoint actually exists yet on DelftBlue — that can only be
+checked on the cluster (this repo has no local mirror of the work root; it's
+git-ignored). Until someone checks and confirms otherwise, treat `package/`
+as frozen: no edits, however cosmetic, until the 24 pending cells report.
+This is why the F4 per-epoch confidence/accuracy logging identified in the
+Cheon & Paik figure audit (2026-08-19) was deliberately not added here —
+it will land in `stage3_calibration`'s Stage B instead, once that's built,
+rather than risk this package's live resume path for a change with no
+benefit to the 24 cells already running under the old schema.
+
 ## Passed gates
 
 - A100 runtime preflight.

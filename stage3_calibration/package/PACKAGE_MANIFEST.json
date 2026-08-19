@@ -1,5 +1,5 @@
 {
-  "aggregate_sha256": "b38552748e6854788ab5f68ebe2c08c44d77ebf80cfe6bf393d940920380bb58",
+  "aggregate_sha256": "5a642062f0212617322b664d9b8d67c86c478fbbd206bca4bfc08501f0943b0a",
   "algorithm": "SHA-256 of exact UTF-8 concatenation of lexically sorted canonical POSIX lines: <sha256>  <relative-path>\\n",
   "canonical_inputs": [
     "58a4b21ac43084825ae85347b3c21e8fdc05934939d7154f24585947b064e6ca  ALL_25_SPLIT_HASHES.json",
@@ -12,7 +12,7 @@
     "46e31ecf5fa45d66d560494e6b403de1414dfb5efe7e759c0deb92e9aeaeacef  GPU_COORDINATE_V29_AUTHORIZATION_BINDING_SOURCE.md",
     "c5e0f974b44090c8cc66894706faf03b10a9ca09b83090912cf39e32040db9a3  README.md",
     "350e767aac2d13198b5643e5bd29108264e497b262c13f46f378114c8972a1cd  STAGE3_COORDINATE_SIGMA_AUTHORIZATION_BINDING.json",
-    "bbbf540ebd0ecd7f1e7740300a7968c3c6348332c8a434792fead624099f6dab  STAGE3_STAGE_A_PROTOCOL.md",
+    "44140cd95c5d605e5c92cce33f41f882d89128efac2af73670969f105e0a6c55  STAGE3_STAGE_A_PROTOCOL.md",
     "ef1d89d28abfcb823aab67a6c6ee75a9b98141ba35b7e7d8cea88bfc232b868e  STAGE_A_RESOURCE_POLICY.json",
     "57bb2e8967f45a4455507fc7a14286deb96f24ea903a35248e54f0a28f657396  TORCH_CU118_REQUIREMENT.txt",
     "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855  alignn_stage2/__init__.py",
@@ -25,7 +25,7 @@
     "97ee14036be45e089da710077d0143987791db2e60ae193c68ecaa6e5d884aec  alignn_stage2/descriptor_head_warmup.py",
     "320a6f836629396619788b4d94cd9f358cf316e957c28475df93101853af213c  alignn_stage2/full_network_warmup.py",
     "2820a8962c7b92be7a0ff2b66053c8f2efdad12636be41424a1c9ff0fbc26316  alignn_stage2/gpu_runtime.py",
-    "2e45b665be7fd713e261b1dcf8f768f936d8df14136d449b8bc086d768a891cf  alignn_stage2/init_diagnostic.py",
+    "8fb8daed746afcfb75b9a9f213289f9bbd04a45a372a1c0753e7fed57119b37e  alignn_stage2/init_diagnostic.py",
     "4a4afe3ed8f91ea1848a63efbd0c854083e0a5c57c48b8fef19dc680cb346d04  alignn_stage2/random_feature_graphs.py",
     "d061c05c95408f6c378abc1a1b2b44ef35bd406530a079e80383d0c70325e524  alignn_stage2/sigma_authorization.py",
     "ad1869ed512085c29132221226163a7af388cdebf2eb545b1300d9d9635c2acd  alignn_stage2/slurm_resources.py",
@@ -42,7 +42,7 @@
     "33e5f897af8ffb136213f930c86678bba312fefb32eeb11d46a7844752c433af  slurm/05_profile_full_network_seed0.sbatch",
     "287bd67d77179458d9329e15a50f27f7aa0d38ba2f77c5b1df44d7dc6288a7f6  slurm/10_stage_a_full_fold0.sbatch",
     "1b37ddb5fa1f18a4283439151a302a0fb0c302ae63a69ff12aa445b218181a9a  tests/conftest.py",
-    "c11935e83e419081c5a938be4e334ece9473b4a519ac54c2cdf11b6fd8df2224  tests/test_activation_probe.py",
+    "ca200e30776e3d5a73ff193372abfe8db270986a99cf2d3c496626443e615996  tests/test_activation_probe.py",
     "10ae31c31ae56a7e00886de0ef51f57daa6168a9a4dbe755cf3dd7926fb0875e  tests/test_full_network_warmup.py",
     "9f123b5f8a680b1ec09601c2caf182784da3e3a0ed12e07e5036b3a01f1ac391  tests/test_head_warmups.py",
     "a7309ec8d6ea68298dcaa059832d152ef669a6e52cd7a35383a33403ab23c5e4  tests/test_init_diagnostic_decision_criterion.py",
@@ -123,8 +123,8 @@
     },
     {
       "path": "STAGE3_STAGE_A_PROTOCOL.md",
-      "sha256": "bbbf540ebd0ecd7f1e7740300a7968c3c6348332c8a434792fead624099f6dab",
-      "size_bytes": 6304
+      "sha256": "44140cd95c5d605e5c92cce33f41f882d89128efac2af73670969f105e0a6c55",
+      "size_bytes": 8139
     },
     {
       "path": "STAGE_A_RESOURCE_POLICY.json",
@@ -188,8 +188,8 @@
     },
     {
       "path": "alignn_stage2/init_diagnostic.py",
-      "sha256": "2e45b665be7fd713e261b1dcf8f768f936d8df14136d449b8bc086d768a891cf",
-      "size_bytes": 15573
+      "sha256": "8fb8daed746afcfb75b9a9f213289f9bbd04a45a372a1c0753e7fed57119b37e",
+      "size_bytes": 18682
     },
     {
       "path": "alignn_stage2/random_feature_graphs.py",
@@ -273,8 +273,8 @@
     },
     {
       "path": "tests/test_activation_probe.py",
-      "sha256": "c11935e83e419081c5a938be4e334ece9473b4a519ac54c2cdf11b6fd8df2224",
-      "size_bytes": 3972
+      "sha256": "ca200e30776e3d5a73ff193372abfe8db270986a99cf2d3c496626443e615996",
+      "size_bytes": 5383
     },
     {
       "path": "tests/test_full_network_warmup.py",

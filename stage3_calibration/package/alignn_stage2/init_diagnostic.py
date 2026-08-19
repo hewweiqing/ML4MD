@@ -133,25 +133,64 @@ def native_logits(model: torch.nn.Module, batch_input) -> torch.Tensor:
     return captured[-1]
 
 
-def measure(model: torch.nn.Module, input_set: dict) -> dict:
-    """One forward pass in eval/no_grad over an entire input set, with the
-    activation probe attached, plus logit diagnostics on the native logits.
+ACTIVATION_PROBE_BATCH_SIZE = 32
+
+
+def measure_activation_scale(model: torch.nn.Module, input_set: dict) -> dict:
+    """Activation-RMS-across-depth trace from ONE representative batch, not
+    the full input set.
+
+    An earlier version reused a single ActivationTrace across every batch of
+    the full-dataset logit loop below (~63 batches for 2000 structures)
+    without resetting between them: call_order_index kept incrementing
+    across batches, so rms_first/rms_last/monotonic_non_increasing were
+    silently computed over ~63 concatenated depth traversals rather than one
+    clean pass — populated, plausible, and wrong, in the figure carrying the
+    central structural claim about where normalization pins activation
+    scale. Characterizing RMS-across-depth doesn't need 2000 structures, so
+    running it on a single batch removes the reset-correctness question
+    entirely instead of solving it.
     """
     model.eval()
+    count = min(ACTIVATION_PROBE_BATCH_SIZE, len(input_set["atom_graphs"]))
     trace, handles = register_activation_probe(model)
+    batch_input = graph_batch(input_set["atom_graphs"], input_set["line_graphs"], list(range(count)))
+    with torch.no_grad():
+        native_logits(model, batch_input)
+    remove_hooks(handles)
+    return activation_scale_summary(trace)
+
+
+def measure(model: torch.nn.Module, input_set: dict, *, phase: str, input_set_name: str) -> tuple[dict, np.ndarray]:
+    """Full-dataset logit diagnostics (no hooks attached here — the
+    activation-RMS probe runs separately, see measure_activation_scale)
+    plus that activation-RMS trace. Returns (record, raw_logits): record is
+    the summary dict that goes into the indented JSON report; raw_logits
+    (float32, shape [n,2]) is collected by the caller into a compact npz
+    sidecar instead, since embedding ~1.2M raw floats (20 seeds x 3 input
+    sets x 5 phases x 2000 samples x 2 floats, ~4.8MB at float32 binary) in
+    indent=2 JSON text would be wasteful — the figures need the array, not
+    a human-readable rendering of it. `phase` and `input_set_name` are
+    written into `record` explicitly rather than relying only on the
+    caller's JSON nesting to identify which condition/input-set a record
+    belongs to.
+    """
+    model.eval()
     logits_batches = []
     with torch.no_grad():
         for start in range(0, len(input_set["atom_graphs"]), GRAPH_BATCH_SIZE):
             indices = list(range(start, min(start + GRAPH_BATCH_SIZE, len(input_set["atom_graphs"]))))
             batch_input = graph_batch(input_set["atom_graphs"], input_set["line_graphs"], indices)
             logits_batches.append(native_logits(model, batch_input))
-    remove_hooks(handles)
     logits = torch.cat(logits_batches)
     diagnostics = logit_diagnostics(logits)
     mean_positive_probability = float(torch.softmax(logits, dim=1)[:, 1].mean())
-    return {"logit_diagnostics": diagnostics, "mechanism_verdict": mechanism_verdict(diagnostics),
+    record = {"phase": phase, "input_set": input_set_name, "logit_diagnostics": diagnostics,
+        "mechanism_verdict": mechanism_verdict(diagnostics),
         "mechanical_gate": evaluate_mechanical_gate(mean_positive_probability, diagnostics["predictive_entropy_mean"]),
-        "activation_scale_summary": activation_scale_summary(trace)}
+        "activation_scale_summary": measure_activation_scale(model, input_set)}
+    raw_logits = logits.detach().cpu().to(torch.float32).numpy()
+    return record, raw_logits
 
 
 def make_full_network_batch_factory(real_input: dict, *, fold: int):
@@ -225,6 +264,13 @@ def run_stage_a(dataset: Path, fold: int, work_dir: Path, *, sigma_authorization
     authorization = require_authorized_sigma(authorization_path=sigma_authorization_path)
     work_dir.mkdir(parents=True, exist_ok=True)
     results = []
+    raw_logits_store: dict[str, np.ndarray] = {}
+
+    def measure_and_store(model: torch.nn.Module, input_set: dict, *, seed: int, phase: str, input_set_name: str) -> dict:
+        record, raw_logits = measure(model, input_set, phase=phase, input_set_name=input_set_name)
+        raw_logits_store[f"seed{seed}__{phase}__{input_set_name}"] = raw_logits
+        return record
+
     for seed in STAGE_A_SEEDS:
         seed_all(seed)
         real_input = build_real_structure_input(dataset, fold, seed)
@@ -234,7 +280,8 @@ def run_stage_a(dataset: Path, fold: int, work_dir: Path, *, sigma_authorization
 
         model = build_model()
         assert_model_gpu(model)
-        pre_warmup = {name: measure(model, input_sets[name]) for name in INPUT_SETS}
+        pre_warmup = {name: measure_and_store(model, input_sets[name], seed=seed, phase="pre_warmup", input_set_name=name)
+            for name in INPUT_SETS}
 
         initial_state = {name: value.detach().clone() for name, value in model.state_dict().items()}
         descriptors = extract_pooled_descriptors(model, real_input["atom_graphs"], real_input["line_graphs"], graph_batch)
@@ -255,17 +302,20 @@ def run_stage_a(dataset: Path, fold: int, work_dir: Path, *, sigma_authorization
             warmed = build_model()
             warmed.load_state_dict(initial_state)
             warmed.fc.load_state_dict(fc_state)
-            post_warmup[variant] = {name: measure(warmed, input_sets[name]) for name in INPUT_SETS}
+            post_warmup[variant] = {name: measure_and_store(warmed, input_sets[name], seed=seed, phase=variant, input_set_name=name)
+                for name in INPUT_SETS}
         full_network_model = build_model()
         full_network_model.load_state_dict(full_network_result["final_state"])
-        post_warmup["full_network"] = {name: measure(full_network_model, input_sets[name]) for name in INPUT_SETS}
+        post_warmup["full_network"] = {name: measure_and_store(full_network_model, input_sets[name],
+            seed=seed, phase="full_network", input_set_name=name) for name in INPUT_SETS}
 
         control_norm = head_displacement_norm(
             initial_state["fc.weight"], initial_state["fc.bias"], descriptor_warmup["fc_state"]["weight"], descriptor_warmup["fc_state"]["bias"])
         control_model = build_model()
         control_model.load_state_dict(initial_state)
         control_provenance = apply_head_perturbation_control(control_model, target_norm=control_norm, seed=seed + 900000)
-        post_warmup["head_perturbation_control"] = {name: measure(control_model, input_sets[name]) for name in INPUT_SETS}
+        post_warmup["head_perturbation_control"] = {name: measure_and_store(control_model, input_sets[name],
+            seed=seed, phase="head_perturbation_control", input_set_name=name) for name in INPUT_SETS}
         post_warmup["head_perturbation_control"]["provenance"] = control_provenance
 
         results.append({"seed": seed, "fold": fold, "input_set_ids_sha256": real_input["ids_sha256"],
@@ -276,8 +326,13 @@ def run_stage_a(dataset: Path, fold: int, work_dir: Path, *, sigma_authorization
             "authorization_sha256": authorization.authorization_sha256,
             "sigma_cartesian_per_axis_angstrom": authorization.sigma})
 
+    raw_logits_path = work_dir / f"STAGE_A_RAW_LOGITS_fold{fold}.npz"
+    np.savez_compressed(raw_logits_path, **raw_logits_store)
+
     report = {"status": "passed", "stage": "A", "fold": fold, "seeds": list(STAGE_A_SEEDS),
         "input_sets": list(INPUT_SETS), "warmup_variants": list(WARMUP_VARIANTS) + ["head_perturbation_control"],
+        "raw_logits_sidecar": {"path": raw_logits_path.name,
+            "key_format": "seed{seed}__{phase}__{input_set}", "dtype": "float32", "columns": ["z_0", "z_1"]},
         "cross_seed_verdict_summary": cross_seed_verdict_summary(results),
         "results": results}
     write_json(work_dir / f"STAGE_A_DIAGNOSTIC_fold{fold}.json", report)

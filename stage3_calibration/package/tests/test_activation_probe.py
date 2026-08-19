@@ -38,6 +38,34 @@ def test_hooks_fire_in_true_execution_order_not_declaration_order():
     assert names == ["first", "norm", "second", "fc"]
 
 
+def test_single_representative_batch_trace_length_matches_leaf_module_count():
+    """Validates the exact pattern init_diagnostic.py's measure_activation_scale
+    relies on: register hooks, run ONE forward pass, remove hooks -- trace
+    length must equal the leaf-module count exactly, with no double-firing
+    and no cross-call accumulation. This is the mechanism the F5 fix depends
+    on (single representative batch, not the full dataset, precisely to
+    avoid the old bug where hooks fired once per batch across ~63 batches
+    without resetting, silently inflating the trace with repeated depth
+    traversals rather than raising).
+    """
+    torch.manual_seed(5)
+    model = _OutOfOrderModel().eval()
+    leaf_count = sum(1 for _, module in model.named_modules() if not list(module.children()))
+    trace, handles = register_activation_probe(model)
+    with torch.no_grad():
+        model(torch.randn(8, 3))
+    remove_hooks(handles)
+    assert len(trace.records) == leaf_count
+    # A second measurement with a FRESH trace (as measure_activation_scale
+    # does per call) must not accumulate onto the first.
+    second_trace, second_handles = register_activation_probe(model)
+    with torch.no_grad():
+        model(torch.randn(8, 3))
+    remove_hooks(second_handles)
+    assert len(second_trace.records) == leaf_count
+    assert len(trace.records) == leaf_count  # unchanged by the second call
+
+
 def test_activation_scale_summary_flags_batchnorm_and_reports_rms():
     torch.manual_seed(1)
     model = _OutOfOrderModel().eval()

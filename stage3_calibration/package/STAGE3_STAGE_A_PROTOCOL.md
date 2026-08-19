@@ -78,13 +78,40 @@ repo. 20 seeds (0-19), `seed_all(seed)` before each construction.
 ## Measurements, per (seed, input set)
 
 - Logit mean/std/min/max, `|z1-z0|` gap, max-softmax mean/histogram/
-  fraction>0.9, predictive entropy, predicted-class-1 fraction.
-- Per-leaf-module activation RMS in true forward-execution order (hook
-  fires in call order regardless of any assumption about ALIGNN's internal
-  names), flagged explicitly for BatchNorm modules — ALIGNN uses BatchNorm
-  throughout, so a strictly monotonic "gradual reduction of activation
-  scale across the hierarchy" is not structurally expected here regardless
-  of what any single trace shows.
+  fraction>0.9, predictive entropy, predicted-class-1 fraction — computed
+  over the full input set (all ~2000 structures), in `measure()`.
+- **Raw per-sample native logits** for every (seed, phase, input_set)
+  triple, float32, shape `[n,2]`, written to a compact npz sidecar
+  (`STAGE_A_RAW_LOGITS_fold{fold}.npz`, key format
+  `seed{seed}__{phase}__{input_set}`) rather than embedded in the indented
+  JSON report — added after an audit found the report only ever carried
+  aggregate statistics and one coarse 10-bin confidence histogram, which
+  cannot support a real logit histogram or a logit-vs-softmax scatter. Size
+  estimate: 20 seeds x 3 input sets x 5 phases x 2000 samples x 2 floats x
+  4 bytes (float32) ~= 4.8MB per fold — fine as a binary sidecar, would have
+  been wasteful as JSON text.
+- Per-leaf-module activation RMS from **one representative batch**
+  (`ACTIVATION_PROBE_BATCH_SIZE = 32`), not the full input set — see
+  `measure_activation_scale()`'s docstring in `activation_probe`-adjacent
+  code (`init_diagnostic.py`) for why: an earlier version reused a single
+  `ActivationTrace` across every batch of the full-dataset loop (~63
+  batches for 2000 structures) without resetting between them, so
+  `call_order_index` kept incrementing across batches and
+  `rms_first`/`rms_last`/`monotonic_non_increasing` were silently computed
+  over ~63 concatenated depth traversals rather than one clean pass —
+  populated, plausible, and wrong, in the figure carrying the paper's
+  central structural claim about where normalization pins activation
+  scale. A single representative batch removes the reset-correctness
+  question entirely rather than solving it; characterizing RMS-across-depth
+  never needed 2000 structures. BatchNorm modules are flagged explicitly at
+  write time (`is_batchnorm`, not recomputed later) — ALIGNN uses
+  BatchNorm throughout, so a strictly monotonic "gradual reduction of
+  activation scale across the hierarchy" is not structurally expected here
+  regardless of what any single trace shows.
+- Every measurement record carries explicit `"phase"` and `"input_set"`
+  fields (not just JSON-nesting-as-identity), including for
+  `head_perturbation_control`, so a flattener doesn't have to special-case
+  one output shape against the others.
 
 ## Decision criterion
 

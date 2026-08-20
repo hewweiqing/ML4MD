@@ -1,0 +1,342 @@
+mbid,composition,is_metal,spg_num,crys_sys
+mb-mp-is-metal-023789,Bi4 Br12,False,14,monoclinic
+mb-mp-is-metal-055201,Na1 Ti5 Se8,True,12,monoclinic
+mb-mp-is-metal-027917,Sr7 Bi23 O40,True,12,monoclinic
+mb-mp-is-metal-084060,Yb2 Hg1 Pb1,True,225,cubic
+mb-mp-is-metal-083339,Ba4 Dy2 In2 Se10,False,36,orthorhombic
+mb-mp-is-metal-057953,Cu4 Bi4 Pb4 S12,False,62,orthorhombic
+mb-mp-is-metal-021246,Sn2 S4,False,122,tetragonal
+mb-mp-is-metal-101479,As4 Br12,False,19,orthorhombic
+mb-mp-is-metal-004915,Fe1 Cu1 Te2,True,115,tetragonal
+mb-mp-is-metal-089351,Sc6 Ni1 Te2,True,189,hexagonal
+mb-mp-is-metal-082272,Sb4 Ru4 Se4,False,14,monoclinic
+mb-mp-is-metal-087538,Cr4 Cu2 Te8,True,227,cubic
+mb-mp-is-metal-100060,Ba1 Nb4 O6,True,123,tetragonal
+mb-mp-is-metal-091715,Li2 Ga2 Te4,False,122,tetragonal
+mb-mp-is-metal-089214,Ba8 Ca8 B16 O40,False,14,monoclinic
+mb-mp-is-metal-046473,Ag2 Pd2 I6 O18,False,2,triclinic
+mb-mp-is-metal-088104,Pr1 Zn1,True,221,cubic
+mb-mp-is-metal-030126,Li9 Fe3 W7 O28,True,160,trigonal
+mb-mp-is-metal-097735,U1 Ga5 Ir1,True,123,tetragonal
+mb-mp-is-metal-089856,Ho2 Ge2,True,63,orthorhombic
+mb-mp-is-metal-061183,Sm1 Tm1 Zn2,True,225,cubic
+mb-mp-is-metal-105885,Y1 As1,True,225,cubic
+mb-mp-is-metal-087300,Al20 Rh8,True,194,hexagonal
+mb-mp-is-metal-104879,K4 Nb2 Cu2 Se8,False,70,orthorhombic
+mb-mp-is-metal-018061,Mg4 Mn4 O12,False,62,orthorhombic
+mb-mp-is-metal-096136,Ca3 Sb1 N1,False,221,cubic
+mb-mp-is-metal-089984,Ti1 Se2,True,164,trigonal
+mb-mp-is-metal-057069,La16 Mn15 O48,True,2,triclinic
+mb-mp-is-metal-050897,Hf54 Os17,True,71,orthorhombic
+mb-mp-is-metal-061460,Pb12 I24,False,156,trigonal
+mb-mp-is-metal-084115,Hf2 Re1 Rh1,True,225,cubic
+mb-mp-is-metal-036199,Yb1 Mn2 As2,True,164,trigonal
+mb-mp-is-metal-086721,La1 B6,True,221,cubic
+mb-mp-is-metal-092893,Ba4 Y2 Re2 O12,True,225,cubic
+mb-mp-is-metal-068146,Li1 Er1 Au2,True,225,cubic
+mb-mp-is-metal-043895,Rb4 Fe2 I8,True,4,monoclinic
+mb-mp-is-metal-050298,K2 U2 Cl2 O6,False,11,monoclinic
+mb-mp-is-metal-100740,Ta16 Fe4 Te16,True,55,orthorhombic
+mb-mp-is-metal-004108,La4 Pr4 O14,True,227,cubic
+mb-mp-is-metal-044722,Ba5 Ga4 Se10,False,42,orthorhombic
+mb-mp-is-metal-084802,Pr16 Te24,False,122,tetragonal
+mb-mp-is-metal-083876,La2 Ge2 I2,True,164,trigonal
+mb-mp-is-metal-060190,Mn3 Ni3 P3,True,189,hexagonal
+mb-mp-is-metal-073485,Fe4 Bi4 Se12 O36,False,19,orthorhombic
+mb-mp-is-metal-051843,Sm16 Se24,False,122,tetragonal
+mb-mp-is-metal-057689,Cd4 Hg26 As16 Cl24,False,14,monoclinic
+mb-mp-is-metal-066261,Sb4 S4 Br4,False,33,orthorhombic
+mb-mp-is-metal-016229,Dy3 Ga1,True,221,cubic
+mb-mp-is-metal-086838,Pr4 Te8 O22,False,15,monoclinic
+mb-mp-is-metal-103246,In1 P1 S4,False,82,tetragonal
+mb-mp-is-metal-089633,Pr2 B2 Pt8,True,191,hexagonal
+mb-mp-is-metal-099153,Al2 Ag2 Te4,False,122,tetragonal
+mb-mp-is-metal-102261,Tb2 Rh4,True,227,cubic
+mb-mp-is-metal-001196,Nd6 Zr2,True,194,hexagonal
+mb-mp-is-metal-047727,Cd2 Cu4 Ge2 Se8,False,7,monoclinic
+mb-mp-is-metal-048188,Nd2 Cu2 Te2 O2,False,129,tetragonal
+mb-mp-is-metal-104863,Rb4 V2 Ag2 S8,False,70,orthorhombic
+mb-mp-is-metal-083305,Cu4 P4 S12,False,136,tetragonal
+mb-mp-is-metal-105914,Sm2 Cu4 O8,True,88,tetragonal
+mb-mp-is-metal-091222,Hf4 Si4,True,62,orthorhombic
+mb-mp-is-metal-103226,Mg1 Ni1 Sb1,True,216,cubic
+mb-mp-is-metal-076428,Rb12 Bi8 Br36,False,14,monoclinic
+mb-mp-is-metal-004251,Mg4 Ti2 Ir2 O12,True,14,monoclinic
+mb-mp-is-metal-063458,In1 Bi2 S4 Br1,False,12,monoclinic
+mb-mp-is-metal-034670,In1 Ga1 P2,False,160,trigonal
+mb-mp-is-metal-048294,Tb1 Cu5,True,216,cubic
+mb-mp-is-metal-039784,Sr2 Ce4 S8,True,122,tetragonal
+mb-mp-is-metal-045993,Ce8 S8 I8,True,61,orthorhombic
+mb-mp-is-metal-028508,La16 Fe4 Sb8 Se40,False,57,orthorhombic
+mb-mp-is-metal-100033,As4 Se4 I4,False,14,monoclinic
+mb-mp-is-metal-073347,Bi7 O5 F11,False,5,monoclinic
+mb-mp-is-metal-088476,Eu1 Zn1,True,221,cubic
+mb-mp-is-metal-059242,Zr6 Sb6,True,63,orthorhombic
+mb-mp-is-metal-070772,La12 Sb8 S6 O24,False,122,tetragonal
+mb-mp-is-metal-016740,Ho1 C2,True,139,tetragonal
+mb-mp-is-metal-034291,Ca2 Mn9 O13,True,12,monoclinic
+mb-mp-is-metal-094110,Ba2 Pd4 O8,True,88,tetragonal
+mb-mp-is-metal-015827,Cu18 S11,True,1,triclinic
+mb-mp-is-metal-047983,Ba1 As2 Pd2,True,139,tetragonal
+mb-mp-is-metal-070501,Ba4 Nd2 Ga2 Se10,False,2,triclinic
+mb-mp-is-metal-041926,K6 Cd4 Sn3 Se13,False,160,trigonal
+mb-mp-is-metal-098699,Li1 Cu2 Ge1,True,225,cubic
+mb-mp-is-metal-051436,Ho8 Hf4 S20,False,62,orthorhombic
+mb-mp-is-metal-005405,Ca2 Bi4 O8,False,63,orthorhombic
+mb-mp-is-metal-081111,Sm1 Mg1 Hg2,True,225,cubic
+mb-mp-is-metal-053797,Te8 I8,False,2,triclinic
+mb-mp-is-metal-047593,Zn3 Cd1 Se4,False,38,orthorhombic
+mb-mp-is-metal-025070,Li2 Cr1 Cu1 O4,True,10,monoclinic
+mb-mp-is-metal-022392,Ce2 Cu1 N2 O2,True,139,tetragonal
+mb-mp-is-metal-088940,Al1 Ir1,True,221,cubic
+mb-mp-is-metal-081166,Ba1 Te1,False,225,cubic
+mb-mp-is-metal-035909,Ta8 Cu4 O22,False,15,monoclinic
+mb-mp-is-metal-001274,Ga2 P2,False,166,trigonal
+mb-mp-is-metal-094883,K6 Na2 Sn6 Se16,False,125,tetragonal
+mb-mp-is-metal-091488,Nd1 B6,True,221,cubic
+mb-mp-is-metal-100903,Sc2 Si6 Ni2,True,65,orthorhombic
+mb-mp-is-metal-039374,K8 Mo48 S56,False,7,monoclinic
+mb-mp-is-metal-062372,Ca10 Cd5 As10,False,8,monoclinic
+mb-mp-is-metal-082817,Sm1 P1,True,225,cubic
+mb-mp-is-metal-058889,Re6 Pb3 O18,True,166,trigonal
+mb-mp-is-metal-086157,Zr2 S6,False,11,monoclinic
+mb-mp-is-metal-039863,V12 Pb2 O22,True,186,hexagonal
+mb-mp-is-metal-066194,Cs1 Rb2 Sb1,False,225,cubic
+mb-mp-is-metal-088761,Lu8 C14,True,14,monoclinic
+mb-mp-is-metal-090844,Hf4 Al6 C8,True,194,hexagonal
+mb-mp-is-metal-038864,Ca4 Te4,False,194,hexagonal
+mb-mp-is-metal-072598,K4 Nb12 Se8 O48,False,57,orthorhombic
+mb-mp-is-metal-026246,Cu2 I2,False,63,orthorhombic
+mb-mp-is-metal-104950,Sm2 B4 Os4,True,70,orthorhombic
+mb-mp-is-metal-089096,Pr8 Au4,True,62,orthorhombic
+mb-mp-is-metal-043206,Pr2 Fe2 Ge4,True,63,orthorhombic
+mb-mp-is-metal-055804,Bi4 Se4 I4,False,62,orthorhombic
+mb-mp-is-metal-028756,Ag2 Au4 S4,True,7,monoclinic
+mb-mp-is-metal-086997,Pr1 Co2 Ge2,True,139,tetragonal
+mb-mp-is-metal-088936,Tl4 Se4,False,140,tetragonal
+mb-mp-is-metal-068185,Pr1 Er1 In2,True,225,cubic
+mb-mp-is-metal-060192,Mn2 Ga1 W1,True,225,cubic
+mb-mp-is-metal-061410,Rb8 Ag40 P16 S64,False,61,orthorhombic
+mb-mp-is-metal-082169,Lu1 P1,True,225,cubic
+mb-mp-is-metal-089343,Yb1 Al2 Si2,True,164,trigonal
+mb-mp-is-metal-094721,Sm4 P6 Pt12,True,141,tetragonal
+mb-mp-is-metal-051995,Er2 Al40 Cr4,True,227,cubic
+mb-mp-is-metal-104916,Lu2 Mo2 C3,True,12,monoclinic
+mb-mp-is-metal-049339,Na2 N2 O4,False,2,triclinic
+mb-mp-is-metal-099181,K4 Sn4 Hg6 S16,False,41,orthorhombic
+mb-mp-is-metal-000006,Li12 Co8 Ge12 O48,True,230,cubic
+mb-mp-is-metal-103933,Sr2 Sn2 P2,True,129,tetragonal
+mb-mp-is-metal-069341,Eu4 Er8 Se16,False,62,orthorhombic
+mb-mp-is-metal-087703,Zr3 Cu4 Si6,True,139,tetragonal
+mb-mp-is-metal-041194,Mg1 Pb3,True,139,tetragonal
+mb-mp-is-metal-085842,Ba2 Fe1 Mo1 O6,True,225,cubic
+mb-mp-is-metal-100677,La2 Si4 Ru2,True,11,monoclinic
+mb-mp-is-metal-054644,K4 Ag6 Sb6 S14,False,36,orthorhombic
+mb-mp-is-metal-006078,Ag2 Ge2 O6,True,51,orthorhombic
+mb-mp-is-metal-087967,Ce2 Si4 Pt2,True,63,orthorhombic
+mb-mp-is-metal-025061,Li8 Cr2 O10,False,2,triclinic
+mb-mp-is-metal-095760,Ho10 Si17,True,44,orthorhombic
+mb-mp-is-metal-074768,Rb8 Ga8 Sn8 Se32,False,14,monoclinic
+mb-mp-is-metal-067690,Sc12 Co12 Ge24,True,55,orthorhombic
+mb-mp-is-metal-027881,Rb8 H24 Se16 O48,False,19,orthorhombic
+mb-mp-is-metal-099411,Nd2 Ag2 Pb2,True,186,hexagonal
+mb-mp-is-metal-082934,Li1 Si1 Pd2,True,225,cubic
+mb-mp-is-metal-067177,V2 Os1 Ru1,True,225,cubic
+mb-mp-is-metal-082750,Dy1 As1,True,225,cubic
+mb-mp-is-metal-103929,Cs1 Eu1 F3,True,221,cubic
+mb-mp-is-metal-051268,P8 Ru2,False,14,monoclinic
+mb-mp-is-metal-086164,Ta3 B4,True,71,orthorhombic
+mb-mp-is-metal-094146,Ag32 Ge4 S24,False,33,orthorhombic
+mb-mp-is-metal-026717,Cr2 Ni1 S4,True,12,monoclinic
+mb-mp-is-metal-016566,Ag24 Ru8 O32,True,15,monoclinic
+mb-mp-is-metal-090128,Rb2 Ag2 F6,True,140,tetragonal
+mb-mp-is-metal-047197,Li2 Mg1 Hg1,True,225,cubic
+mb-mp-is-metal-061818,Th3 B2 C3,True,10,monoclinic
+mb-mp-is-metal-039583,U4 Se4 S4,True,62,orthorhombic
+mb-mp-is-metal-084936,Th2 Al20 Fe4,True,63,orthorhombic
+mb-mp-is-metal-100260,In2 Hg1 Te4,False,82,tetragonal
+mb-mp-is-metal-100977,Cu4 O2,False,224,cubic
+mb-mp-is-metal-063214,Zr6 O2,True,182,hexagonal
+mb-mp-is-metal-077301,Dy6 Ga2 S12,False,36,orthorhombic
+mb-mp-is-metal-096754,Cs4 Bi12 Se20,False,62,orthorhombic
+mb-mp-is-metal-083660,Sr1 Se1,False,225,cubic
+mb-mp-is-metal-054839,Ag6 As2 Se6,False,161,trigonal
+mb-mp-is-metal-001100,Ti20 O22,True,2,triclinic
+mb-mp-is-metal-059337,Ga4 Te6 O18,False,176,hexagonal
+mb-mp-is-metal-105331,Sn1 Se2,False,164,trigonal
+mb-mp-is-metal-087580,Sr1 Sb12 Ru4,True,204,cubic
+mb-mp-is-metal-010171,Li2 Co4 O7 F1,True,8,monoclinic
+mb-mp-is-metal-063280,Ba4 Er2 Ga2 Se10,False,2,triclinic
+mb-mp-is-metal-077124,B2 Sb2 Pb2 S8,False,4,monoclinic
+mb-mp-is-metal-058049,Ce4 Ti4 O14,True,227,cubic
+mb-mp-is-metal-033525,Eu4 Sb8 Se16,False,62,orthorhombic
+mb-mp-is-metal-018710,Zn2 In4 S8,False,164,trigonal
+mb-mp-is-metal-002925,Ga1 Fe3,True,65,orthorhombic
+mb-mp-is-metal-002176,Ba4 F8,False,194,hexagonal
+mb-mp-is-metal-082859,Be1 Fe2 Si1,True,225,cubic
+mb-mp-is-metal-065438,P4 W20 O68,True,4,monoclinic
+mb-mp-is-metal-069763,Sc1 Cu1 O2,False,166,trigonal
+mb-mp-is-metal-088821,K4 Sb20 S32,False,7,monoclinic
+mb-mp-is-metal-007921,Yb2 H6 O6,True,176,hexagonal
+mb-mp-is-metal-088385,K4 Hg4,True,2,triclinic
+mb-mp-is-metal-105203,Cs2 Bi4,True,227,cubic
+mb-mp-is-metal-052809,Cu16 Pd4,True,84,tetragonal
+mb-mp-is-metal-077491,Ge2 Pb4 Se8 O24,False,14,monoclinic
+mb-mp-is-metal-046238,Zr1 Pd3,True,221,cubic
+mb-mp-is-metal-078496,Fe4 B2 P6 O24,False,176,hexagonal
+mb-mp-is-metal-088788,Lu1 Ir1,True,221,cubic
+mb-mp-is-metal-062583,Li1 Bi3 Cl2 O4,False,38,orthorhombic
+mb-mp-is-metal-042384,Pr2 Co8 B2,True,191,hexagonal
+mb-mp-is-metal-089527,Li2 Sn2 Au2,True,194,hexagonal
+mb-mp-is-metal-097746,Nb4 Co2 Pd1 Se12,True,12,monoclinic
+mb-mp-is-metal-087690,Nd1 As1,True,225,cubic
+mb-mp-is-metal-102093,Ca2 Cd1 Pb1,True,225,cubic
+mb-mp-is-metal-100362,Ce1 Tl3,True,221,cubic
+mb-mp-is-metal-069688,Ge1 Bi12 O20,False,197,cubic
+mb-mp-is-metal-054208,Rb1 Na2 Sb1,False,225,cubic
+mb-mp-is-metal-011402,La4 Mo2 O10,False,87,tetragonal
+mb-mp-is-metal-094099,Eu2 In4 As4,True,194,hexagonal
+mb-mp-is-metal-010223,Rb1 Sb1 O3,True,221,cubic
+mb-mp-is-metal-000630,Gd2 O4,True,11,monoclinic
+mb-mp-is-metal-088561,Zr6 Sb2 Pt1,True,189,hexagonal
+mb-mp-is-metal-075440,K4 Y4 Te8 O24,False,62,orthorhombic
+mb-mp-is-metal-090961,Lu2 Mn12 P7,True,174,hexagonal
+mb-mp-is-metal-002920,Hf1 In1 Cu2,True,123,tetragonal
+mb-mp-is-metal-081975,Tb1 Yb1 Rh2,True,225,cubic
+mb-mp-is-metal-054912,Te2 Au1,True,12,monoclinic
+mb-mp-is-metal-003650,Y8 O12,False,62,orthorhombic
+mb-mp-is-metal-046201,Li1 Ca2 Mg1,True,225,cubic
+mb-mp-is-metal-097514,Cd2 Sb4 Se6 Br4,False,12,monoclinic
+mb-mp-is-metal-001549,Mg6 O6,False,223,cubic
+mb-mp-is-metal-071085,K2 La2 Ti3 O10,False,139,tetragonal
+mb-mp-is-metal-081822,Tl1 W3 O9,True,183,hexagonal
+mb-mp-is-metal-087543,Zr24 Se12,True,58,orthorhombic
+mb-mp-is-metal-057560,Tb2 Cu6 Se6,False,148,trigonal
+mb-mp-is-metal-059427,Na4 In12 S20,False,55,orthorhombic
+mb-mp-is-metal-088467,Li1 Mg1 As1,True,216,cubic
+mb-mp-is-metal-102913,Nb3 V1 P6 O24,True,146,trigonal
+mb-mp-is-metal-101991,Sn4 Ge4 S12,False,14,monoclinic
+mb-mp-is-metal-083596,Ca8 In16 Ir8,True,62,orthorhombic
+mb-mp-is-metal-100869,Ho8 Au4,True,62,orthorhombic
+mb-mp-is-metal-009783,Er8 Ni2 B26,True,128,tetragonal
+mb-mp-is-metal-102994,K4 Si4 Bi4 S16,False,14,monoclinic
+mb-mp-is-metal-086505,Eu2 Te1 O2,True,139,tetragonal
+mb-mp-is-metal-079529,Cs8 In8 Te16,False,15,monoclinic
+mb-mp-is-metal-016807,Ce12 Mo4 O28,False,19,orthorhombic
+mb-mp-is-metal-028608,Sb2 Pb4 S4 I6,False,36,orthorhombic
+mb-mp-is-metal-045991,Ba42 Ir24 Pd9 O99,True,150,trigonal
+mb-mp-is-metal-011028,Sc4 Co4 O12,True,62,orthorhombic
+mb-mp-is-metal-056947,Ba2 Dy1 Cu3 O7,True,47,orthorhombic
+mb-mp-is-metal-096792,Ba1 As2 Rh2,True,139,tetragonal
+mb-mp-is-metal-034818,Cs2 Mo6 O18,True,12,monoclinic
+mb-mp-is-metal-032894,Y1 Sc1 O2,True,166,trigonal
+mb-mp-is-metal-035947,Li2 Ti6 O12,True,70,orthorhombic
+mb-mp-is-metal-014045,Li3 Mn3 W1 O8,True,166,trigonal
+mb-mp-is-metal-090657,Eu1 Ge3 Pt1,True,107,tetragonal
+mb-mp-is-metal-029759,Cr8 As6,True,12,monoclinic
+mb-mp-is-metal-006112,Li4 Co3 Cu1 O8,True,166,trigonal
+mb-mp-is-metal-083137,Sm2 Tl1 Hg1,True,225,cubic
+mb-mp-is-metal-099496,La1 Fe4 As12,True,204,cubic
+mb-mp-is-metal-088623,Ba2 Cu2 Te2 F2,False,129,tetragonal
+mb-mp-is-metal-097289,Li2 Ga1 Pd1,True,216,cubic
+mb-mp-is-metal-066976,Cu4 Sb4 Pb4 S12,False,31,orthorhombic
+mb-mp-is-metal-050341,Sc2 Ga4,True,65,orthorhombic
+mb-mp-is-metal-018381,As8 O12,False,56,orthorhombic
+mb-mp-is-metal-067655,Ni3 Pt1,True,221,cubic
+mb-mp-is-metal-058378,Sn4 Pb4 S12,False,62,orthorhombic
+mb-mp-is-metal-079303,Zn2 Si2 Ag4 S8,False,7,monoclinic
+mb-mp-is-metal-052856,Yb2 Pr22 Se32,True,18,orthorhombic
+mb-mp-is-metal-002138,P4 H8 Rh2 O18,False,5,monoclinic
+mb-mp-is-metal-093711,Ba12 Dy8 P16 S64,False,60,orthorhombic
+mb-mp-is-metal-038889,Th1 Mn4 Cu3 O12,True,204,cubic
+mb-mp-is-metal-064018,Nb6 Co7,True,166,trigonal
+mb-mp-is-metal-052924,Co7 Mo6,True,166,trigonal
+mb-mp-is-metal-039895,Cu3 Bi4 I16,True,8,monoclinic
+mb-mp-is-metal-036742,Y1 Si2,True,191,hexagonal
+mb-mp-is-metal-006166,Lu1 C2,True,139,tetragonal
+mb-mp-is-metal-099150,Ba2 Tb1 Ir1 O6,True,225,cubic
+mb-mp-is-metal-085876,Eu1 Se1,True,225,cubic
+mb-mp-is-metal-037989,Sr3 Li4 La5 O12,True,6,monoclinic
+mb-mp-is-metal-059774,Ti1 Bi12 O20,False,197,cubic
+mb-mp-is-metal-075863,K6 Ti4 P10 S36,False,15,monoclinic
+mb-mp-is-metal-077169,Cd4 Pb2 O8,True,55,orthorhombic
+mb-mp-is-metal-093986,Ca4 In4 Pt4,True,62,orthorhombic
+mb-mp-is-metal-035726,U6 Se8,True,220,cubic
+mb-mp-is-metal-013805,Na5 Cu7 O13,True,1,triclinic
+mb-mp-is-metal-008905,Sc4 Ti4 O12,True,33,orthorhombic
+mb-mp-is-metal-015740,Nd2 Mn2 Sb2 O2,True,129,tetragonal
+mb-mp-is-metal-038749,Ge3 Pt6,True,189,hexagonal
+mb-mp-is-metal-088093,Ba4 Nb14 O23,True,65,orthorhombic
+mb-mp-is-metal-004259,Er1 B1 Pd3,True,221,cubic
+mb-mp-is-metal-063720,Ni2 Te2,True,194,hexagonal
+mb-mp-is-metal-102314,Sr4 In32 Rh8,True,55,orthorhombic
+mb-mp-is-metal-048874,Zn12 B8 O24,False,15,monoclinic
+mb-mp-is-metal-096950,La2 P1 I2,True,164,trigonal
+mb-mp-is-metal-066728,Hf14 P8,True,12,monoclinic
+mb-mp-is-metal-082929,Mg2 Rh1 Au1,True,225,cubic
+mb-mp-is-metal-063398,Dy16 Ga4 Sb4 S36,False,41,orthorhombic
+mb-mp-is-metal-063778,Ta2 Pt6,True,59,orthorhombic
+mb-mp-is-metal-063135,Ga2 Ge2 Te2,False,166,trigonal
+mb-mp-is-metal-103871,K11 Mn4 O16,True,121,tetragonal
+mb-mp-is-metal-101290,Dy2 Ge2,True,63,orthorhombic
+mb-mp-is-metal-101969,Nd1 Co2 Ge2,True,139,tetragonal
+mb-mp-is-metal-104116,Lu1 Ag2,True,139,tetragonal
+mb-mp-is-metal-077210,La4 Mg8 H28 Pd4,False,19,orthorhombic
+mb-mp-is-metal-052894,Cu8 As4 O18,True,2,triclinic
+mb-mp-is-metal-089637,Sc4 Zn8,True,194,hexagonal
+mb-mp-is-metal-092670,U1 Cr4 C4,True,87,tetragonal
+mb-mp-is-metal-090798,Y1 Sb1 Pt1,False,216,cubic
+mb-mp-is-metal-095248,Bi8 Mo12 O48,False,14,monoclinic
+mb-mp-is-metal-052456,Na4 Sb4 F24,False,205,cubic
+mb-mp-is-metal-098536,Ca3 Zn9 Ni6,True,191,hexagonal
+mb-mp-is-metal-092388,Ta10 N12,True,193,hexagonal
+mb-mp-is-metal-084069,Mg1 Sn1 Rh2,True,225,cubic
+mb-mp-is-metal-094240,Dy2 Fe2 Si2,True,129,tetragonal
+mb-mp-is-metal-097039,Cs2 Ce2 Hg2 Se6,True,63,orthorhombic
+mb-mp-is-metal-005136,Li30 Fe8 O32,True,7,monoclinic
+mb-mp-is-metal-100284,Cu4 Sb4 Se8,False,62,orthorhombic
+mb-mp-is-metal-043818,Na3 U1 F7,True,8,monoclinic
+mb-mp-is-metal-066990,Cu21 Pd7,True,99,tetragonal
+mb-mp-is-metal-081801,Gd1 Sb1,True,225,cubic
+mb-mp-is-metal-057195,Pr1 Lu1 In2,True,225,cubic
+mb-mp-is-metal-013037,Li4 Mn5 Nb1 O12,True,12,monoclinic
+mb-mp-is-metal-094483,Pr18 Sb10 O10,True,85,tetragonal
+mb-mp-is-metal-074465,Rb16 Ge4 P16 Se48,False,29,orthorhombic
+mb-mp-is-metal-086807,Li4 Ga2,True,63,orthorhombic
+mb-mp-is-metal-062696,Hf20 Si16,True,92,tetragonal
+mb-mp-is-metal-037618,Zn1 Hg1 Se2,True,160,trigonal
+mb-mp-is-metal-102131,Rb8 Ge6 B12 O34,False,9,monoclinic
+mb-mp-is-metal-100357,La1 In1,True,221,cubic
+mb-mp-is-metal-004924,Cu3 Sb1 Se4,True,160,trigonal
+mb-mp-is-metal-023033,Li3 Fe1 Co4 O8,True,2,triclinic
+mb-mp-is-metal-020007,Li6 Mn5 Fe1 O12,True,12,monoclinic
+mb-mp-is-metal-006840,In1 Ag3,True,65,orthorhombic
+mb-mp-is-metal-089371,Dy6 Fe1 Te2,True,189,hexagonal
+mb-mp-is-metal-103039,Zr2 Co12 P7,True,174,hexagonal
+mb-mp-is-metal-105284,Ba3 Mg1 Ta2 O9,False,164,trigonal
+mb-mp-is-metal-027729,Mn1 Te1,True,225,cubic
+mb-mp-is-metal-022669,Er2 Si2 Pd2,True,12,monoclinic
+mb-mp-is-metal-070330,Na4 In4 Ge2 Se12,False,9,monoclinic
+mb-mp-is-metal-082108,Li1 Si1 Rh2,True,225,cubic
+mb-mp-is-metal-012769,Cu8 H20 S2 O24,True,7,monoclinic
+mb-mp-is-metal-031901,Li3 Cu4 O4,True,44,orthorhombic
+mb-mp-is-metal-046216,Pr2 Cd1 Sn1,True,225,cubic
+mb-mp-is-metal-002709,Fe12 N4,True,62,orthorhombic
+mb-mp-is-metal-105588,As4 Ru2,False,58,orthorhombic
+mb-mp-is-metal-022062,Li3 Fe1 Sb4 O12,True,1,triclinic
+mb-mp-is-metal-072930,As4 Ru4 S4,False,14,monoclinic
+mb-mp-is-metal-082735,Na1 Br1,False,225,cubic
+mb-mp-is-metal-096276,Cd2 Bi2 Cl2 O4,False,11,monoclinic
+mb-mp-is-metal-079927,V6 Bi2 Pb6 O24,False,9,monoclinic
+mb-mp-is-metal-088197,Rb1 Tb1 Se2,False,166,trigonal
+mb-mp-is-metal-089903,Nd2 Al14 Au6,True,167,trigonal
+mb-mp-is-metal-092130,Ti1 Fe2 Si1,False,225,cubic
+mb-mp-is-metal-100332,Sr2 In4 Ir2,True,63,orthorhombic
+mb-mp-is-metal-009823,Sb8 Se12,False,62,orthorhombic
+mb-mp-is-metal-032473,In12 Se14,False,11,monoclinic
+mb-mp-is-metal-064969,Cu18 Se8 Cl12 O28,True,14,monoclinic
+mb-mp-is-metal-002170,V2 Sb2,True,194,hexagonal
+mb-mp-is-metal-081735,In2 Pt1,True,225,cubic
+mb-mp-is-metal-100084,Hf1 Co2 Si2,True,139,tetragonal
+mb-mp-is-metal-067875,Hf10 Sb18,True,85,tetragonal
+mb-mp-is-metal-103953,La4 Si10 Rh6,True,72,orthorhombic

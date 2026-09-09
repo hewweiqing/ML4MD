@@ -1,9 +1,5 @@
 # ALIGNN warm-up experiments
 
-The two completed **balanced-cohort** studies, packaged for straightforward reruns.
-The older exploratory `alignn_scratch_v2.py` update-ladder/head-reset studies are
-not included in these two runners.
-
 | File | Purpose |
 | --- | --- |
 | `run_methods.py` | Control, fixed labels (F), refreshed labels (R), with 4 warm-up passes. Contains the shared training functions. |

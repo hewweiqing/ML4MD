@@ -1,9 +1,0 @@
-{
-  "directories": "0755",
-  "enforced_by_release_builder": "build_delftblue_package_v13.py",
-  "executable_scripts": "0755",
-  "regular_files": "0644",
-  "schema_version": 1,
-  "verified_from_tar_headers": true,
-  "world_writable_prohibited": true
-}

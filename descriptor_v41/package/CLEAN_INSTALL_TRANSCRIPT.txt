@@ -1,3 +1,0 @@
-V20 IMMUTABLE PLACEHOLDER
-STATUS: PENDING EXTERNAL RUNTIME EVIDENCE
-The setup writes clean-install evidence and its transcript beside the final certified environment, never into this package.

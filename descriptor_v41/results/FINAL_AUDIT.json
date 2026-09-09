@@ -1,8 +1,0 @@
-{
-  "expected_cells": 25,
-  "failures": [],
-  "readouts": 100,
-  "status": "passed",
-  "trained_branches": 50,
-  "valid_cells": 25
-}

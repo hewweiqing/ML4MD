@@ -1,7 +1,0 @@
-# package/ contents are hash-verified against PACKAGE_MANIFEST.json (LF
-# line endings, as built on the DelftBlue cluster). Force LF on checkin and
-# checkout regardless of a client's core.autocrlf, so Windows checkouts don't
-# silently break the recorded SHA-256 hashes.
-coordinate_gpu_v4/package/** text eol=lf
-descriptor_v41/package/** text eol=lf
-stage3_calibration/package/** text eol=lf 

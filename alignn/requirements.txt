@@ -1,0 +1,12 @@
+# Python 3.10. Direct dependencies from the original runtime.
+# For GPU training, install matching CUDA builds of BOTH torch and dgl (README).
+torch==2.0.1
+dgl==1.1.1
+alignn==2025.4.1
+jarvis-tools==2026.6.12
+pymatgen==2025.10.7
+numpy==1.26.4
+scipy==1.15.3
+pandas==2.3.3
+scikit-learn==1.7.2
+matplotlib==3.10.6

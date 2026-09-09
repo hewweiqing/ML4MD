@@ -1,5 +1,0 @@
-{
-  "schema_version": 1,
-  "projected_wall_time_hours_max": 12,
-  "note": "Approval threshold for the projected 20-seed Stage A full-network-arm wall time, extrapolated linearly from the single-seed profile (STAGE_A_FULL_NETWORK_SEED0_PROFILE.json). If the projection exceeds this, a human reviewer should not approve without reconsidering the batch/step budget or job partitioning (e.g. splitting seeds across multiple array jobs) rather than silently accepting an over-budget run."
-}

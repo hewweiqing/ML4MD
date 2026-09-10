@@ -1,0 +1,11 @@
+# Python 3.12. Observed runtime; install the appropriate Torch CPU/CUDA build.
+torch==2.8.0
+orb-models==0.6.2
+ase==3.29.0
+numpy==2.4.6
+scipy==1.18.0
+pandas==3.0.5
+matplotlib==3.11.1
+# Pin the graph-construction backend as well as the model package.
+nvalchemi-toolkit-ops==0.4.1
+warp-lang==1.16.0

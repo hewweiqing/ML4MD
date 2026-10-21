@@ -26,6 +26,7 @@ from pymatgen.core import Element, Structure
 from plot import metrics, plot
 
 HERE = Path(__file__).resolve().parent
+DATA_ROOT = HERE.parent / "data"
 BATCH_SIZE, EVAL_BATCH_SIZE, LR = 8, 16, 0.001
 ELEMENTS = [Element.from_Z(z).symbol for z in range(1, 101)]
 MODEL = dict(name="alignn", alignn_layers=4, gcn_layers=4, atom_input_features=92,
@@ -268,7 +269,7 @@ def run(args, doses):
     torch.backends.cudnn.allow_tf32 = False
     records, seen = {}, set()
     for split, count in (("train", 2014), ("val", 252), ("test", 252)):
-        records[split] = json.loads((HERE / "data" / f"{split}.json").read_text(encoding="utf-8"))
+        records[split] = json.loads((DATA_ROOT / f"{split}.json").read_text(encoding="utf-8"))
         ids = {r["mbid"] for r in records[split]}
         if (len(ids) != count or len(records[split]) != count or seen & ids
                 or any(type(r["is_metal"]) is not bool for r in records[split])
@@ -284,7 +285,7 @@ def run(args, doses):
                   seed_streams=dict(initial="seed", bank="100000+seed", independent="200000+seed",
                                     warmup="300000+seed", warmup_order="400000+seed",
                                     refreshed_labels="500000+seed", supervised="600000+seed", supervised_order="700000+seed"),
-                  data_sha256={s: sha256(HERE / "data" / f"{s}.json") for s in records},
+                  data_sha256={s: sha256(DATA_ROOT / f"{s}.json") for s in records},
                   code_sha256={f: sha256(HERE / f) for f in ("run_methods.py", "run_doses.py", "plot.py")},
                   python=platform.python_version(), versions={p: importlib.metadata.version(p) for p in
                       ("torch", "dgl", "alignn", "jarvis-tools", "pymatgen", "numpy", "scipy", "pandas", "scikit-learn", "matplotlib")})

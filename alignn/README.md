@@ -6,6 +6,9 @@
 | `run_doses.py` | Those same methods at 5, 15 and 30 passes; imports the shared functions. |
 | `plot.py` | Three-panel confidence/accuracy figures and two-panel synthetic-bank NLL. No PyTorch or DGL required for plotting. |
 
+The shared dataset is located at `../data/` in the repository root.
+ALIGNN uses its training, validation, and test splits.
+
 ## Install
 
 Use **Python 3.10** in a fresh environment, then from this folder:
@@ -84,31 +87,25 @@ roughly 2 GB of disk space and several GB of RAM for cached graphs.
 - Validation supplies diagnostics only: no checkpoint selection, early stopping
   or temperature fitting. Test inference occurs only after every branch finishes.
 
-## Plot the completed results without training
+## Plot results from a completed run
+
+After training finishes, run these commands from the `alignn/` folder:
 
 ```sh
-python plot.py results/methods
-python plot.py results/doses
+python plot.py runs/methods
+python plot.py runs/doses
 ```
 
-For plotting only, install NumPy, SciPy, pandas, scikit-learn and matplotlib from
-the versions in `requirements.txt`; no model libraries are imported by `plot.py`.
+Use the output directory corresponding to the experiment you completed.
+Archived reference results are not included in this repository.
 
-`results/` contains the original per-seed metrics (not newly trained results).
-Each study has `config.json`, `warmup.csv`, `supervised.csv`, `test.csv`, and
-`figures/`. All source metrics are retained. The dose tables store control once,
-and the shared warm-up trajectory once, rather than duplicating prefix rows.
-Plots appear in `figures/confidence_accuracy_E04.png` for methods, and
-`confidence_accuracy_E05.png`, `E15.png`, `E30.png` for doses; PDF copies are included.
-`synthetic_bank_nll.png` shows both banks. Run the same plotting command on
-`runs/methods` or `runs/doses` for new results.
+Plotting requires the saved run configuration and metric CSVs.
+The plotting script does not import Torch, DGL, or ALIGNN.
 
-Confidence/accuracy curves evaluate **real validation materials**, not the noisy
-bank or test. Lines are seed means with pointwise 95% Student-t intervals.
-Supervised epoch 0 is the handover and is not duplicated. No in-panel explanatory
-sentences are drawn. F's on/off-bank NLL uses each bank's fixed labels; R's bank
-NLL is the **exact expected loss over independent Bernoulli labels**, not the loss
-on a realized training minibatch. Gaps are paired within seed before aggregation.
+Confidence and accuracy curves use real validation data.
+Lines show seed means with pointwise 95% Student-t confidence intervals.
+`test.csv` contains the separate final test metrics.
+
 
 ## Reproducibility and scope
 

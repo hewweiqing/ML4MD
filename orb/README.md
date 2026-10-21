@@ -72,10 +72,14 @@ Four arms, all beginning from the same initialization within each seed:
 4. **Fresh inputs / fresh labels:** independent new bank each epoch, labels refreshed
    with the **same label stream and batch boundaries as arm 3**.
 
-Data are the unchanged balanced `mp_is_metal` **2,014 train and 252 validation**
-records, exactly half metallic in each, matched to the CrabNet/ALIGNN IDs and order.
-**No test data, temperature scaling, early stopping or best-checkpoint selection.**
-Validation only measures trajectories. There is intentionally no `data/test.json`.
+The shared dataset is located at `../data/` in the repository root.
+ORB uses only `train.json` (2,014 materials) and `val.json` (252 materials),
+exactly half metallic in each. These records match the CrabNet/ALIGNN
+training and validation IDs and order.
+
+**No test-data access, temperature scaling, early stopping, or
+best-checkpoint selection.** Validation only measures trajectories.
+The shared `test.json` is used by CrabNet and ALIGNN; ORB does not read it.
 
 Synthetic banks retain lattice/site count, draw elements 1-100 and wrapped Gaussian
 fractional coordinates N(0.5, 0.15^2). The original 200-attempt 0.5-Angstrom placement

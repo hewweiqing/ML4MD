@@ -26,6 +26,7 @@ from crabnet.utils.utils import BCEWithLogitsLoss, DummyScaler, EDM_CsvLoader, L
 from plot import metrics, plot_results
 
 ROOT = Path(__file__).resolve().parent
+DATA_ROOT = ROOT.parent / "data"
 ARMS = ("U_fixed", "A_fixed", "U_refreshed")
 BATCH_SIZE = 128
 SUPERVISED_EPOCHS = 20
@@ -78,7 +79,7 @@ def preserve_rng():
 
 
 def load_split(name):
-    rows = json.loads((ROOT/"data"/f"{name}.json").read_text(encoding="utf-8"))
+    rows = json.loads((DATA_ROOT/f"{name}.json").read_text(encoding="utf-8"))
     return pd.DataFrame({"sample_id": [r["mbid"] for r in rows],
                          "formula": [r["composition"].replace(" ", "") for r in rows],
                          "target": [float(r["is_metal"]) for r in rows]})
@@ -323,7 +324,7 @@ def run(doses, seeds, output, device):
         controls="trained once per seed; reused across doses", temperature_scaling=False,
         python_version=platform.python_version(),
         embedding_sha256=hashlib.sha256(embedding_path.read_bytes()).hexdigest(),
-        data_sha256={name: hashlib.sha256((ROOT/"data"/f"{name}.json").read_bytes()).hexdigest()
+        data_sha256={name: hashlib.sha256((DATA_ROOT/f"{name}.json").read_bytes()).hexdigest()
                      for name in ("train", "val", "test")},
         versions={name: importlib.metadata.version(name) for name in
                   ("crabnet", "torch", "numpy", "pandas", "pymatgen", "scipy", "scikit-learn", "matplotlib")})

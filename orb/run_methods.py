@@ -26,6 +26,7 @@ from orb_models.forcefield.forcefield_adapter import ForcefieldAtomsAdapter
 from plot import ARMS, metrics, plot
 
 HERE = Path(__file__).resolve().parent
+DATA_ROOT = HERE.parent / "data"
 TRAIN_LIMITS, EVAL_LIMITS = (8, 128, 24000), (16, 256, 30000)
 MODEL = dict(latent_dim=256, base_mlp_hidden_dim=1024, base_mlp_depth=2,
              head_mlp_hidden_dim=256, head_mlp_depth=1, num_message_passing_steps=5,
@@ -392,7 +393,7 @@ def run(args, doses, batching):
     if device == "cuda" and not torch.cuda.is_available():
         raise RuntimeError("CUDA requested but unavailable")
     torch.set_num_threads(1)
-    clean, validation = (read_json(HERE / "data" / f"{s}.json") for s in ("train", "val"))
+    clean, validation = (read_json(DATA_ROOT / f"{s}.json") for s in ("train", "val"))
     seen = set()
     for records, count in ((clean, 2014), (validation, 252)):
         ids = {r["mbid"] for r in records}
@@ -412,7 +413,7 @@ def run(args, doses, batching):
                                     supervised="600000+seed", supervised_order="700000+seed+epoch"),
                   device=device, python=platform.python_version(),
                   versions={p: importlib.metadata.version(p) for p in ("torch", "orb-models", "ase", "numpy", "scipy", "pandas", "matplotlib", "nvalchemi-toolkit-ops", "warp-lang")},
-                  data_sha256={s: sha256(HERE / "data" / f"{s}.json") for s in ("train", "val")},
+                  data_sha256={s: sha256(DATA_ROOT / f"{s}.json") for s in ("train", "val")},
                   code_sha256={f: sha256(HERE / f) for f in ("run_methods.py", "run_doses.py", "plot.py")})
     save_json(output / "config.json", config)
     train, val = build_items(clean), build_items(validation)

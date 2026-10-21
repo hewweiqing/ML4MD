@@ -1,0 +1,16 @@
+{
+  "alignn_individual_raw.npz": "8e4338da1b300573a8cd46ec9bf8a9633285de1a9d3e15c9752f4ceaf4148809",
+  "alignn_individual_relative.npz": "a0867791bd9ffb0c11ae9abc16744b67d07d52cf083300c2183a6e3bc3e270a4",
+  "alignn_material_raw.npz": "4870b85c017e370768998efe883232bee77774c203e4ee56deb79203bb76d239",
+  "alignn_material_relative.npz": "1feee6bee88054c4bf15441fb49152b27cb5702aa8fd84e01cd0d72fbdbd9875",
+  "crabnet_individual_raw.npz": "3eb981c60bb244c6f8b6808eff3688347ccdf99d7066e2ef626d26a4b121854f",
+  "crabnet_individual_relative.npz": "ed6ea9488e112fb201dcca07bf54224cc5a45998e33eb1b814fdaa82cdf8fa68",
+  "crabnet_material_raw.npz": "1ec68432a19a3b7b45c98d053ad5c743770fbae9c90a4259a5b211efb740aa91",
+  "crabnet_material_relative.npz": "4e47d33035717c58c7cd19eddab44aa7f841639373fc8600b96088f066f862a8",
+  "Cross_model_PCA_only_2D_3D.pdf": "3da0ce6cac51d1b3fc8decd69000c64554fe55a06a2eacd36168fc1a6f773a62",
+  "orb_individual_raw.npz": "8434db49046c0740009be79ac4060bcc9b360e29a4b6c6bfd9f5f142c6d15131",
+  "orb_individual_relative.npz": "a0b176ff88775983e1e55a1d8a7478c05a9ccdd29e4e8189df09e47ebc378c15",
+  "orb_material_raw.npz": "992b4b5fcd728e98eb259802faa83a8d1f369ab01deb36cf3f88c493bfc38dda",
+  "orb_material_relative.npz": "257d7cd3943ce2d7d7e98b24715600f9042541c0a5d0d518da670d3fa51a363a",
+  "provenance.json": "958ce3bdaf6bcc2cb00eb597ca70a97c8635822e9d173a45a720ba152bd38d14"
+}

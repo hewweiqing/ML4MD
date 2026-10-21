@@ -1,0 +1,9 @@
+{
+  "alignn_individual_relative.npz": "e0855bb7dc7e5ebdbc5599b84833564250d8c70f89a8e312461161d2c392d07a",
+  "alignn_material_relative.npz": "7f277fcb9388b32a11c895b80a5b0414327dac851295a90e8a37d5acf049aa89",
+  "crabnet_individual_relative.npz": "ca188694c992fa6e5a3659065654860951bd8cca9bfc4b2fc2cbfe76e74eb7dc",
+  "crabnet_material_relative.npz": "ba59e60c74d3d788b63b78974162ca2bd34c34d43651eaf10cd59a668bcd3453",
+  "orb_individual_relative.npz": "ffdfb360bd8058f5aa5a45ffecff85902c4bebddd3608823682b948df0e3a24e",
+  "orb_material_relative.npz": "2caa728d751f2021d4c2f73907bdfaa5966d2c723341cc047f849cf302bd6b21",
+  "provenance.json": "5153b314671ef5e2c9d1315cb98a268edbf590f1ec9c2359367346fcf7613587"
+}

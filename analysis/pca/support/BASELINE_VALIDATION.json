@@ -1,0 +1,32 @@
+{
+  "status": "PASS",
+  "visual_review": "All 48 final PDF pages inspected in eight rendered contact sheets; representative ORB material 2D and ALIGNN atomic 3D pages inspected individually. No clipping or overlap defects observed.",
+  "date": "2026-10-21",
+  "unit_tests_passed": 15,
+  "standalone_execution_from_outside_package": true,
+  "native_training": false,
+  "GPU_used": false,
+  "PCA_refitted_from_feature_inputs": true,
+  "reference_PCA_fits": 12,
+  "maximum_coordinate_difference": 0.0,
+  "maximum_explained_variance_ratio_difference": 0.0,
+  "reference_comparison_scope": "This environment; cross-platform equality is tolerance-based, not bytewise",
+  "PDF_pages": 48,
+  "static_3D_pages": 12,
+  "axis_percentages_match_original": true,
+  "all_PDF_pages_rendered": true,
+  "PDF_boundary_violations": [],
+  "original_reference_PDF_unchanged": true,
+  "source_PDF_sha256": "3da0ce6cac51d1b3fc8decd69000c64554fe55a06a2eacd36168fc1a6f773a62",
+  "generated_PDF_sha256": "53c6b38d5a0c8d67e70fa746cf559a5b4ed34678c2a521321d8d6281d0f63092",
+  "source_checksums": {
+    "analyze.py": "2418dd93ec16c2083ed69635ff3c598eae54a43b14f06b5f19ccedf6b58e5d3c",
+    "plot.py": "6aeb4a88a66cd51e6bc26a7b9b3be253b061bf149b1b14cd4594d023391fbfda",
+    "test_pca.py": "fed3f85d7d0ec7a02ccd2b65d612cf4931c4273976c856d06d22fb282ab9369f",
+    "requirements.txt": "49e2d9617c518d02370dc0328f6350a6c9ad3a3008348132302a544f95d32897",
+    "data/manifest.json": "b079c2199e8fc9c667472a74cdbe0abc45fa432f224c2d39c093558adc7f026c"
+  },
+  "other_operating_systems_and_fresh_environment_install_not_tested": true,
+  "git_commit_created": false,
+  "git_push_performed": false
+}

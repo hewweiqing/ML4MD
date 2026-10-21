@@ -1,0 +1,534 @@
+{
+  "native_training": false,
+  "test_access": false,
+  "features_quantized": false,
+  "reference_PCA_refitted": false,
+  "sequence_extensions": false,
+  "source_environment": {
+    "ORB_extraction_from_archived_manifest": {
+      "python": "3.12.4",
+      "platform": "Windows-11-10.0.26200-SP0",
+      "torch": "2.8.0+cu128",
+      "orb-models": "0.6.2",
+      "numpy": "2.4.6",
+      "ase": "3.29.0",
+      "warp-lang": "1.16.0",
+      "nvalchemiops": "not installed",
+      "device": "cuda"
+    },
+    "CrabNet_extraction": {
+      "python": "3.10.20",
+      "torch": "2.0.1+cu118",
+      "crabnet": "2.0.8",
+      "numpy": "1.23.5",
+      "pymatgen": "2022.7.25",
+      "device": "cpu"
+    },
+    "ALIGNN_extraction_and_CPU_analysis": {
+      "python": "3.10.20",
+      "torch": "2.0.1+cu118",
+      "alignn": "2025.4.1",
+      "dgl": "1.1.1+cu118",
+      "numpy": "1.26.4",
+      "scipy": "1.15.3",
+      "scikit-learn": "1.7.2",
+      "matplotlib": "3.10.6",
+      "plotly": "6.9.0",
+      "pymatgen": "2025.10.7"
+    },
+    "scope": "Native source hashes and initial-state/checkpoint hashes verified. ORB cached exports and original probes reused. Package differences between environments are recorded, not silently treated as bitwise reproducibility guarantees."
+  },
+  "models": {
+    "orb": {
+      "feature_tap": "backbone node_features (256-D) before all-atom mean and classifier",
+      "states": [
+        {
+          "key": "I",
+          "arm": "shared",
+          "stage": "initialization",
+          "checkpoint_file_sha256": "53ac31c922c648a3e3b58696502bc91d9912b6f8e1cbfb8929c1da7b7b280a6b",
+          "initial_state_hash": null,
+          "raw_train_sha256": "8edfb8ae9e8720858e65bf544db06e65f2da63d3b0501837ea7c14d1c555f448",
+          "raw_validation_sha256": "2a64a9b9632e2dd044d01617dfa1a8a595fbb0a41a567e41993b0cdfe7fe28ef",
+          "source_update_counts": {
+            "stage": "initial",
+            "warmup_updates": 0,
+            "supervised_updates": 0
+          }
+        },
+        {
+          "key": "AW5",
+          "arm": "fixed_inputs_fixed_labels",
+          "stage": "warmup",
+          "checkpoint_file_sha256": "1cf3bdda5345adaf070cf69a5839cb7913990b08d3f6380763b0a37d73c0a058",
+          "initial_state_hash": null,
+          "raw_train_sha256": "ee7159aeb7562d4244959c79bdf49088912b887253ed00a96647f856b6fda349",
+          "raw_validation_sha256": "4ebdef8533e7e8e0c761f901b63c525155e6e9b507bedb0654a6fe65db485966",
+          "source_update_counts": {
+            "stage": "warm",
+            "warmup_updates": 2011,
+            "supervised_updates": 0
+          }
+        },
+        {
+          "key": "BW5",
+          "arm": "fixed_inputs_fresh_labels",
+          "stage": "warmup",
+          "checkpoint_file_sha256": "c1d953a4dcfa0a2ea1f087f6846ce9d8950383c7135c2942265374e7acfdac6b",
+          "initial_state_hash": null,
+          "raw_train_sha256": "bee2db81d4f0dc9802844b10fa4bdbb2eb702db57cf5d6e160ecc3b7a0769403",
+          "raw_validation_sha256": "c668764d1c7e700eef65dc72da95357ca3b0e52683298190aae640ac47576421",
+          "source_update_counts": {
+            "stage": "warm",
+            "warmup_updates": 2011,
+            "supervised_updates": 0
+          }
+        },
+        {
+          "key": "CW5",
+          "arm": "fresh_inputs_fresh_labels",
+          "stage": "warmup",
+          "checkpoint_file_sha256": "86c526120e6a4504a32fb5c97e1419950aabc758db48586fda1cdec5d7caabc8",
+          "initial_state_hash": null,
+          "raw_train_sha256": "8e4e7f5ce087f5f73f07926ca6c0aab932c5a721c4b27cbe7f4d0f7b42c3c050",
+          "raw_validation_sha256": "3f871ef9052e4f8249884563b189fa8690506bb5f91c6c6917185c8ec68b9117",
+          "source_update_counts": {
+            "stage": "warm",
+            "warmup_updates": 2011,
+            "supervised_updates": 0
+          }
+        },
+        {
+          "key": "AW15",
+          "arm": "fixed_inputs_fixed_labels",
+          "stage": "warmup",
+          "checkpoint_file_sha256": "e1f8cf8ebc6f1b4ce9459fb1ae684fe86ff54e0b8ab8ea7a73046129ff5b03f6",
+          "initial_state_hash": null,
+          "raw_train_sha256": "744362af1e4ab9718c7ff5eca0ff377588b576ed33967de2f936dbc802a88b47",
+          "raw_validation_sha256": "6ac033085053619b2b6283ec848d2d9ac10fb80bd1a985a22e8cdf4f86589779",
+          "source_update_counts": {
+            "stage": "warm",
+            "warmup_updates": 6039,
+            "supervised_updates": 0
+          }
+        },
+        {
+          "key": "BW15",
+          "arm": "fixed_inputs_fresh_labels",
+          "stage": "warmup",
+          "checkpoint_file_sha256": "3a24e14284e0ea5940a33596716ffb682f10af2eb177abc85955b8caeda03457",
+          "initial_state_hash": null,
+          "raw_train_sha256": "c46f8a96a2ff3b6e5db1df25e32873ea85f87a3b821477ea6d81ddcd3f98e213",
+          "raw_validation_sha256": "3d4e27d252fed89cfe50ffff674a146e1d81ac6a8be674c0cd7684941a636a3a",
+          "source_update_counts": {
+            "stage": "warm",
+            "warmup_updates": 6039,
+            "supervised_updates": 0
+          }
+        },
+        {
+          "key": "CW15",
+          "arm": "fresh_inputs_fresh_labels",
+          "stage": "warmup",
+          "checkpoint_file_sha256": "f1447213ba7b2e28058c92d3c04441753d9bf274ffac6c58af4165fab64cc4a2",
+          "initial_state_hash": null,
+          "raw_train_sha256": "8e99e15f0a9be915d636c253b747a269c92df22f1f4e0d9cf07d676f416b11cd",
+          "raw_validation_sha256": "913dc3bbda65fb684ded22c949cf152911e59d68995a7925352a4218cfe1b37c",
+          "source_update_counts": {
+            "stage": "warm",
+            "warmup_updates": 6039,
+            "supervised_updates": 0
+          }
+        },
+        {
+          "key": "AW30",
+          "arm": "fixed_inputs_fixed_labels",
+          "stage": "warmup",
+          "checkpoint_file_sha256": "0fb889194d85e305cecacc4228a655c7092f7a4b76df45efc60c28228e03a9fe",
+          "initial_state_hash": null,
+          "raw_train_sha256": "ba24b377f57babf2910325b0a593d7a36545b8ba416e2578b1557d1c8858d247",
+          "raw_validation_sha256": "9f922bfe69b89ff4c6c70061f732732a4de9b60a9e8ac4876a408dee6fe07bdf",
+          "source_update_counts": {
+            "stage": "warm",
+            "warmup_updates": 12093,
+            "supervised_updates": 0
+          }
+        },
+        {
+          "key": "BW30",
+          "arm": "fixed_inputs_fresh_labels",
+          "stage": "warmup",
+          "checkpoint_file_sha256": "e3a58890d4632940b4be1e8c9047f08dbe478fd5b44f0a3c98bc7244253bc18e",
+          "initial_state_hash": null,
+          "raw_train_sha256": "afc90a807aed62dc2e41726a48e47d424eb64ac1f707a9a6707187e3c52d14f4",
+          "raw_validation_sha256": "bf5dc358a78bc3218c7ba7906851dfa98c38b728aa6dd38d34f2e2b58f985325",
+          "source_update_counts": {
+            "stage": "warm",
+            "warmup_updates": 12093,
+            "supervised_updates": 0
+          }
+        },
+        {
+          "key": "CW30",
+          "arm": "fresh_inputs_fresh_labels",
+          "stage": "warmup",
+          "checkpoint_file_sha256": "27451e128a56dea4db6fd8cee8413dc52baae08693817356e1278066677386b5",
+          "initial_state_hash": null,
+          "raw_train_sha256": "d83798f3f6f7c23d2b73736c101970a3af11c896e1423cf8057b91e93f899f38",
+          "raw_validation_sha256": "cba9926d27dc0c0f55c034dacb50f436973d61afac1b2d0604019b7825074011",
+          "source_update_counts": {
+            "stage": "warm",
+            "warmup_updates": 12093,
+            "supervised_updates": 0
+          }
+        },
+        {
+          "key": "ControlS20",
+          "arm": "control",
+          "stage": "supervised",
+          "checkpoint_file_sha256": "df70a2674a0745631474d3dc182257ec2c11d3b03218a008a7bdc8ebfff9808e",
+          "initial_state_hash": null,
+          "raw_train_sha256": "dccb6401943f9b150cca51ffd0436251eeeb9bcd5e7aed0217b5b1f0c0081f12",
+          "raw_validation_sha256": "62a4366840c26bf741c9fce4ff5af580e9d4f2790d521d8d0428eae5eecf7805",
+          "source_update_counts": {
+            "stage": "final",
+            "warmup_updates": 0,
+            "supervised_updates": 8047
+          }
+        },
+        {
+          "key": "1S20_W5",
+          "arm": "fixed_inputs_fixed_labels",
+          "stage": "supervised",
+          "checkpoint_file_sha256": "1424761d9584f6a2118506740bafe684b5fab276031b3c0bf76899f77602131e",
+          "initial_state_hash": null,
+          "raw_train_sha256": "1814ae48f747038d4d5148443809489479aeaf2d8e5df6cf0e4fba734e050e60",
+          "raw_validation_sha256": "c12b9d1532678f1dddd666b31a4e85226c522b96b2968a8faf281b8cfd0c0e94",
+          "source_update_counts": {
+            "stage": "final",
+            "warmup_updates": 0,
+            "supervised_updates": 8047
+          }
+        },
+        {
+          "key": "2S20_W5",
+          "arm": "fixed_inputs_fresh_labels",
+          "stage": "supervised",
+          "checkpoint_file_sha256": "ded8c07f9af28ec7bf92e3d62df92035e0b7fa4ae4d81a572ccf8821ae51bc0d",
+          "initial_state_hash": null,
+          "raw_train_sha256": "94bffa0e801a8b8559a04eddc862ea49d5f2add0cbcc7dc70418c841f15a7140",
+          "raw_validation_sha256": "dd3518f27a689d5d5c01975aec123c475c1814b2dacc343db02bc3e868ddbacb",
+          "source_update_counts": {
+            "stage": "final",
+            "warmup_updates": 0,
+            "supervised_updates": 8047
+          }
+        },
+        {
+          "key": "3S20_W5",
+          "arm": "fresh_inputs_fresh_labels",
+          "stage": "supervised",
+          "checkpoint_file_sha256": "c99c650f03ced71b9332c7ce904fe3f4e29665d77a278c04f7c817d173d840d2",
+          "initial_state_hash": null,
+          "raw_train_sha256": "cdeeae9d0c47780522aef6272fe41ee4e0b5f8f22e8cc7ad17c0b2e9127d2ba4",
+          "raw_validation_sha256": "31b1bcc9c411b3dd7d0564ce11334200fa46d8d6f7e566db1645437ce4f09d6e",
+          "source_update_counts": {
+            "stage": "final",
+            "warmup_updates": 0,
+            "supervised_updates": 8047
+          }
+        },
+        {
+          "key": "1S20_W15",
+          "arm": "fixed_inputs_fixed_labels",
+          "stage": "supervised",
+          "checkpoint_file_sha256": "45292828b69fe1e3c52e5a09d048c10e4d45fb08f1ac0ab978a54939dbc63bb7",
+          "initial_state_hash": null,
+          "raw_train_sha256": "acac1ba59af6086e8c60afd938e43158b57bc9aa84065ccfea391ab9fc964292",
+          "raw_validation_sha256": "369715f6888434b93655e73dcd5c43b1c5caf7a73db56dfd31fd5246a1b68a50",
+          "source_update_counts": {
+            "stage": "final",
+            "warmup_updates": 0,
+            "supervised_updates": 8047
+          }
+        },
+        {
+          "key": "2S20_W15",
+          "arm": "fixed_inputs_fresh_labels",
+          "stage": "supervised",
+          "checkpoint_file_sha256": "eaa861bf2cc574181dafea464361d46e5b51dfe51f07a9f82d47c767d2afe6c7",
+          "initial_state_hash": null,
+          "raw_train_sha256": "8649b6ad74f9592dd38cf2ac5ef4cc5f24e1f6a3e7d34bb8aec5ffc5b956e1c0",
+          "raw_validation_sha256": "716d6bca9471989984b37a73b5be1c8144e345e0dd1ea9509edf1b4dd7965f32",
+          "source_update_counts": {
+            "stage": "final",
+            "warmup_updates": 0,
+            "supervised_updates": 8047
+          }
+        },
+        {
+          "key": "3S20_W15",
+          "arm": "fresh_inputs_fresh_labels",
+          "stage": "supervised",
+          "checkpoint_file_sha256": "3a253434866e76d70380256e0f918a98ad4f4004a10e2572fe3ccd78a5d8713e",
+          "initial_state_hash": null,
+          "raw_train_sha256": "a98117b80bf548d5c209e816b131414f0fb49ee0db58ffd97c14f4d0dc40a6f9",
+          "raw_validation_sha256": "dc5969ad5430c0852a7f4950224873654f611b0a221fb899857da740ea356588",
+          "source_update_counts": {
+            "stage": "final",
+            "warmup_updates": 0,
+            "supervised_updates": 8047
+          }
+        },
+        {
+          "key": "1S20_W30",
+          "arm": "fixed_inputs_fixed_labels",
+          "stage": "supervised",
+          "checkpoint_file_sha256": "38a528c034851fc17793ea922465c83842218a371e2870a6e9ae62e8b443bc18",
+          "initial_state_hash": null,
+          "raw_train_sha256": "bf4b55954975dc69f77dfe5d32972c14f1ca5b630bacd68248ccec5035f0930a",
+          "raw_validation_sha256": "36247acdc47a6ce6d41a1425aeae35a35284c5af4dd5415b3dc69ada4dcbca49",
+          "source_update_counts": {
+            "stage": "final",
+            "warmup_updates": 0,
+            "supervised_updates": 8047
+          }
+        },
+        {
+          "key": "2S20_W30",
+          "arm": "fixed_inputs_fresh_labels",
+          "stage": "supervised",
+          "checkpoint_file_sha256": "8f4cc67078baa1d52977fdad1c1d9e973d4713168f2b8e1eb06f912fdda49f31",
+          "initial_state_hash": null,
+          "raw_train_sha256": "107b5a995e499bce7815e28a540772af551537e916fd27ec7ea7de7fea98f5bb",
+          "raw_validation_sha256": "aa3647be395f00113f5d69810a54f444bb903e81b2df61ba6087784a8f19888d",
+          "source_update_counts": {
+            "stage": "final",
+            "warmup_updates": 0,
+            "supervised_updates": 8047
+          }
+        },
+        {
+          "key": "3S20_W30",
+          "arm": "fresh_inputs_fresh_labels",
+          "stage": "supervised",
+          "checkpoint_file_sha256": "034697b44fb079bd484c60b65ba517a3852a2e8057f831f276bd5b9097eae410",
+          "initial_state_hash": null,
+          "raw_train_sha256": "14a3f52e6080a53f8c210c84b2ae608bbe50b53b2d177f093f5c1ad5c7f4f4f6",
+          "raw_validation_sha256": "a8e07b923cb7f2e9f762c885d21d60c45a6343808a87e7d6fc22c2bf6604bdcb",
+          "source_update_counts": {
+            "stage": "final",
+            "warmup_updates": 0,
+            "supervised_updates": 8047
+          }
+        }
+      ]
+    },
+    "alignn": {
+      "feature_tap": "readout input final atom nodes (256-D); all-atom mean equals fc input",
+      "states": [
+        {
+          "key": "I",
+          "arm": "Control",
+          "stage": "initial",
+          "checkpoint_file_sha256": null,
+          "initial_state_hash": "d317b91e9af891aa3008d8f759c9df55a36d109440ab38ff4dfdaa097791807a",
+          "raw_train_sha256": "7aaf162d745d36c0a5717fda38006f01ef12bae06af72407adb4f6f8ba0d45c1",
+          "raw_validation_sha256": "f7c3415c75ce4c32e2afababb40e85fc33cc6ac33de825cfd7a339221ef7021c",
+          "source_update_counts": {
+            "stage": "initial",
+            "warmup_updates": 0,
+            "supervised_updates": 0
+          }
+        },
+        {
+          "key": "FW5",
+          "arm": "F",
+          "stage": "warm",
+          "checkpoint_file_sha256": "5c35f55e7211ed8a9cb5bdf74fb43cc059a2c414713a0fcd7d273d268deebcf3",
+          "initial_state_hash": "d317b91e9af891aa3008d8f759c9df55a36d109440ab38ff4dfdaa097791807a",
+          "raw_train_sha256": "56e771ae5dba1f4ba0631fddedfbb2872cdfbf9053ee8832ea0d58a9b287157a",
+          "raw_validation_sha256": "98f544e22e0b12290c9c69543e3b3bc572e0900a89e03244d1a80d55c0b7fa1e",
+          "source_update_counts": {
+            "stage": "warm",
+            "warmup_updates": 1260,
+            "supervised_updates": 0
+          }
+        },
+        {
+          "key": "RW5",
+          "arm": "R",
+          "stage": "warm",
+          "checkpoint_file_sha256": "0dbaaeb88b7d9b97d7b9a60ad6c9c0401eb19722ec9e5d1998828ca689b50287",
+          "initial_state_hash": "d317b91e9af891aa3008d8f759c9df55a36d109440ab38ff4dfdaa097791807a",
+          "raw_train_sha256": "04bdea397b64e63c5585419151134afef47d242a83019fbddf79ed1eb509001d",
+          "raw_validation_sha256": "d3fba43ea2c228f4e2367b1dc5f349be8fe8b6929d96f96100c2df339a90354a",
+          "source_update_counts": {
+            "stage": "warm",
+            "warmup_updates": 1260,
+            "supervised_updates": 0
+          }
+        },
+        {
+          "key": "ControlS20",
+          "arm": "Control",
+          "stage": "control_final",
+          "checkpoint_file_sha256": "0340a453233102a4f243077d601e35c49384550904263c0f49632b7dd70c86dd",
+          "initial_state_hash": "d317b91e9af891aa3008d8f759c9df55a36d109440ab38ff4dfdaa097791807a",
+          "raw_train_sha256": "2dac9284c4d7be4540c23ec597828580c19536094201ce58c3757813ca176fcc",
+          "raw_validation_sha256": "347cb875a9d1240e84e0b03c60f4741594e96cfa0375b7df163a7564e9479780",
+          "source_update_counts": {
+            "stage": "control_final",
+            "warmup_updates": 0,
+            "supervised_updates": 5040
+          }
+        },
+        {
+          "key": "FS20",
+          "arm": "F",
+          "stage": "final",
+          "checkpoint_file_sha256": "a894d486e131b401c76ae6deed3961537e5e9e744dbc5b68a66ee77d84ad5af1",
+          "initial_state_hash": "d317b91e9af891aa3008d8f759c9df55a36d109440ab38ff4dfdaa097791807a",
+          "raw_train_sha256": "e9faf7e22aebe4a8cc0f68454a54a5b41d7e4a4efca0bd6d19980d1f1bac0b70",
+          "raw_validation_sha256": "c704d8faefc111e12f56d1b0fc8ed5c989c0bba49562b31591119e654962ac00",
+          "source_update_counts": {
+            "stage": "final",
+            "warmup_updates": 1260,
+            "supervised_updates": 5040
+          }
+        },
+        {
+          "key": "RS20",
+          "arm": "R",
+          "stage": "final",
+          "checkpoint_file_sha256": "d371d86f056bf6131001ab0dd83b0bc17688303ad6e0a2244f29055f17ab3f79",
+          "initial_state_hash": "d317b91e9af891aa3008d8f759c9df55a36d109440ab38ff4dfdaa097791807a",
+          "raw_train_sha256": "875453ebc98d89809598eb5d8940307e1c220e83db4160f6b95352721c4e13a6",
+          "raw_validation_sha256": "ff3faeb0b7ac9bcee73590517edda3b38535117d9d6e03ba46ac3fcb1e624e84",
+          "source_update_counts": {
+            "stage": "final",
+            "warmup_updates": 1260,
+            "supervised_updates": 5040
+          }
+        }
+      ]
+    },
+    "crabnet": {
+      "feature_tap": "output_nn.fc_out input (128-D), masked unweighted mean before native value/gate readout",
+      "states": [
+        {
+          "key": "I",
+          "arm": "Control",
+          "stage": "initial",
+          "checkpoint_file_sha256": null,
+          "initial_state_hash": "ec60c441843d0e0f7597b6a310de949571dc9976cbdc31d93b73a010bfa560a5",
+          "raw_train_sha256": "d51cd2a33db7c8c663e446decdaeccc6c6b2d2f9f0c4ae8b2fbbfb947dfa57e8",
+          "raw_validation_sha256": "6a9c565f6fede044b5e65ef398c969b9591828cfb2e1191ebd4eb5e14057b133",
+          "source_update_counts": {
+            "stage": "initial",
+            "warmup_updates": 0,
+            "supervised_updates": 0
+          }
+        },
+        {
+          "key": "U_fixedW5",
+          "arm": "U_fixed",
+          "stage": "warm",
+          "checkpoint_file_sha256": "c6296f7d9619c81305b8e8a4a0ed7fb02c538b058a864f8fa8d991c84185f596",
+          "initial_state_hash": "ec60c441843d0e0f7597b6a310de949571dc9976cbdc31d93b73a010bfa560a5",
+          "raw_train_sha256": "d379f510f576996d61c3a737cb449e8a810fd85e2b70bd922f1df722c5a5a74c",
+          "raw_validation_sha256": "cefcef92e6f42ba8be6c99947eef9c9db353ae8c77146c69aac33808fcb8b010",
+          "source_update_counts": {
+            "stage": "warm",
+            "warmup_updates": 80,
+            "supervised_updates": 0
+          }
+        },
+        {
+          "key": "A_fixedW5",
+          "arm": "A_fixed",
+          "stage": "warm",
+          "checkpoint_file_sha256": "77c7a889412a90bc4e2d901180d811f406493f2a928c20d1b23f1d25a3552b7d",
+          "initial_state_hash": "ec60c441843d0e0f7597b6a310de949571dc9976cbdc31d93b73a010bfa560a5",
+          "raw_train_sha256": "d30ad733cbb05b20b61c3ac16591e56bf5ddbb1ddce8bae8ccbd1c6ee7e496f1",
+          "raw_validation_sha256": "cfaa4df74b17a1008b39258446bed05ea9e1f0814d2e851e4bd8f94b66f26358",
+          "source_update_counts": {
+            "stage": "warm",
+            "warmup_updates": 80,
+            "supervised_updates": 0
+          }
+        },
+        {
+          "key": "U_refreshedW5",
+          "arm": "U_refreshed",
+          "stage": "warm",
+          "checkpoint_file_sha256": "ee3b7995b937ded3e93f9893f182e2c984e8f9f4d2def62a0fab7acfe32b219e",
+          "initial_state_hash": "ec60c441843d0e0f7597b6a310de949571dc9976cbdc31d93b73a010bfa560a5",
+          "raw_train_sha256": "4a5421213b1636fc8b6e9378a2d9f1ee2f4e5f2da292c3485abe5ef28e17b16c",
+          "raw_validation_sha256": "c5e810d8c20e685c43a2aca6ae9b89f5dafa97f22dce37192f2eafbcb6016bb0",
+          "source_update_counts": {
+            "stage": "warm",
+            "warmup_updates": 80,
+            "supervised_updates": 0
+          }
+        },
+        {
+          "key": "ControlS20",
+          "arm": "Control",
+          "stage": "control_final",
+          "checkpoint_file_sha256": "8bad6d0428e2097f4894262cc6907c1627ce6586809f089cfc18d146778b1499",
+          "initial_state_hash": "ec60c441843d0e0f7597b6a310de949571dc9976cbdc31d93b73a010bfa560a5",
+          "raw_train_sha256": "84d0850e69d099c35dad1e015b95bc9092b0df2b11e3910e980bc6dfafe3476b",
+          "raw_validation_sha256": "7de10e4820a129058f2fa818457c292338e2bd0078198ca219229dbce12d5e52",
+          "source_update_counts": {
+            "stage": "control_final",
+            "warmup_updates": 0,
+            "supervised_updates": 320
+          }
+        },
+        {
+          "key": "U_fixedS20",
+          "arm": "U_fixed",
+          "stage": "final",
+          "checkpoint_file_sha256": "dc75fed4791c11de5f29ce68f27814e888744b7397ad371a143bd9d018612338",
+          "initial_state_hash": "ec60c441843d0e0f7597b6a310de949571dc9976cbdc31d93b73a010bfa560a5",
+          "raw_train_sha256": "835bc3cc9ae646f6810733ab0d95b7e5a05c059171b7c5cfa19ab1534e348fa4",
+          "raw_validation_sha256": "ce0730ba4890d410988c33f8ae1352e5bf31da525ca1d9a4d84f1983aa2fa0b4",
+          "source_update_counts": {
+            "stage": "final",
+            "warmup_updates": 80,
+            "supervised_updates": 320
+          }
+        },
+        {
+          "key": "A_fixedS20",
+          "arm": "A_fixed",
+          "stage": "final",
+          "checkpoint_file_sha256": "77be77a54983464aa57bd105ba6704f1151dda051e2a2518ffd2dedae1a90156",
+          "initial_state_hash": "ec60c441843d0e0f7597b6a310de949571dc9976cbdc31d93b73a010bfa560a5",
+          "raw_train_sha256": "982fb5815d1c3ee90965aa950796e2a55c74c169c80119b2f07d544ddc6d8e9b",
+          "raw_validation_sha256": "e29ed493024a9648e2304cd48b1a151da596bc565641f194cbef4c6d1f99e6a7",
+          "source_update_counts": {
+            "stage": "final",
+            "warmup_updates": 80,
+            "supervised_updates": 320
+          }
+        },
+        {
+          "key": "U_refreshedS20",
+          "arm": "U_refreshed",
+          "stage": "final",
+          "checkpoint_file_sha256": "5e21e3848038fceea65623220c7a34a2ef31f64c46a9458aeee7753a1f17a071",
+          "initial_state_hash": "ec60c441843d0e0f7597b6a310de949571dc9976cbdc31d93b73a010bfa560a5",
+          "raw_train_sha256": "8fc506dfe2469b8fc4050a40c64afc47280e559480de7620719dc512549b2215",
+          "raw_validation_sha256": "5eb96a2990f6126ad363c92439c91b6ef70ae42d610e0b9bc3eba992aa1f8adc",
+          "source_update_counts": {
+            "stage": "final",
+            "warmup_updates": 80,
+            "supervised_updates": 320
+          }
+        }
+      ]
+    }
+  }
+}

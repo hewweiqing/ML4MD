@@ -11,6 +11,7 @@ Warm-up experiments on balanced Matbench `mp_is_metal` classification
 | [alignn/](alignn/) | ALIGNN crystal-structure experiments | 3.10 |
 | [orb/](orb/) | ORB-v3 crystal-structure experiments, trained from scratch | 3.12 |
 | [data/](data/) | Shared dataset splits | — |
+| [analysis/pca/](analysis/pca/) | Cross-model raw/relative 2D and static-3D PCA; DIRECT anchors by default | 3.10 |
 
 Each model folder contains its own README, requirements, experiment runners,
 and plotting script. Follow that folder's README and run its commands from
@@ -31,6 +32,29 @@ CrabNet and ALIGNN use all three splits, with test evaluation after training.
 ORB intentionally uses only training and validation data.
 
 New experiment outputs are saved under each model's `runs/` directory.
+
+## PCA representation analysis
+
+The [PCA package](analysis/pca/README.md) reproduces the cross-model raw and
+anchor-relative PCA figures, including static 3D views, from included checkpoint
+features. Use a separate CPU analysis environment; no training or GPU is needed.
+From the repository root:
+
+```sh
+cd analysis/pca
+python -m pip install -r requirements.txt
+python analyze.py --check-reference
+```
+
+DIRECT is the default anchor selector. The original selection remains available
+with `--anchors baseline`; `support/requirements-direct.txt` is only needed for the
+optional independent reselection audit. See the package README for the pinned
+authors' implementation, feature definitions and shared training-only PCA protocol.
+
+The 48-page PDF and PNGs are written to `analysis/pca/results/pca_direct/figures/`.
+Generated results are ignored by Git. Include the package's `data/` and `support/`:
+these contain reproducibility inputs and optional checks, not training outputs.
+The feature data is separate from the real material records in root `data/`.
 
 ## Contributing
 

@@ -1,0 +1,10 @@
+{
+  "anchor_method": "DIRECT",
+  "input_manifest_sha256": "bb126928630c2a45040f56f3ba44d4dbe1af6e0d374144ed1eeb3c52b64282e3",
+  "generated_by": "analyze.py: ordinary PCA of author-selected anchor-relative features",
+  "reference_checkpoint": "ControlS20",
+  "seed": 0,
+  "baseline_reference_unchanged": true,
+  "newly_refitted": true,
+  "native_training": false
+}

@@ -1,0 +1,4 @@
+# Optional: only needed to re-run the authors' selection audit.
+-r ../requirements.txt
+maml==2025.4.3
+tqdm==4.68.4

@@ -1,0 +1,62 @@
+{
+  "status": "PASS",
+  "date": "2026-10-21",
+  "primary_anchor_method": "DIRECT",
+  "unit_tests_passed": 21,
+  "repository_tests_passed": 4,
+  "default_execution_from_outside_package": true,
+  "six_author_selection_recomputations_match_ordered_indices": true,
+  "ORB_previous_DIRECT_PC1_PC2_exactly_reproduced": true,
+  "raw_PCA_fits_exactly_unchanged": 6,
+  "relative_PCA_fits_refitted": 6,
+  "baseline_all_12_reference_fits_exactly_reproduced": true,
+  "direct_all_12_reference_fits_reproduced": true,
+  "PDF_pages": 48,
+  "static_3D_pages": 12,
+  "all_PDF_pages_rendered": true,
+  "all_axis_percentages_verified": true,
+  "PDF_boundary_violations": [],
+  "visual_review": "All 48 pages inspected in eight rendered contact sheets; representative 2D and 3D pages checked individually",
+  "pdf_sha256": "c80f270a8f4f5aec8309ed2715af24268f181b2c50a2c2720915a6664d1c88fe",
+  "memory_cleanup_added_to_plotting": true,
+  "native_training": false,
+  "GPU_used": false,
+  "original_caches_checkpoints_PDFs_unchanged": true,
+  "normal_run_uses_frozen_DIRECT_selections": true,
+  "optional_reselection_uses_unmodified_pinned_authors_wrapper": true,
+  "other_operating_systems_and_fresh_environment_install_not_tested": true,
+  "git_commit_created": false,
+  "git_push_performed": false,
+  "source_checksums": {
+    "analyze.py": "ad273a9653037f43f3d59d2ab6d4f706c1186517bcbfa85530fb80dd00793186",
+    "plot.py": "b8da8b5c7c2a5c64c7d328c5d44a6c0f68a62d3f44a69e1cac6caf698b0a5dff",
+    "support/test_pca.py": "9748b32f66bc414f0b85557e25c81cf0f4d40313bfc0b4e1e473a777773a1412",
+    "requirements.txt": "49e2d9617c518d02370dc0328f6350a6c9ad3a3008348132302a544f95d32897",
+    "support/requirements-direct.txt": "618e1889c98350d03f7f9c9e1f72cab75e0c61739487779967f56c5a56a4c432",
+    "data/manifest.json": "bb126928630c2a45040f56f3ba44d4dbe1af6e0d374144ed1eeb3c52b64282e3"
+  },
+  "source_checksums_before_layout_change": {
+    "analyze.py": "b59824fad51c1e1f8426885d2e0058f5d69dbe4f4a325bf432092f8ec78d355c",
+    "plot.py": "b8da8b5c7c2a5c64c7d328c5d44a6c0f68a62d3f44a69e1cac6caf698b0a5dff",
+    "test_pca.py": "8e0cdf83474539611ada2d9c3cf024a874dd6e329b78857cd72f7257909d8082",
+    "requirements.txt": "49e2d9617c518d02370dc0328f6350a6c9ad3a3008348132302a544f95d32897",
+    "requirements-direct.txt": "910e81c16d880d72839ba394290d8082a68f5b130eb10f63638854e683e9afae",
+    "data/manifest.json": "bb126928630c2a45040f56f3ba44d4dbe1af6e0d374144ed1eeb3c52b64282e3"
+  },
+  "layout_revision": {
+    "unit_tests_passed": 21,
+    "PCA_reference_checks_passed": 12,
+    "maximum_coordinate_difference": 0.0,
+    "maximum_variance_ratio_difference": 0.0,
+    "numerical_method_unchanged": true,
+    "all_scientific_inputs_preserved": true,
+    "public_entry_points": [
+      "analyze.py",
+      "plot.py"
+    ],
+    "details_folder": "support",
+    "no_new_PDF_generated": true,
+    "no_training": true
+  },
+  "cloned_repository_unchanged_during_original_analysis": true
+}
